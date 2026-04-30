@@ -1,0 +1,382 @@
+﻿namespace TixNova__Final
+{
+    partial class MoviesForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MoviesForm));
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.subheadingGradientLabel2 = new TixNova__Final.SubheadingGradientLabel();
+            this.subheadingGradientLabel1 = new TixNova__Final.SubheadingGradientLabel();
+            this.gradientLabel2 = new TixNova_Final.GradientLabel();
+            this.gradientLabel1 = new TixNova_Final.GradientLabel();
+            this.roundedPictureBox1 = new TixNova_Final.RoundedPictureBox();
+            this.roundedPictureBox2 = new TixNova_Final.RoundedPictureBox();
+            this.roundedPictureBox3 = new TixNova_Final.RoundedPictureBox();
+            this.roundedPictureBox4 = new TixNova_Final.RoundedPictureBox();
+            this.roundedPictureBox5 = new TixNova_Final.RoundedPictureBox();
+            this.roundedPictureBox6 = new TixNova_Final.RoundedPictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox6)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(1629, 36);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(189, 70);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 34;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1558, 45);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 33;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(-18, 12);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(182, 116);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 32;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Location = new System.Drawing.Point(458, 364);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 32);
+            this.label1.TabIndex = 31;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // linkLabel5
+            // 
+            this.linkLabel5.ActiveLinkColor = System.Drawing.Color.Cyan;
+            this.linkLabel5.AutoSize = true;
+            this.linkLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel5.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel5.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel5.LinkColor = System.Drawing.Color.White;
+            this.linkLabel5.Location = new System.Drawing.Point(1293, 48);
+            this.linkLabel5.Name = "linkLabel5";
+            this.linkLabel5.Size = new System.Drawing.Size(116, 30);
+            this.linkLabel5.TabIndex = 24;
+            this.linkLabel5.TabStop = true;
+            this.linkLabel5.Text = "Categories";
+            this.linkLabel5.VisitedLinkColor = System.Drawing.Color.Cyan;
+            // 
+            // linkLabel4
+            // 
+            this.linkLabel4.ActiveLinkColor = System.Drawing.Color.Cyan;
+            this.linkLabel4.AutoSize = true;
+            this.linkLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel4.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel4.LinkColor = System.Drawing.Color.White;
+            this.linkLabel4.Location = new System.Drawing.Point(1094, 48);
+            this.linkLabel4.Name = "linkLabel4";
+            this.linkLabel4.Size = new System.Drawing.Size(64, 30);
+            this.linkLabel4.TabIndex = 23;
+            this.linkLabel4.TabStop = true;
+            this.linkLabel4.Text = "Shop";
+            this.linkLabel4.VisitedLinkColor = System.Drawing.Color.Cyan;
+            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
+            // 
+            // linkLabel3
+            // 
+            this.linkLabel3.ActiveLinkColor = System.Drawing.Color.Cyan;
+            this.linkLabel3.AutoSize = true;
+            this.linkLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel3.LinkColor = System.Drawing.Color.White;
+            this.linkLabel3.Location = new System.Drawing.Point(888, 48);
+            this.linkLabel3.Name = "linkLabel3";
+            this.linkLabel3.Size = new System.Drawing.Size(95, 30);
+            this.linkLabel3.TabIndex = 22;
+            this.linkLabel3.TabStop = true;
+            this.linkLabel3.Text = "Cinemas";
+            this.linkLabel3.VisitedLinkColor = System.Drawing.Color.Cyan;
+            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.ActiveLinkColor = System.Drawing.Color.Cyan;
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel2.LinkColor = System.Drawing.Color.Cyan;
+            this.linkLabel2.Location = new System.Drawing.Point(707, 48);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(83, 30);
+            this.linkLabel2.TabIndex = 21;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Movies";
+            this.linkLabel2.VisitedLinkColor = System.Drawing.Color.Cyan;
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Cyan;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel1.LinkColor = System.Drawing.Color.White;
+            this.linkLabel1.Location = new System.Drawing.Point(538, 48);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(72, 30);
+            this.linkLabel1.TabIndex = 20;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Home";
+            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Cyan;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // subheadingGradientLabel2
+            // 
+            this.subheadingGradientLabel2.AutoSize = true;
+            this.subheadingGradientLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.subheadingGradientLabel2.Font = new System.Drawing.Font("Segoe UI Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subheadingGradientLabel2.Location = new System.Drawing.Point(338, 537);
+            this.subheadingGradientLabel2.Name = "subheadingGradientLabel2";
+            this.subheadingGradientLabel2.Size = new System.Drawing.Size(284, 50);
+            this.subheadingGradientLabel2.TabIndex = 36;
+            this.subheadingGradientLabel2.Text = "Coming Soonn\r\n";
+            // 
+            // subheadingGradientLabel1
+            // 
+            this.subheadingGradientLabel1.AutoSize = true;
+            this.subheadingGradientLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.subheadingGradientLabel1.Font = new System.Drawing.Font("Segoe UI Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subheadingGradientLabel1.Location = new System.Drawing.Point(338, 119);
+            this.subheadingGradientLabel1.Name = "subheadingGradientLabel1";
+            this.subheadingGradientLabel1.Size = new System.Drawing.Size(272, 50);
+            this.subheadingGradientLabel1.TabIndex = 35;
+            this.subheadingGradientLabel1.Text = "Now Showing";
+            // 
+            // gradientLabel2
+            // 
+            this.gradientLabel2.AutoSize = true;
+            this.gradientLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.gradientLabel2.Font = new System.Drawing.Font("Segoe UI Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientLabel2.Location = new System.Drawing.Point(113, 43);
+            this.gradientLabel2.Name = "gradientLabel2";
+            this.gradientLabel2.Size = new System.Drawing.Size(192, 45);
+            this.gradientLabel2.TabIndex = 25;
+            this.gradientLabel2.Text = "TIXNOVA+";
+            // 
+            // gradientLabel1
+            // 
+            this.gradientLabel1.AutoSize = true;
+            this.gradientLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.gradientLabel1.Font = new System.Drawing.Font("Segoe UI Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientLabel1.Location = new System.Drawing.Point(760, 48);
+            this.gradientLabel1.Name = "gradientLabel1";
+            this.gradientLabel1.Size = new System.Drawing.Size(0, 45);
+            this.gradientLabel1.TabIndex = 18;
+            // 
+            // roundedPictureBox1
+            // 
+            this.roundedPictureBox1.BorderRadius = 20;
+            this.roundedPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox1.Image")));
+            this.roundedPictureBox1.Location = new System.Drawing.Point(586, 191);
+            this.roundedPictureBox1.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.roundedPictureBox1.Name = "roundedPictureBox1";
+            this.roundedPictureBox1.Size = new System.Drawing.Size(267, 334);
+            this.roundedPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roundedPictureBox1.TabIndex = 37;
+            this.roundedPictureBox1.TabStop = false;
+            // 
+            // roundedPictureBox2
+            // 
+            this.roundedPictureBox2.BorderRadius = 20;
+            this.roundedPictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox2.Image")));
+            this.roundedPictureBox2.Location = new System.Drawing.Point(956, 191);
+            this.roundedPictureBox2.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.roundedPictureBox2.Name = "roundedPictureBox2";
+            this.roundedPictureBox2.Size = new System.Drawing.Size(267, 334);
+            this.roundedPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roundedPictureBox2.TabIndex = 38;
+            this.roundedPictureBox2.TabStop = false;
+            // 
+            // roundedPictureBox3
+            // 
+            this.roundedPictureBox3.BorderRadius = 20;
+            this.roundedPictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox3.Image")));
+            this.roundedPictureBox3.Location = new System.Drawing.Point(1298, 191);
+            this.roundedPictureBox3.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.roundedPictureBox3.Name = "roundedPictureBox3";
+            this.roundedPictureBox3.Size = new System.Drawing.Size(267, 334);
+            this.roundedPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roundedPictureBox3.TabIndex = 39;
+            this.roundedPictureBox3.TabStop = false;
+            // 
+            // roundedPictureBox4
+            // 
+            this.roundedPictureBox4.BorderRadius = 20;
+            this.roundedPictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox4.Image")));
+            this.roundedPictureBox4.Location = new System.Drawing.Point(586, 600);
+            this.roundedPictureBox4.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.roundedPictureBox4.Name = "roundedPictureBox4";
+            this.roundedPictureBox4.Size = new System.Drawing.Size(267, 334);
+            this.roundedPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roundedPictureBox4.TabIndex = 40;
+            this.roundedPictureBox4.TabStop = false;
+            // 
+            // roundedPictureBox5
+            // 
+            this.roundedPictureBox5.BorderRadius = 20;
+            this.roundedPictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox5.Image")));
+            this.roundedPictureBox5.Location = new System.Drawing.Point(956, 613);
+            this.roundedPictureBox5.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.roundedPictureBox5.Name = "roundedPictureBox5";
+            this.roundedPictureBox5.Size = new System.Drawing.Size(267, 334);
+            this.roundedPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roundedPictureBox5.TabIndex = 41;
+            this.roundedPictureBox5.TabStop = false;
+            // 
+            // roundedPictureBox6
+            // 
+            this.roundedPictureBox6.BorderRadius = 20;
+            this.roundedPictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox6.Image")));
+            this.roundedPictureBox6.Location = new System.Drawing.Point(1298, 613);
+            this.roundedPictureBox6.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.roundedPictureBox6.Name = "roundedPictureBox6";
+            this.roundedPictureBox6.Size = new System.Drawing.Size(267, 334);
+            this.roundedPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roundedPictureBox6.TabIndex = 42;
+            this.roundedPictureBox6.TabStop = false;
+            // 
+            // MoviesForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1924, 856);
+            this.Controls.Add(this.roundedPictureBox6);
+            this.Controls.Add(this.roundedPictureBox5);
+            this.Controls.Add(this.roundedPictureBox4);
+            this.Controls.Add(this.roundedPictureBox3);
+            this.Controls.Add(this.roundedPictureBox2);
+            this.Controls.Add(this.roundedPictureBox1);
+            this.Controls.Add(this.subheadingGradientLabel2);
+            this.Controls.Add(this.subheadingGradientLabel1);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.gradientLabel2);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.linkLabel5);
+            this.Controls.Add(this.linkLabel4);
+            this.Controls.Add(this.linkLabel3);
+            this.Controls.Add(this.linkLabel2);
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.gradientLabel1);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "MoviesForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "TixNova+ MoviesForm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox6)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private TixNova_Final.GradientLabel gradientLabel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private TixNova_Final.GradientLabel gradientLabel2;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel linkLabel5;
+        private System.Windows.Forms.LinkLabel linkLabel4;
+        private System.Windows.Forms.LinkLabel linkLabel3;
+        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private SubheadingGradientLabel subheadingGradientLabel1;
+        private SubheadingGradientLabel subheadingGradientLabel2;
+        private TixNova_Final.RoundedPictureBox roundedPictureBox1;
+        private TixNova_Final.RoundedPictureBox roundedPictureBox2;
+        private TixNova_Final.RoundedPictureBox roundedPictureBox3;
+        private TixNova_Final.RoundedPictureBox roundedPictureBox4;
+        private TixNova_Final.RoundedPictureBox roundedPictureBox5;
+        private TixNova_Final.RoundedPictureBox roundedPictureBox6;
+    }
+}
