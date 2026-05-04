@@ -55,6 +55,9 @@
     <Compile Include="CinemasForm.Designer.cs">
       <DependentUpon>CinemasForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomMegaMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="FadingImageButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -125,11 +128,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-    <!-- Kill running process before build (without timeout) -->
+  <!-- Kill running process before build (without timeout) -->
   <Target Name="KillRunningProcess" BeforeTargets="BeforeBuild;BeforeRebuild">
     <Exec Command="taskkill /F /IM TixNova+_Final.exe" IgnoreExitCode="true" ContinueOnError="true" />
   </Target>
-
   <!-- Delete locked files before clean -->
   <Target Name="CleanLockedFiles" BeforeTargets="CoreClean">
     <Exec Command="del /F /Q &quot;$(OutputPath)TixNova+_Final.exe&quot;" IgnoreExitCode="true" ContinueOnError="true" />

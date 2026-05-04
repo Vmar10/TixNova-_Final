@@ -122,6 +122,7 @@
             this.linkLabel5.TabStop = true;
             this.linkLabel5.Text = "Categories";
             this.linkLabel5.VisitedLinkColor = System.Drawing.Color.Cyan;
+            this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked_1);
             // 
             // linkLabel4
             // 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+using System.Runtime.InteropServices;
 
 namespace TixNova__Final
 {
@@ -19,6 +20,96 @@ namespace TixNova__Final
             MakeRoundedGradientButton(MenuButton, Color.FromArgb(78, 199, 220), Color.FromArgb(7, 89, 179), 30);
             MakeRoundedGradientButton(SearchButton, Color.FromArgb(78, 199, 220), Color.FromArgb(7, 89, 179), 35);
             SetupAllLinkLabelsGlow();
+            SetupMenu();
+        }
+
+        [DllImport("user32.dll")]
+        internal static extern int SetWindowCompositionAttribute(IntPtr hwnd, ref WindowCompositionAttributeData data);
+
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct WindowCompositionAttributeData
+        {
+            public WindowCompositionAttribute Attribute;
+            public IntPtr Data;
+            public int SizeOfData;
+        }
+
+        internal enum WindowCompositionAttribute
+        {
+            WCA_ACCENT_POLICY = 19
+        }
+
+        internal enum AccentState
+        {
+            ACCENT_ENABLE_BLURBEHIND = 3
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct AccentPolicy
+        {
+            public AccentState AccentState;
+            public int AccentFlags;
+            public int GradientColor;
+            public int AnimationId;
+        }
+
+        private void EnableBlur(IntPtr hwnd)
+        {
+            var accent = new AccentPolicy();
+            accent.AccentState = AccentState.ACCENT_ENABLE_BLURBEHIND;
+
+            int accentStructSize = Marshal.SizeOf(accent);
+            IntPtr accentPtr = Marshal.AllocHGlobal(accentStructSize);
+            Marshal.StructureToPtr(accent, accentPtr, false);
+
+            var data = new WindowCompositionAttributeData();
+            data.Attribute = WindowCompositionAttribute.WCA_ACCENT_POLICY;
+            data.SizeOfData = accentStructSize;
+            data.Data = accentPtr;
+
+            SetWindowCompositionAttribute(hwnd, ref data);
+            Marshal.FreeHGlobal(accentPtr);
+        }
+
+        // --- Your Updated SetupMenu ---
+
+        private Form dropDownForm;
+        private DateTime menuLastClosedTime = DateTime.MinValue;
+        private TixNovaMenuControl menuContent;
+
+        private void SetupMenu()
+        {
+            menuContent = new TixNovaMenuControl();
+
+            dropDownForm = new Form();
+            dropDownForm.FormBorderStyle = FormBorderStyle.None;
+            dropDownForm.StartPosition = FormStartPosition.Manual;
+            dropDownForm.ShowInTaskbar = false;
+            dropDownForm.Size = menuContent.Size;
+
+            // Use Magenta to punch out the background completely without leaving a black shadow
+            dropDownForm.BackColor = Color.Black;
+
+            // Clip the form perfectly to the outer bounds so the blur doesn't bleed out
+            dropDownForm.Region = new Region(menuContent.GetRegionPath());
+
+            dropDownForm.Controls.Add(menuContent);
+            menuContent.Location = new Point(0, 0);
+
+            dropDownForm.HandleCreated += (s, e) => EnableBlur(dropDownForm.Handle);
+            dropDownForm.Deactivate += (s, e) =>
+            {
+                dropDownForm.Hide();
+                menuLastClosedTime = DateTime.Now; // Record exactly when it closed
+            };
+        }
+
+        public class NoBorderRenderer : ToolStripSystemRenderer
+        {
+            protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
+            {
+                // Leave empty
+            }
         }
         private void SetupAllLinkLabelsGlow()
         {
@@ -174,6 +265,65 @@ namespace TixNova__Final
             shopform.Show();
 
             this.Hide();
+        }
+        private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if ((DateTime.Now - menuLastClosedTime).TotalMilliseconds < 100)
+            {
+                return;
+            }
+
+            // 2. Toggle logic
+            if (dropDownForm.Visible)
+            {
+                dropDownForm.Hide();
+            }
+            else
+            {
+                int xOffset = (linkLabel5.Width - menuContent.Width) / 2;
+
+
+
+                // Convert the button's location to screen coordinates
+
+                Point screenLocation = linkLabel5.PointToScreen(new Point(xOffset, linkLabel5.Height + 5));
+
+                // You might need to tweak the X and Y here so the arrow lines up perfectly
+                // dropDownForm.Location = new Point(screenPos.X - 50, screenPos.Y);
+                dropDownForm.Location = screenLocation;
+                dropDownForm.Show();
+                dropDownForm.BringToFront(); // Ensure it pops up over everything else
+            }
+        }
+
+        private void linkLabel5_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if ((DateTime.Now - menuLastClosedTime).TotalMilliseconds < 100)
+            {
+                return;
+            }
+
+            // 2. Toggle logic
+            if (dropDownForm.Visible)
+            {
+                dropDownForm.Hide();
+            }
+            else
+            {
+                int xOffset = (linkLabel5.Width - menuContent.Width) / 2;
+
+
+
+                // Convert the button's location to screen coordinates
+
+                Point screenLocation = linkLabel5.PointToScreen(new Point(xOffset, linkLabel5.Height + 5));
+
+                // You might need to tweak the X and Y here so the arrow lines up perfectly
+                // dropDownForm.Location = new Point(screenPos.X - 50, screenPos.Y);
+                dropDownForm.Location = screenLocation;
+                dropDownForm.Show();
+                dropDownForm.BringToFront(); // Ensure it pops up over everything else
+            }
         }
     }
 }

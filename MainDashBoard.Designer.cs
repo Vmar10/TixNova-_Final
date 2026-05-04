@@ -38,7 +38,6 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.viewportPanel = new System.Windows.Forms.Panel();
             this.movieTrackPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.MenuButton = new System.Windows.Forms.Button();
             this.roundedPictureBox1 = new TixNova_Final.RoundedPictureBox();
             this.roundedPictureBox2 = new TixNova_Final.RoundedPictureBox();
             this.roundedPictureBox3 = new TixNova_Final.RoundedPictureBox();
@@ -49,6 +48,7 @@
             this.roundedPictureBox8 = new TixNova_Final.RoundedPictureBox();
             this.roundedPictureBox9 = new TixNova_Final.RoundedPictureBox();
             this.roundedPictureBox10 = new TixNova_Final.RoundedPictureBox();
+            this.MenuButton = new System.Windows.Forms.Button();
             this.subheadingGradientLabel1 = new TixNova__Final.SubheadingGradientLabel();
             this.fadingImageButton2 = new TixNova__Final.FadingImageButton();
             this.fadingImageButton1 = new TixNova__Final.FadingImageButton();
@@ -142,6 +142,7 @@
             this.linkLabel5.TabStop = true;
             this.linkLabel5.Text = "Categories";
             this.linkLabel5.VisitedLinkColor = System.Drawing.Color.Cyan;
+            this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked);
             // 
             // label1
             // 
@@ -214,20 +215,6 @@
             this.movieTrackPanel.Size = new System.Drawing.Size(3150, 376);
             this.movieTrackPanel.TabIndex = 0;
             this.movieTrackPanel.WrapContents = false;
-            // 
-            // MenuButton
-            // 
-            this.MenuButton.BackColor = System.Drawing.Color.Aqua;
-            this.MenuButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.MenuButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.MenuButton.ForeColor = System.Drawing.Color.White;
-            this.MenuButton.Location = new System.Drawing.Point(1670, 53);
-            this.MenuButton.Name = "MenuButton";
-            this.MenuButton.Size = new System.Drawing.Size(127, 40);
-            this.MenuButton.TabIndex = 25;
-            this.MenuButton.Text = "MENU";
-            this.MenuButton.UseVisualStyleBackColor = false;
             // 
             // roundedPictureBox1
             // 
@@ -358,6 +345,20 @@
             this.roundedPictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox10.TabIndex = 9;
             this.roundedPictureBox10.TabStop = false;
+            // 
+            // MenuButton
+            // 
+            this.MenuButton.BackColor = System.Drawing.Color.Aqua;
+            this.MenuButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.MenuButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.MenuButton.ForeColor = System.Drawing.Color.White;
+            this.MenuButton.Location = new System.Drawing.Point(1670, 53);
+            this.MenuButton.Name = "MenuButton";
+            this.MenuButton.Size = new System.Drawing.Size(127, 40);
+            this.MenuButton.TabIndex = 25;
+            this.MenuButton.Text = "MENU";
+            this.MenuButton.UseVisualStyleBackColor = false;
             // 
             // subheadingGradientLabel1
             // 
