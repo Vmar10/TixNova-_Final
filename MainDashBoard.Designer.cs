@@ -36,10 +36,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.viewportPanel = new System.Windows.Forms.Panel();
             this.movieTrackPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.MenuButton = new System.Windows.Forms.Button();
             this.roundedPictureBox1 = new TixNova_Final.RoundedPictureBox();
             this.roundedPictureBox2 = new TixNova_Final.RoundedPictureBox();
             this.roundedPictureBox3 = new TixNova_Final.RoundedPictureBox();
@@ -59,9 +58,8 @@
             this.blueGradientLabel4 = new TixNova_Final.BlueGradientLabel();
             this.blueGradientLabel3 = new TixNova_Final.BlueGradientLabel();
             this.gradientLabel2 = new TixNova_Final.GradientLabel();
+            this.SearchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.viewportPanel.SuspendLayout();
             this.movieTrackPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox1)).BeginInit();
@@ -82,8 +80,9 @@
             // 
             this.linkLabel2.ActiveLinkColor = System.Drawing.Color.Cyan;
             this.linkLabel2.AutoSize = true;
+            this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel2.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel2.LinkColor = System.Drawing.Color.White;
             this.linkLabel2.Location = new System.Drawing.Point(727, 49);
             this.linkLabel2.Name = "linkLabel2";
@@ -98,8 +97,9 @@
             // 
             this.linkLabel3.ActiveLinkColor = System.Drawing.Color.Cyan;
             this.linkLabel3.AutoSize = true;
+            this.linkLabel3.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel3.LinkColor = System.Drawing.Color.White;
             this.linkLabel3.Location = new System.Drawing.Point(908, 49);
             this.linkLabel3.Name = "linkLabel3";
@@ -114,8 +114,9 @@
             // 
             this.linkLabel4.ActiveLinkColor = System.Drawing.Color.Cyan;
             this.linkLabel4.AutoSize = true;
+            this.linkLabel4.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel4.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel4.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel4.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel4.LinkColor = System.Drawing.Color.White;
             this.linkLabel4.Location = new System.Drawing.Point(1114, 49);
             this.linkLabel4.Name = "linkLabel4";
@@ -130,8 +131,9 @@
             // 
             this.linkLabel5.ActiveLinkColor = System.Drawing.Color.Cyan;
             this.linkLabel5.AutoSize = true;
+            this.linkLabel5.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel5.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel5.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel5.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel5.LinkColor = System.Drawing.Color.White;
             this.linkLabel5.Location = new System.Drawing.Point(1313, 49);
             this.linkLabel5.Name = "linkLabel5";
@@ -144,6 +146,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -171,8 +174,9 @@
             // 
             this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Cyan;
             this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel1.LinkColor = System.Drawing.Color.Cyan;
             this.linkLabel1.Location = new System.Drawing.Point(558, 49);
             this.linkLabel1.Name = "linkLabel1";
@@ -181,30 +185,6 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Home";
             this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Cyan;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(1578, 46);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1649, 37);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(189, 70);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 18;
-            this.pictureBox2.TabStop = false;
             // 
             // viewportPanel
             // 
@@ -234,6 +214,20 @@
             this.movieTrackPanel.Size = new System.Drawing.Size(3150, 376);
             this.movieTrackPanel.TabIndex = 0;
             this.movieTrackPanel.WrapContents = false;
+            // 
+            // MenuButton
+            // 
+            this.MenuButton.BackColor = System.Drawing.Color.Aqua;
+            this.MenuButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.MenuButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.MenuButton.ForeColor = System.Drawing.Color.White;
+            this.MenuButton.Location = new System.Drawing.Point(1670, 53);
+            this.MenuButton.Name = "MenuButton";
+            this.MenuButton.Size = new System.Drawing.Size(127, 40);
+            this.MenuButton.TabIndex = 25;
+            this.MenuButton.Text = "MENU";
+            this.MenuButton.UseVisualStyleBackColor = false;
             // 
             // roundedPictureBox1
             // 
@@ -470,6 +464,20 @@
             this.gradientLabel2.TabIndex = 9;
             this.gradientLabel2.Text = "TixNova+";
             // 
+            // SearchButton
+            // 
+            this.SearchButton.BackColor = System.Drawing.Color.Aqua;
+            this.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.SearchButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.SearchButton.ForeColor = System.Drawing.Color.White;
+            this.SearchButton.Location = new System.Drawing.Point(1603, 53);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(40, 40);
+            this.SearchButton.TabIndex = 26;
+            this.SearchButton.Text = "⌕";
+            this.SearchButton.UseVisualStyleBackColor = false;
+            // 
             // MainDashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -478,12 +486,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1924, 1061);
+            this.Controls.Add(this.SearchButton);
+            this.Controls.Add(this.MenuButton);
             this.Controls.Add(this.viewportPanel);
             this.Controls.Add(this.subheadingGradientLabel1);
             this.Controls.Add(this.fadingImageButton2);
             this.Controls.Add(this.fadingImageButton1);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.blueGradientLabel2);
             this.Controls.Add(this.blueGradientLabel1);
             this.Controls.Add(this.gradientLabel1);
@@ -504,8 +512,6 @@
             this.Text = "TixNova+ MainDashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.viewportPanel.ResumeLayout(false);
             this.viewportPanel.PerformLayout();
             this.movieTrackPanel.ResumeLayout(false);
@@ -540,8 +546,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private FadingImageButton fadingImageButton1;
         private FadingImageButton fadingImageButton2;
         private SubheadingGradientLabel subheadingGradientLabel1;
@@ -557,6 +561,8 @@
         private TixNova_Final.RoundedPictureBox roundedPictureBox8;
         private TixNova_Final.RoundedPictureBox roundedPictureBox9;
         private TixNova_Final.RoundedPictureBox roundedPictureBox10;
+        private System.Windows.Forms.Button MenuButton;
+        private System.Windows.Forms.Button SearchButton;
     }
 }
 

@@ -125,4 +125,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- Kill running process before build (without timeout) -->
+  <Target Name="KillRunningProcess" BeforeTargets="BeforeBuild;BeforeRebuild">
+    <Exec Command="taskkill /F /IM TixNova+_Final.exe" IgnoreExitCode="true" ContinueOnError="true" />
+  </Target>
+
+  <!-- Delete locked files before clean -->
+  <Target Name="CleanLockedFiles" BeforeTargets="CoreClean">
+    <Exec Command="del /F /Q &quot;$(OutputPath)TixNova+_Final.exe&quot;" IgnoreExitCode="true" ContinueOnError="true" />
+    <Exec Command="del /F /Q &quot;$(IntermediateOutputPath)TixNova+_Final.exe&quot;" IgnoreExitCode="true" ContinueOnError="true" />
+  </Target>
 </Project>
