@@ -61,6 +61,15 @@
     <Compile Include="FadingImageButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="GlassPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainDashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,13 +85,22 @@
     <Compile Include="MoviesForm.Designer.cs">
       <DependentUpon>MoviesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OutlineButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoundedButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RoundedPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="RoundedPictureBox.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RoundedTextBox.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ShopForm.cs">
       <SubType>Form</SubType>
@@ -95,6 +113,9 @@
     </Compile>
     <EmbeddedResource Include="CinemasForm.resx">
       <DependentUpon>CinemasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainDashBoard.resx">
       <DependentUpon>MainDashBoard.cs</DependentUpon>
@@ -128,13 +149,4 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- Kill running process before build (without timeout) -->
-  <Target Name="KillRunningProcess" BeforeTargets="BeforeBuild;BeforeRebuild">
-    <Exec Command="taskkill /F /IM TixNova+_Final.exe" IgnoreExitCode="true" ContinueOnError="true" />
-  </Target>
-  <!-- Delete locked files before clean -->
-  <Target Name="CleanLockedFiles" BeforeTargets="CoreClean">
-    <Exec Command="del /F /Q &quot;$(OutputPath)TixNova+_Final.exe&quot;" IgnoreExitCode="true" ContinueOnError="true" />
-    <Exec Command="del /F /Q &quot;$(IntermediateOutputPath)TixNova+_Final.exe&quot;" IgnoreExitCode="true" ContinueOnError="true" />
-  </Target>
 </Project>

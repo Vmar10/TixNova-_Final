@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TixNova_Final;
 
 namespace TixNova__Final
 {
@@ -16,7 +17,7 @@ namespace TixNova__Final
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainDashBoard());
+            Application.Run(new LoginForm());
         }
     }
 }
