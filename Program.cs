@@ -17,7 +17,7 @@ namespace TixNova__Final
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new MainDashBoard());
         }
     }
 }

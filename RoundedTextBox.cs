@@ -67,6 +67,13 @@ namespace TixNova_Final
             set => textBox1.UseSystemPasswordChar = value;
         }
 
+        // NEW: This is the missing bridge for the password masking character!
+        public char PasswordChar
+        {
+            get => textBox1.PasswordChar;
+            set => textBox1.PasswordChar = value;
+        }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);

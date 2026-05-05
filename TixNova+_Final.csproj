@@ -111,6 +111,7 @@
     <Compile Include="SubheadingGradientLabel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UserSession.cs" />
     <EmbeddedResource Include="CinemasForm.resx">
       <DependentUpon>CinemasForm.cs</DependentUpon>
     </EmbeddedResource>
