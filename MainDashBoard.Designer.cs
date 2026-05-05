@@ -142,7 +142,7 @@
             this.linkLabel5.TabStop = true;
             this.linkLabel5.Text = "Categories";
             this.linkLabel5.VisitedLinkColor = System.Drawing.Color.Cyan;
-            this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked);
+            this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel5_LinkClicked);
             // 
             // label1
             // 
@@ -191,7 +191,7 @@
             // 
             this.viewportPanel.BackColor = System.Drawing.Color.Transparent;
             this.viewportPanel.Controls.Add(this.movieTrackPanel);
-            this.viewportPanel.Location = new System.Drawing.Point(279, 511);
+            this.viewportPanel.Location = new System.Drawing.Point(277, 551);
             this.viewportPanel.Name = "viewportPanel";
             this.viewportPanel.Size = new System.Drawing.Size(1367, 379);
             this.viewportPanel.TabIndex = 24;
@@ -219,7 +219,7 @@
             // roundedPictureBox1
             // 
             this.roundedPictureBox1.BorderRadius = 20;
-            this.roundedPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox1.Image")));
             this.roundedPictureBox1.Location = new System.Drawing.Point(10, 3);
             this.roundedPictureBox1.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
@@ -232,7 +232,7 @@
             // roundedPictureBox2
             // 
             this.roundedPictureBox2.BorderRadius = 20;
-            this.roundedPictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox2.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox2.Image")));
             this.roundedPictureBox2.Location = new System.Drawing.Point(325, 3);
             this.roundedPictureBox2.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
@@ -245,7 +245,7 @@
             // roundedPictureBox3
             // 
             this.roundedPictureBox3.BorderRadius = 20;
-            this.roundedPictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox3.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox3.Image")));
             this.roundedPictureBox3.Location = new System.Drawing.Point(640, 3);
             this.roundedPictureBox3.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
@@ -258,7 +258,7 @@
             // roundedPictureBox4
             // 
             this.roundedPictureBox4.BorderRadius = 20;
-            this.roundedPictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox4.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox4.Image")));
             this.roundedPictureBox4.Location = new System.Drawing.Point(955, 3);
             this.roundedPictureBox4.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
@@ -271,7 +271,7 @@
             // roundedPictureBox5
             // 
             this.roundedPictureBox5.BorderRadius = 20;
-            this.roundedPictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox5.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox5.Image")));
             this.roundedPictureBox5.Location = new System.Drawing.Point(1270, 3);
             this.roundedPictureBox5.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
@@ -284,7 +284,7 @@
             // roundedPictureBox6
             // 
             this.roundedPictureBox6.BorderRadius = 20;
-            this.roundedPictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox6.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox6.Image")));
             this.roundedPictureBox6.Location = new System.Drawing.Point(1585, 3);
             this.roundedPictureBox6.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
@@ -297,7 +297,7 @@
             // roundedPictureBox7
             // 
             this.roundedPictureBox7.BorderRadius = 20;
-            this.roundedPictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox7.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox7.Image")));
             this.roundedPictureBox7.Location = new System.Drawing.Point(1900, 3);
             this.roundedPictureBox7.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
@@ -310,7 +310,7 @@
             // roundedPictureBox8
             // 
             this.roundedPictureBox8.BorderRadius = 20;
-            this.roundedPictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox8.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox8.Image")));
             this.roundedPictureBox8.Location = new System.Drawing.Point(2215, 3);
             this.roundedPictureBox8.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
@@ -323,7 +323,7 @@
             // roundedPictureBox9
             // 
             this.roundedPictureBox9.BorderRadius = 20;
-            this.roundedPictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox9.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox9.Image")));
             this.roundedPictureBox9.Location = new System.Drawing.Point(2530, 3);
             this.roundedPictureBox9.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
@@ -336,7 +336,7 @@
             // roundedPictureBox10
             // 
             this.roundedPictureBox10.BorderRadius = 20;
-            this.roundedPictureBox10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox10.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox10.Image")));
             this.roundedPictureBox10.Location = new System.Drawing.Point(2845, 3);
             this.roundedPictureBox10.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
@@ -365,7 +365,7 @@
             this.subheadingGradientLabel1.AutoSize = true;
             this.subheadingGradientLabel1.BackColor = System.Drawing.Color.Transparent;
             this.subheadingGradientLabel1.Font = new System.Drawing.Font("Segoe UI Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subheadingGradientLabel1.Location = new System.Drawing.Point(229, 429);
+            this.subheadingGradientLabel1.Location = new System.Drawing.Point(229, 474);
             this.subheadingGradientLabel1.Name = "subheadingGradientLabel1";
             this.subheadingGradientLabel1.Size = new System.Drawing.Size(282, 50);
             this.subheadingGradientLabel1.TabIndex = 19;
@@ -377,7 +377,7 @@
             this.fadingImageButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.fadingImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.fadingImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("fadingImageButton2.Image")));
-            this.fadingImageButton2.Location = new System.Drawing.Point(1679, 646);
+            this.fadingImageButton2.Location = new System.Drawing.Point(1666, 686);
             this.fadingImageButton2.Name = "fadingImageButton2";
             this.fadingImageButton2.Size = new System.Drawing.Size(106, 92);
             this.fadingImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -391,7 +391,7 @@
             this.fadingImageButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.fadingImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.fadingImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("fadingImageButton1.Image")));
-            this.fadingImageButton1.Location = new System.Drawing.Point(165, 646);
+            this.fadingImageButton1.Location = new System.Drawing.Point(165, 686);
             this.fadingImageButton1.Name = "fadingImageButton1";
             this.fadingImageButton1.Size = new System.Drawing.Size(106, 92);
             this.fadingImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

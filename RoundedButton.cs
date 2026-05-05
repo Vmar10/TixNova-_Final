@@ -10,12 +10,12 @@ namespace TixNova_Final
         public int BorderRadius { get; set; } = 30;
 
         // Colors from your screenshot
-        private Color GradientStart = Color.FromArgb(0, 194, 255);
-        private Color GradientEnd = Color.FromArgb(45, 125, 255);
+        private readonly Color GradientStart = Color.FromArgb(0, 194, 255);
+        private readonly Color GradientEnd = Color.FromArgb(45, 125, 255);
 
         private float pulseScale = 1.0f;
         private int pulseAlpha = 0;
-        private Timer pulseTimer;
+        private readonly Timer pulseTimer;
         private bool hasPulsed = false; // Prevents looping
 
         public RoundedButton()

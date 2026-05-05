@@ -64,6 +64,12 @@
     <Compile Include="GlassPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="GoodluckHaveFunForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoodluckHaveFunForm.Designer.cs">
+      <DependentUpon>GoodluckHaveFunForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,12 @@
     <Compile Include="RoundedTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="SendHelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SendHelpForm.Designer.cs">
+      <DependentUpon>SendHelpForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShopForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,8 +124,17 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UserSession.cs" />
+    <Compile Include="YearsLaterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YearsLaterForm.Designer.cs">
+      <DependentUpon>YearsLaterForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CinemasForm.resx">
       <DependentUpon>CinemasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GoodluckHaveFunForm.resx">
+      <DependentUpon>GoodluckHaveFunForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -133,8 +154,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SendHelpForm.resx">
+      <DependentUpon>SendHelpForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ShopForm.resx">
       <DependentUpon>ShopForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YearsLaterForm.resx">
+      <DependentUpon>YearsLaterForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

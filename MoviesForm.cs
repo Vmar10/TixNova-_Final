@@ -55,21 +55,26 @@ namespace TixNova__Final
 
         private void EnableBlur(IntPtr hwnd)
         {
-            var accent = new AccentPolicy();
-            accent.AccentState = AccentState.ACCENT_ENABLE_BLURBEHIND;
+            var accent = new AccentPolicy
+            {
+                AccentState = AccentState.ACCENT_ENABLE_BLURBEHIND
+            };
 
             int accentStructSize = Marshal.SizeOf(accent);
             IntPtr accentPtr = Marshal.AllocHGlobal(accentStructSize);
             Marshal.StructureToPtr(accent, accentPtr, false);
 
-            var data = new WindowCompositionAttributeData();
-            data.Attribute = WindowCompositionAttribute.WCA_ACCENT_POLICY;
-            data.SizeOfData = accentStructSize;
-            data.Data = accentPtr;
+            var data = new WindowCompositionAttributeData
+            {
+                Attribute = WindowCompositionAttribute.WCA_ACCENT_POLICY,
+                SizeOfData = accentStructSize,
+                Data = accentPtr
+            };
 
             SetWindowCompositionAttribute(hwnd, ref data);
             Marshal.FreeHGlobal(accentPtr);
         }
+
 
         // --- Your Updated SetupMenu ---
 
@@ -79,30 +84,31 @@ namespace TixNova__Final
 
         private void SetupMenu()
         {
-            menuContent = new TixNovaMenuControl();
+            menuContent = new TixNovaMenuControl
+            {
+                Location = new Point(0, 0) // set directly at creation
+            };
 
-            dropDownForm = new Form();
-            dropDownForm.FormBorderStyle = FormBorderStyle.None;
-            dropDownForm.StartPosition = FormStartPosition.Manual;
-            dropDownForm.ShowInTaskbar = false;
-            dropDownForm.Size = menuContent.Size;
-
-            // Use Magenta to punch out the background completely without leaving a black shadow
-            dropDownForm.BackColor = Color.Black;
-
-            // Clip the form perfectly to the outer bounds so the blur doesn't bleed out
-            dropDownForm.Region = new Region(menuContent.GetRegionPath());
+            dropDownForm = new Form
+            {
+                FormBorderStyle = FormBorderStyle.None,
+                StartPosition = FormStartPosition.Manual,
+                ShowInTaskbar = false,
+                Size = menuContent.Size,
+                BackColor = Color.Black, // punch-out background
+                Region = new Region(menuContent.GetRegionPath())
+            };
 
             dropDownForm.Controls.Add(menuContent);
-            menuContent.Location = new Point(0, 0);
 
             dropDownForm.HandleCreated += (s, e) => EnableBlur(dropDownForm.Handle);
             dropDownForm.Deactivate += (s, e) =>
             {
                 dropDownForm.Hide();
-                menuLastClosedTime = DateTime.Now; // Record exactly when it closed
+                menuLastClosedTime = DateTime.Now; // record when closed
             };
         }
+
 
         public class NoBorderRenderer : ToolStripSystemRenderer
         {
@@ -230,7 +236,7 @@ namespace TixNova__Final
             public Color EndColor { get; set; }
         }
 
-        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LinkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             CinemasForm cinemasform = new CinemasForm();
 
@@ -240,7 +246,7 @@ namespace TixNova__Final
 
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             MainDashBoard mainDashBoard = new MainDashBoard();
 
@@ -249,7 +255,7 @@ namespace TixNova__Final
             this.Hide();
         }
 
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LinkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             MoviesForm moviesform = new MoviesForm();
 
@@ -258,7 +264,7 @@ namespace TixNova__Final
             this.Hide();
         }
 
-        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LinkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             ShopForm shopform = new ShopForm();
 
@@ -266,7 +272,7 @@ namespace TixNova__Final
 
             this.Hide();
         }
-        private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LinkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if ((DateTime.Now - menuLastClosedTime).TotalMilliseconds < 100)
             {
@@ -296,34 +302,28 @@ namespace TixNova__Final
             }
         }
 
-        private void linkLabel5_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        private void RoundedPictureBox1_Click(object sender, EventArgs e)
         {
-            if ((DateTime.Now - menuLastClosedTime).TotalMilliseconds < 100)
-            {
-                return;
-            }
+            SendHelpForm sendHelpForm = new SendHelpForm();
+            sendHelpForm.Show();
 
-            // 2. Toggle logic
-            if (dropDownForm.Visible)
-            {
-                dropDownForm.Hide();
-            }
-            else
-            {
-                int xOffset = (linkLabel5.Width - menuContent.Width) / 2;
+            this.Hide();
+        }
 
+        private void RoundedPictureBox2_Click(object sender, EventArgs e)
+        {
+            GoodluckHaveFunForm goodluckHaveFunForm = new GoodluckHaveFunForm();
+            goodluckHaveFunForm.Show();
 
+            this.Hide();
+        }
 
-                // Convert the button's location to screen coordinates
+        private void RoundedPictureBox3_Click(object sender, EventArgs e)
+        {
+            YearsLaterForm yearslaterform = new YearsLaterForm();
+            yearslaterform.Show();
 
-                Point screenLocation = linkLabel5.PointToScreen(new Point(xOffset, linkLabel5.Height + 5));
-
-                // You might need to tweak the X and Y here so the arrow lines up perfectly
-                // dropDownForm.Location = new Point(screenPos.X - 50, screenPos.Y);
-                dropDownForm.Location = screenLocation;
-                dropDownForm.Show();
-                dropDownForm.BringToFront(); // Ensure it pops up over everything else
-            }
+            this.Hide();
         }
     }
 }

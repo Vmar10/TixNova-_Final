@@ -155,8 +155,8 @@
             this.roundedTextBox1.Size = new System.Drawing.Size(520, 52);
             this.roundedTextBox1.TabIndex = 14;
             this.roundedTextBox1.UsePasswordChar = false;
-            this.roundedTextBox1.Enter += new System.EventHandler(this.roundedTextBox1_Enter);
-            this.roundedTextBox1.Leave += new System.EventHandler(this.roundedTextBox1_Leave);
+            this.roundedTextBox1.Enter += new System.EventHandler(this.RoundedTextBox1_Enter);
+            this.roundedTextBox1.Leave += new System.EventHandler(this.RoundedTextBox1_Leave);
             // 
             // roundedTextBox2
             // 
@@ -172,8 +172,8 @@
             this.roundedTextBox2.Size = new System.Drawing.Size(520, 52);
             this.roundedTextBox2.TabIndex = 20;
             this.roundedTextBox2.UsePasswordChar = true;
-            this.roundedTextBox2.Enter += new System.EventHandler(this.roundedTextBox2_Enter);
-            this.roundedTextBox2.Leave += new System.EventHandler(this.roundedTextBox2_Leave);
+            this.roundedTextBox2.Enter += new System.EventHandler(this.RoundedTextBox2_Enter);
+            this.roundedTextBox2.Leave += new System.EventHandler(this.RoundedTextBox2_Leave);
             // 
             // pictureBox1
             // 
@@ -246,7 +246,7 @@
             this.roundedButton1.TabIndex = 13;
             this.roundedButton1.Text = "SIGN IN";
             this.roundedButton1.UseVisualStyleBackColor = true;
-            this.roundedButton1.Click += new System.EventHandler(this.roundedButton1_Click);
+            this.roundedButton1.Click += new System.EventHandler(this.RoundedButton1_Click);
             // 
             // gradientLabel1
             // 

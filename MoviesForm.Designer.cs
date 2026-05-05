@@ -36,25 +36,25 @@
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.MenuButton = new System.Windows.Forms.Button();
+            this.roundedPictureBox6 = new TixNova_Final.RoundedPictureBox();
+            this.roundedPictureBox5 = new TixNova_Final.RoundedPictureBox();
+            this.roundedPictureBox4 = new TixNova_Final.RoundedPictureBox();
+            this.roundedPictureBox3 = new TixNova_Final.RoundedPictureBox();
+            this.roundedPictureBox2 = new TixNova_Final.RoundedPictureBox();
+            this.roundedPictureBox1 = new TixNova_Final.RoundedPictureBox();
             this.subheadingGradientLabel2 = new TixNova__Final.SubheadingGradientLabel();
             this.subheadingGradientLabel1 = new TixNova__Final.SubheadingGradientLabel();
             this.gradientLabel2 = new TixNova_Final.GradientLabel();
             this.gradientLabel1 = new TixNova_Final.GradientLabel();
-            this.roundedPictureBox1 = new TixNova_Final.RoundedPictureBox();
-            this.roundedPictureBox2 = new TixNova_Final.RoundedPictureBox();
-            this.roundedPictureBox3 = new TixNova_Final.RoundedPictureBox();
-            this.roundedPictureBox4 = new TixNova_Final.RoundedPictureBox();
-            this.roundedPictureBox5 = new TixNova_Final.RoundedPictureBox();
-            this.roundedPictureBox6 = new TixNova_Final.RoundedPictureBox();
-            this.SearchButton = new System.Windows.Forms.Button();
-            this.MenuButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox4
@@ -95,7 +95,6 @@
             this.linkLabel5.TabStop = true;
             this.linkLabel5.Text = "Categories";
             this.linkLabel5.VisitedLinkColor = System.Drawing.Color.Cyan;
-            this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked_1);
             // 
             // linkLabel4
             // 
@@ -112,7 +111,7 @@
             this.linkLabel4.TabStop = true;
             this.linkLabel4.Text = "Shop";
             this.linkLabel4.VisitedLinkColor = System.Drawing.Color.Cyan;
-            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
+            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel4_LinkClicked);
             // 
             // linkLabel3
             // 
@@ -129,7 +128,7 @@
             this.linkLabel3.TabStop = true;
             this.linkLabel3.Text = "Cinemas";
             this.linkLabel3.VisitedLinkColor = System.Drawing.Color.Cyan;
-            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
+            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel3_LinkClicked);
             // 
             // linkLabel2
             // 
@@ -146,7 +145,7 @@
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Movies";
             this.linkLabel2.VisitedLinkColor = System.Drawing.Color.Cyan;
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel2_LinkClicked);
             // 
             // linkLabel1
             // 
@@ -163,7 +162,116 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Home";
             this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Cyan;
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel1_LinkClicked);
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.BackColor = System.Drawing.Color.Aqua;
+            this.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.SearchButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.SearchButton.ForeColor = System.Drawing.Color.White;
+            this.SearchButton.Location = new System.Drawing.Point(1603, 53);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(40, 40);
+            this.SearchButton.TabIndex = 44;
+            this.SearchButton.Text = "⌕";
+            this.SearchButton.UseVisualStyleBackColor = false;
+            // 
+            // MenuButton
+            // 
+            this.MenuButton.BackColor = System.Drawing.Color.Aqua;
+            this.MenuButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.MenuButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.MenuButton.ForeColor = System.Drawing.Color.White;
+            this.MenuButton.Location = new System.Drawing.Point(1670, 53);
+            this.MenuButton.Name = "MenuButton";
+            this.MenuButton.Size = new System.Drawing.Size(127, 40);
+            this.MenuButton.TabIndex = 43;
+            this.MenuButton.Text = "MENU";
+            this.MenuButton.UseVisualStyleBackColor = false;
+            // 
+            // roundedPictureBox6
+            // 
+            this.roundedPictureBox6.BorderRadius = 20;
+            this.roundedPictureBox6.Cursor = System.Windows.Forms.Cursors.Default;
+            this.roundedPictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox6.Image")));
+            this.roundedPictureBox6.Location = new System.Drawing.Point(1298, 613);
+            this.roundedPictureBox6.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.roundedPictureBox6.Name = "roundedPictureBox6";
+            this.roundedPictureBox6.Size = new System.Drawing.Size(267, 334);
+            this.roundedPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roundedPictureBox6.TabIndex = 42;
+            this.roundedPictureBox6.TabStop = false;
+            // 
+            // roundedPictureBox5
+            // 
+            this.roundedPictureBox5.BorderRadius = 20;
+            this.roundedPictureBox5.Cursor = System.Windows.Forms.Cursors.Default;
+            this.roundedPictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox5.Image")));
+            this.roundedPictureBox5.Location = new System.Drawing.Point(956, 613);
+            this.roundedPictureBox5.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.roundedPictureBox5.Name = "roundedPictureBox5";
+            this.roundedPictureBox5.Size = new System.Drawing.Size(267, 334);
+            this.roundedPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roundedPictureBox5.TabIndex = 41;
+            this.roundedPictureBox5.TabStop = false;
+            // 
+            // roundedPictureBox4
+            // 
+            this.roundedPictureBox4.BorderRadius = 20;
+            this.roundedPictureBox4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.roundedPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox4.Image")));
+            this.roundedPictureBox4.Location = new System.Drawing.Point(586, 600);
+            this.roundedPictureBox4.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.roundedPictureBox4.Name = "roundedPictureBox4";
+            this.roundedPictureBox4.Size = new System.Drawing.Size(267, 334);
+            this.roundedPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roundedPictureBox4.TabIndex = 40;
+            this.roundedPictureBox4.TabStop = false;
+            // 
+            // roundedPictureBox3
+            // 
+            this.roundedPictureBox3.BorderRadius = 20;
+            this.roundedPictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox3.Image")));
+            this.roundedPictureBox3.Location = new System.Drawing.Point(1298, 191);
+            this.roundedPictureBox3.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.roundedPictureBox3.Name = "roundedPictureBox3";
+            this.roundedPictureBox3.Size = new System.Drawing.Size(267, 334);
+            this.roundedPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roundedPictureBox3.TabIndex = 39;
+            this.roundedPictureBox3.TabStop = false;
+            this.roundedPictureBox3.Click += new System.EventHandler(this.RoundedPictureBox3_Click);
+            // 
+            // roundedPictureBox2
+            // 
+            this.roundedPictureBox2.BorderRadius = 20;
+            this.roundedPictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox2.Image")));
+            this.roundedPictureBox2.Location = new System.Drawing.Point(956, 191);
+            this.roundedPictureBox2.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.roundedPictureBox2.Name = "roundedPictureBox2";
+            this.roundedPictureBox2.Size = new System.Drawing.Size(267, 334);
+            this.roundedPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roundedPictureBox2.TabIndex = 38;
+            this.roundedPictureBox2.TabStop = false;
+            this.roundedPictureBox2.Click += new System.EventHandler(this.RoundedPictureBox2_Click);
+            // 
+            // roundedPictureBox1
+            // 
+            this.roundedPictureBox1.BorderRadius = 20;
+            this.roundedPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox1.Image")));
+            this.roundedPictureBox1.Location = new System.Drawing.Point(586, 191);
+            this.roundedPictureBox1.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.roundedPictureBox1.Name = "roundedPictureBox1";
+            this.roundedPictureBox1.Size = new System.Drawing.Size(267, 334);
+            this.roundedPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roundedPictureBox1.TabIndex = 37;
+            this.roundedPictureBox1.TabStop = false;
+            this.roundedPictureBox1.Click += new System.EventHandler(this.RoundedPictureBox1_Click);
             // 
             // subheadingGradientLabel2
             // 
@@ -208,112 +316,6 @@
             this.gradientLabel1.Size = new System.Drawing.Size(0, 45);
             this.gradientLabel1.TabIndex = 18;
             // 
-            // roundedPictureBox1
-            // 
-            this.roundedPictureBox1.BorderRadius = 20;
-            this.roundedPictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.roundedPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox1.Image")));
-            this.roundedPictureBox1.Location = new System.Drawing.Point(586, 191);
-            this.roundedPictureBox1.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.roundedPictureBox1.Name = "roundedPictureBox1";
-            this.roundedPictureBox1.Size = new System.Drawing.Size(267, 334);
-            this.roundedPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.roundedPictureBox1.TabIndex = 37;
-            this.roundedPictureBox1.TabStop = false;
-            // 
-            // roundedPictureBox2
-            // 
-            this.roundedPictureBox2.BorderRadius = 20;
-            this.roundedPictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.roundedPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox2.Image")));
-            this.roundedPictureBox2.Location = new System.Drawing.Point(956, 191);
-            this.roundedPictureBox2.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.roundedPictureBox2.Name = "roundedPictureBox2";
-            this.roundedPictureBox2.Size = new System.Drawing.Size(267, 334);
-            this.roundedPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.roundedPictureBox2.TabIndex = 38;
-            this.roundedPictureBox2.TabStop = false;
-            // 
-            // roundedPictureBox3
-            // 
-            this.roundedPictureBox3.BorderRadius = 20;
-            this.roundedPictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.roundedPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox3.Image")));
-            this.roundedPictureBox3.Location = new System.Drawing.Point(1298, 191);
-            this.roundedPictureBox3.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.roundedPictureBox3.Name = "roundedPictureBox3";
-            this.roundedPictureBox3.Size = new System.Drawing.Size(267, 334);
-            this.roundedPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.roundedPictureBox3.TabIndex = 39;
-            this.roundedPictureBox3.TabStop = false;
-            // 
-            // roundedPictureBox4
-            // 
-            this.roundedPictureBox4.BorderRadius = 20;
-            this.roundedPictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.roundedPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox4.Image")));
-            this.roundedPictureBox4.Location = new System.Drawing.Point(586, 600);
-            this.roundedPictureBox4.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.roundedPictureBox4.Name = "roundedPictureBox4";
-            this.roundedPictureBox4.Size = new System.Drawing.Size(267, 334);
-            this.roundedPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.roundedPictureBox4.TabIndex = 40;
-            this.roundedPictureBox4.TabStop = false;
-            // 
-            // roundedPictureBox5
-            // 
-            this.roundedPictureBox5.BorderRadius = 20;
-            this.roundedPictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.roundedPictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox5.Image")));
-            this.roundedPictureBox5.Location = new System.Drawing.Point(956, 613);
-            this.roundedPictureBox5.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.roundedPictureBox5.Name = "roundedPictureBox5";
-            this.roundedPictureBox5.Size = new System.Drawing.Size(267, 334);
-            this.roundedPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.roundedPictureBox5.TabIndex = 41;
-            this.roundedPictureBox5.TabStop = false;
-            // 
-            // roundedPictureBox6
-            // 
-            this.roundedPictureBox6.BorderRadius = 20;
-            this.roundedPictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.roundedPictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox6.Image")));
-            this.roundedPictureBox6.Location = new System.Drawing.Point(1298, 613);
-            this.roundedPictureBox6.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.roundedPictureBox6.Name = "roundedPictureBox6";
-            this.roundedPictureBox6.Size = new System.Drawing.Size(267, 334);
-            this.roundedPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.roundedPictureBox6.TabIndex = 42;
-            this.roundedPictureBox6.TabStop = false;
-            // 
-            // SearchButton
-            // 
-            this.SearchButton.BackColor = System.Drawing.Color.Aqua;
-            this.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.SearchButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.SearchButton.ForeColor = System.Drawing.Color.White;
-            this.SearchButton.Location = new System.Drawing.Point(1603, 53);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(40, 40);
-            this.SearchButton.TabIndex = 44;
-            this.SearchButton.Text = "⌕";
-            this.SearchButton.UseVisualStyleBackColor = false;
-            // 
-            // MenuButton
-            // 
-            this.MenuButton.BackColor = System.Drawing.Color.Aqua;
-            this.MenuButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.MenuButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.MenuButton.ForeColor = System.Drawing.Color.White;
-            this.MenuButton.Location = new System.Drawing.Point(1670, 53);
-            this.MenuButton.Name = "MenuButton";
-            this.MenuButton.Size = new System.Drawing.Size(127, 40);
-            this.MenuButton.TabIndex = 43;
-            this.MenuButton.Text = "MENU";
-            this.MenuButton.UseVisualStyleBackColor = false;
-            // 
             // MoviesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,12 +349,12 @@
             this.Text = "TixNova+ MoviesForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

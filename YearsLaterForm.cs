@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using System.Runtime.InteropServices;
 
 namespace TixNova__Final
 {
-    public partial class MainDashBoard : Form
+    public partial class YearsLaterForm : Form
     {
-        public MainDashBoard()
+        public YearsLaterForm()
         {
             InitializeComponent();
             MakeRoundedGradientButton(MenuButton, Color.FromArgb(78, 199, 220), Color.FromArgb(7, 89, 179), 30);
@@ -83,7 +84,10 @@ namespace TixNova__Final
 
         private void SetupMenu()
         {
-            menuContent = new TixNovaMenuControl();
+            menuContent = new TixNovaMenuControl
+            {
+                Location = new Point(0, 0) // set directly at creation
+            };
 
             dropDownForm = new Form
             {
@@ -91,18 +95,17 @@ namespace TixNova__Final
                 StartPosition = FormStartPosition.Manual,
                 ShowInTaskbar = false,
                 Size = menuContent.Size,
-                BackColor = Color.Black, // Magenta/Black punch-out background
+                BackColor = Color.Black, // punch-out background
                 Region = new Region(menuContent.GetRegionPath())
             };
 
             dropDownForm.Controls.Add(menuContent);
-            menuContent.Location = new Point(0, 0);
 
             dropDownForm.HandleCreated += (s, e) => EnableBlur(dropDownForm.Handle);
             dropDownForm.Deactivate += (s, e) =>
             {
                 dropDownForm.Hide();
-                menuLastClosedTime = DateTime.Now; // Record exactly when it closed
+                menuLastClosedTime = DateTime.Now; // record when closed
             };
         }
 
@@ -114,7 +117,6 @@ namespace TixNova__Final
                 // Leave empty
             }
         }
-
         private void SetupAllLinkLabelsGlow()
         {
             foreach (Control control in this.Controls)
@@ -158,18 +160,6 @@ namespace TixNova__Final
             }
         }
 
-        private void GlowPaint(object sender, PaintEventArgs e)
-        {
-            LinkLabel lbl = sender as LinkLabel;
-
-            // Draw shadow text behind the original text
-            using (var shadowBrush = new SolidBrush(Color.FromArgb(100, 0, 255, 255)))
-            {
-                TextRenderer.DrawText(e.Graphics, lbl.Text, lbl.Font,
-                    new Point(1, 1), Color.Cyan, TextFormatFlags.Left);
-            }
-        }
-
         private void MakeRoundedGradientButton(Button btn, Color startColor, Color endColor, int radius = 20)
         {
             // Remove default button styling
@@ -178,7 +168,6 @@ namespace TixNova__Final
 
             // Store gradient colors (you can change these dynamically)
             btn.Tag = new GradientInfo { StartColor = startColor, EndColor = endColor };
-
             // Store original size and location for hover
             var originalSize = btn.Size;
             var originalLocation = btn.Location;
@@ -197,6 +186,7 @@ namespace TixNova__Final
                 btn.Location = originalLocation;
                 btn.Cursor = Cursors.Default; // Optional: restores cursor
             };
+
 
             btn.Paint += (sender, e) =>
             {
@@ -239,7 +229,6 @@ namespace TixNova__Final
             // Redraw on resize
             btn.Resize += (sender, e) => btn.Invalidate();
         }
-
         // Helper class to store gradient info
         private class GradientInfo
         {
@@ -247,67 +236,36 @@ namespace TixNova__Final
             public Color EndColor { get; set; }
         }
 
+        private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MainDashBoard mainForm = new MainDashBoard();
+            mainForm.Show();
+
+            this.Hide();
+        }
+
         private void LinkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             MoviesForm moviesForm = new MoviesForm();
-
-           
             moviesForm.Show();
 
-            
             this.Hide();
         }
 
         private void LinkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            CinemasForm cinemaform = new CinemasForm();
-
-            cinemaform.Show();
+            CinemasForm cinemasForm = new CinemasForm();
+            cinemasForm.Show();
 
             this.Hide();
         }
 
         private void LinkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            ShopForm shopform = new ShopForm();
-
-            shopform.Show();
+            ShopForm shopForm = new ShopForm();
+            shopForm.Show();
 
             this.Hide();
-        }
-
-        private void FadingImageButton2_Click(object sender, EventArgs e)
-        {
-            // 1. Set the scroll amount for a "Page"
-            // If one poster + margin is 210, scrolling 4 at a time means 210 * 4 = 840
-            int scrollAmount = 840;
-
-            // 2. Move the track to the left
-            movieTrackPanel.Left -= scrollAmount;
-
-            // 3. Stop perfectly at the end of the list
-            // Make sure 'viewportPanel' is the actual name of your outer panel!
-            int maxScrollLimit = viewportPanel.Width - movieTrackPanel.Width;
-            if (movieTrackPanel.Left < maxScrollLimit)
-            {
-                movieTrackPanel.Left = maxScrollLimit;
-            }
-        }
-
-        private void FadingImageButton1_Click(object sender, EventArgs e)
-        {
-            // Make sure this matches the number from your Right button!
-            // 1. Set the exact same scroll amount as the Right button
-            int scrollAmount = 840;
-
-            // 2. Move the track to the right
-            movieTrackPanel.Left += scrollAmount;
-
-            // 3. Stop perfectly at the beginning of the list
-            if (movieTrackPanel.Left > 0)
-            {
-                movieTrackPanel.Left = 0;
-            }
         }
 
         private void LinkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
