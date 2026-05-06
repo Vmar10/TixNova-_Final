@@ -39,7 +39,7 @@ namespace TixNova__Final
             }
 
             AddHeader("DISCOVER", col2X, 40);
-            string[] discover = { "Now Showing", "Coming Soon", "Advance Screenings", "Top 10 This Week", "Staff Picks" };
+            string[] discover = { "Coming Soon", "Rated G", "Rated PG", "Rated SPG","PG-13", "Staff Picks" };
             for (int i = 0; i < discover.Length; i++)
             {
                 AddItem(discover[i], col2X, 75 + (i * 25));
@@ -82,8 +82,114 @@ namespace TixNova__Final
             lbl.MouseEnter += (s, e) => lbl.ForeColor = Color.FromArgb(0, 191, 255);
             lbl.MouseLeave += (s, e) => lbl.ForeColor = Color.FromArgb(230, 230, 230);
 
+            // ==========================================
+            // STEP 1: Add the Click event handler here
+            // ==========================================
+            lbl.Click += MenuItem_Click;
+
             this.Controls.Add(lbl);
         }
+
+        // ==========================================
+        // STEP 2: The Click Event Logic Method
+        // ==========================================
+        private void MenuItem_Click(object sender, EventArgs e)
+        {
+            // 1. Identify which label was clicked
+            Label clickedLabel = sender as Label;
+            if (clickedLabel == null) return;
+
+            string selectedCategory = clickedLabel.Text;
+
+            // Grab a reference to the main dashboard form that contains this menu
+            Form mainDashboard = this.FindForm();
+
+            // 2. Use a switch statement to open the correct form based on the text
+            switch (selectedCategory)
+            {
+                case "Action":
+                case "Action & Adventure":
+
+                    GenreActionForm actionForm = new GenreActionForm();
+
+                    // Hide the Main Dashboard
+                    if (mainDashboard != null)
+                    {
+                        mainDashboard.Hide();
+                    }
+
+                    // Show the Action form
+                    actionForm.Show();
+
+                    // (Recommended) Show the main dashboard again when ActionForm is closed
+                    actionForm.FormClosed += (s, args) =>
+                    {
+                        if (mainDashboard != null)
+                        {
+                            mainDashboard.Show();
+                        }
+                    };
+
+                    break;
+
+                case "Sci-Fi & Fantasy":
+                    GenreSciFi sciFiForm = new GenreSciFi();
+
+                    if (mainDashboard != null)
+                    {
+                        mainDashboard.Hide();
+                    }
+                    sciFiForm.Show();
+
+                    break;
+
+                case "Horror & Thriller":
+                    GenreHorror horrorForm = new GenreHorror();
+
+                    if(mainDashboard != null)
+                    {
+                        mainDashboard.Hide();
+                    }
+                    horrorForm.Show();
+
+                    break;
+
+                case "Coming Soon":
+                    ComingsoonForm comingSoonForm = new ComingsoonForm();
+                    if (mainDashboard != null)
+                    {
+                        mainDashboard.Hide();
+                    }
+                    comingSoonForm.Show();
+                    break;
+
+                case "Rated G":
+                    RatedGForm ratedGForm = new RatedGForm();
+                    if (mainDashboard != null)
+                    {
+                        mainDashboard.Hide();
+                    }
+                    ratedGForm.Show();
+                    break;
+
+                case "Rated PG":
+                    RatedPGForm ratedPGForm = new RatedPGForm();
+                    if (mainDashboard != null)
+                    {
+                        mainDashboard.Hide();
+                    }
+                    ratedPGForm.Show();
+                    break;
+
+
+
+                default:
+                    // Fallback so you know the click registered for unmade forms
+                    MessageBox.Show($"Coming soon: {selectedCategory} section!", "TixNova+");
+                    break;
+            }
+        }
+        // ==========================================
 
         // Extracted the path logic so the Parent Form can use it to clip its bounds
         // 1. Path for the Form's Region (determines the actual window shape)

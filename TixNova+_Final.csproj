@@ -55,6 +55,12 @@
     <Compile Include="CinemasForm.Designer.cs">
       <DependentUpon>CinemasForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComingsoonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComingsoonForm.Designer.cs">
+      <DependentUpon>ComingsoonForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomMegaMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -66,6 +72,24 @@
     </Compile>
     <Compile Include="FadingImageButton.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GenreActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenreActionForm.Designer.cs">
+      <DependentUpon>GenreActionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenreHorror.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenreHorror.Designer.cs">
+      <DependentUpon>GenreHorror.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenreSciFi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenreSciFi.Designer.cs">
+      <DependentUpon>GenreSciFi.cs</DependentUpon>
     </Compile>
     <Compile Include="GlassPanel.cs">
       <SubType>Component</SubType>
@@ -102,6 +126,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RatedGForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RatedGForm.Designer.cs">
+      <DependentUpon>RatedGForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RatedPGForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RatedPGForm.Designer.cs">
+      <DependentUpon>RatedPGForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RatedSPGForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RatedSPGForm.Designer.cs">
+      <DependentUpon>RatedSPGForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RoundedButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -139,6 +181,18 @@
     <EmbeddedResource Include="CinemasForm.resx">
       <DependentUpon>CinemasForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ComingsoonForm.resx">
+      <DependentUpon>ComingsoonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenreActionForm.resx">
+      <DependentUpon>GenreActionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenreHorror.resx">
+      <DependentUpon>GenreHorror.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenreSciFi.resx">
+      <DependentUpon>GenreSciFi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GoodluckHaveFunForm.resx">
       <DependentUpon>GoodluckHaveFunForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +214,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RatedGForm.resx">
+      <DependentUpon>RatedGForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RatedPGForm.resx">
+      <DependentUpon>RatedPGForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RatedSPGForm.resx">
+      <DependentUpon>RatedSPGForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SendHelpForm.resx">
       <DependentUpon>SendHelpForm.cs</DependentUpon>
     </EmbeddedResource>

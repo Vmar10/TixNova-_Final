@@ -38,9 +38,8 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SearchButton = new System.Windows.Forms.Button();
             this.MenuButton = new System.Windows.Forms.Button();
-            this.roundedPictureBox6 = new TixNova_Final.RoundedPictureBox();
+            this.gradientLabel5 = new TixNova_Final.GradientLabel();
             this.roundedPictureBox5 = new TixNova_Final.RoundedPictureBox();
-            this.roundedPictureBox4 = new TixNova_Final.RoundedPictureBox();
             this.roundedPictureBox3 = new TixNova_Final.RoundedPictureBox();
             this.roundedPictureBox2 = new TixNova_Final.RoundedPictureBox();
             this.roundedPictureBox1 = new TixNova_Final.RoundedPictureBox();
@@ -48,13 +47,17 @@
             this.subheadingGradientLabel1 = new TixNova__Final.SubheadingGradientLabel();
             this.gradientLabel2 = new TixNova_Final.GradientLabel();
             this.gradientLabel1 = new TixNova_Final.GradientLabel();
+            this.roundedPictureBox4 = new TixNova_Final.RoundedPictureBox();
+            this.roundedPictureBox6 = new TixNova_Final.RoundedPictureBox();
+            this.gradientLabel3 = new TixNova_Final.GradientLabel();
+            this.gradientLabel4 = new TixNova_Final.GradientLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox4
@@ -195,44 +198,29 @@
             this.MenuButton.UseVisualStyleBackColor = false;
             this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
-            // roundedPictureBox6
+            // gradientLabel5
             // 
-            this.roundedPictureBox6.BorderRadius = 20;
-            this.roundedPictureBox6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.roundedPictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox6.Image")));
-            this.roundedPictureBox6.Location = new System.Drawing.Point(1298, 613);
-            this.roundedPictureBox6.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.roundedPictureBox6.Name = "roundedPictureBox6";
-            this.roundedPictureBox6.Size = new System.Drawing.Size(267, 334);
-            this.roundedPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.roundedPictureBox6.TabIndex = 42;
-            this.roundedPictureBox6.TabStop = false;
+            this.gradientLabel5.AutoSize = true;
+            this.gradientLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.gradientLabel5.Font = new System.Drawing.Font("Segoe UI Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientLabel5.Location = new System.Drawing.Point(1322, 948);
+            this.gradientLabel5.Name = "gradientLabel5";
+            this.gradientLabel5.Size = new System.Drawing.Size(230, 45);
+            this.gradientLabel5.TabIndex = 47;
+            this.gradientLabel5.Text = "May 23, 2026";
             // 
             // roundedPictureBox5
             // 
             this.roundedPictureBox5.BorderRadius = 20;
             this.roundedPictureBox5.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox5.Image")));
-            this.roundedPictureBox5.Location = new System.Drawing.Point(956, 613);
+            this.roundedPictureBox5.Location = new System.Drawing.Point(1298, 599);
             this.roundedPictureBox5.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.roundedPictureBox5.Name = "roundedPictureBox5";
             this.roundedPictureBox5.Size = new System.Drawing.Size(267, 334);
             this.roundedPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox5.TabIndex = 41;
             this.roundedPictureBox5.TabStop = false;
-            // 
-            // roundedPictureBox4
-            // 
-            this.roundedPictureBox4.BorderRadius = 20;
-            this.roundedPictureBox4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.roundedPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox4.Image")));
-            this.roundedPictureBox4.Location = new System.Drawing.Point(586, 600);
-            this.roundedPictureBox4.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.roundedPictureBox4.Name = "roundedPictureBox4";
-            this.roundedPictureBox4.Size = new System.Drawing.Size(267, 334);
-            this.roundedPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.roundedPictureBox4.TabIndex = 40;
-            this.roundedPictureBox4.TabStop = false;
             // 
             // roundedPictureBox3
             // 
@@ -281,7 +269,7 @@
             this.subheadingGradientLabel2.AutoSize = true;
             this.subheadingGradientLabel2.BackColor = System.Drawing.Color.Transparent;
             this.subheadingGradientLabel2.Font = new System.Drawing.Font("Segoe UI Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subheadingGradientLabel2.Location = new System.Drawing.Point(338, 537);
+            this.subheadingGradientLabel2.Location = new System.Drawing.Point(338, 527);
             this.subheadingGradientLabel2.Name = "subheadingGradientLabel2";
             this.subheadingGradientLabel2.Size = new System.Drawing.Size(284, 50);
             this.subheadingGradientLabel2.TabIndex = 36;
@@ -319,18 +307,69 @@
             this.gradientLabel1.Size = new System.Drawing.Size(0, 45);
             this.gradientLabel1.TabIndex = 18;
             // 
+            // roundedPictureBox4
+            // 
+            this.roundedPictureBox4.BorderRadius = 20;
+            this.roundedPictureBox4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.roundedPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox4.Image")));
+            this.roundedPictureBox4.Location = new System.Drawing.Point(956, 599);
+            this.roundedPictureBox4.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.roundedPictureBox4.Name = "roundedPictureBox4";
+            this.roundedPictureBox4.Size = new System.Drawing.Size(267, 334);
+            this.roundedPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roundedPictureBox4.TabIndex = 48;
+            this.roundedPictureBox4.TabStop = false;
+            // 
+            // roundedPictureBox6
+            // 
+            this.roundedPictureBox6.BorderRadius = 20;
+            this.roundedPictureBox6.Cursor = System.Windows.Forms.Cursors.Default;
+            this.roundedPictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox6.Image")));
+            this.roundedPictureBox6.Location = new System.Drawing.Point(586, 599);
+            this.roundedPictureBox6.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.roundedPictureBox6.Name = "roundedPictureBox6";
+            this.roundedPictureBox6.Size = new System.Drawing.Size(267, 334);
+            this.roundedPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.roundedPictureBox6.TabIndex = 49;
+            this.roundedPictureBox6.TabStop = false;
+            // 
+            // gradientLabel3
+            // 
+            this.gradientLabel3.AutoSize = true;
+            this.gradientLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.gradientLabel3.Font = new System.Drawing.Font("Segoe UI Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientLabel3.Location = new System.Drawing.Point(606, 948);
+            this.gradientLabel3.Name = "gradientLabel3";
+            this.gradientLabel3.Size = new System.Drawing.Size(226, 45);
+            this.gradientLabel3.TabIndex = 68;
+            this.gradientLabel3.Text = "May 15, 2026";
+            // 
+            // gradientLabel4
+            // 
+            this.gradientLabel4.AutoSize = true;
+            this.gradientLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.gradientLabel4.Font = new System.Drawing.Font("Segoe UI Black", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientLabel4.Location = new System.Drawing.Point(981, 948);
+            this.gradientLabel4.Name = "gradientLabel4";
+            this.gradientLabel4.Size = new System.Drawing.Size(230, 45);
+            this.gradientLabel4.TabIndex = 69;
+            this.gradientLabel4.Text = "May 22, 2026";
+            // 
             // MoviesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1924, 856);
+            this.ClientSize = new System.Drawing.Size(1924, 1061);
+            this.Controls.Add(this.gradientLabel4);
+            this.Controls.Add(this.gradientLabel3);
+            this.Controls.Add(this.roundedPictureBox6);
+            this.Controls.Add(this.roundedPictureBox4);
+            this.Controls.Add(this.gradientLabel5);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.MenuButton);
-            this.Controls.Add(this.roundedPictureBox6);
             this.Controls.Add(this.roundedPictureBox5);
-            this.Controls.Add(this.roundedPictureBox4);
             this.Controls.Add(this.roundedPictureBox3);
             this.Controls.Add(this.roundedPictureBox2);
             this.Controls.Add(this.roundedPictureBox1);
@@ -352,12 +391,12 @@
             this.Text = "TixNova+ MoviesForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,10 +418,13 @@
         private TixNova_Final.RoundedPictureBox roundedPictureBox1;
         private TixNova_Final.RoundedPictureBox roundedPictureBox2;
         private TixNova_Final.RoundedPictureBox roundedPictureBox3;
-        private TixNova_Final.RoundedPictureBox roundedPictureBox4;
         private TixNova_Final.RoundedPictureBox roundedPictureBox5;
-        private TixNova_Final.RoundedPictureBox roundedPictureBox6;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Button MenuButton;
+        private TixNova_Final.GradientLabel gradientLabel5;
+        private TixNova_Final.RoundedPictureBox roundedPictureBox4;
+        private TixNova_Final.RoundedPictureBox roundedPictureBox6;
+        private TixNova_Final.GradientLabel gradientLabel3;
+        private TixNova_Final.GradientLabel gradientLabel4;
     }
 }
