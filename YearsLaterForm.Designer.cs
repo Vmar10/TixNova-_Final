@@ -35,7 +35,6 @@
             this.blueGradientLabel1 = new TixNova_Final.BlueGradientLabel();
             this.roundedPictureBox2 = new TixNova_Final.RoundedPictureBox();
             this.SearchButton = new System.Windows.Forms.Button();
-            this.MenuButton = new System.Windows.Forms.Button();
             this.gradientLabel2 = new TixNova_Final.GradientLabel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
@@ -45,6 +44,7 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.gradientLabel1 = new TixNova_Final.GradientLabel();
             this.roundedPictureBox1 = new TixNova_Final.RoundedPictureBox();
+            this.MenuButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox1)).BeginInit();
@@ -132,20 +132,7 @@
             this.SearchButton.TabIndex = 87;
             this.SearchButton.Text = "⌕";
             this.SearchButton.UseVisualStyleBackColor = false;
-            // 
-            // MenuButton
-            // 
-            this.MenuButton.BackColor = System.Drawing.Color.Aqua;
-            this.MenuButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.MenuButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.MenuButton.ForeColor = System.Drawing.Color.White;
-            this.MenuButton.Location = new System.Drawing.Point(1674, 45);
-            this.MenuButton.Name = "MenuButton";
-            this.MenuButton.Size = new System.Drawing.Size(127, 40);
-            this.MenuButton.TabIndex = 86;
-            this.MenuButton.Text = "MENU";
-            this.MenuButton.UseVisualStyleBackColor = false;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // gradientLabel2
             // 
@@ -276,6 +263,21 @@
             this.roundedPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox1.TabIndex = 88;
             this.roundedPictureBox1.TabStop = false;
+            // 
+            // MenuButton
+            // 
+            this.MenuButton.BackColor = System.Drawing.Color.Aqua;
+            this.MenuButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.MenuButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.MenuButton.ForeColor = System.Drawing.Color.White;
+            this.MenuButton.Location = new System.Drawing.Point(1674, 45);
+            this.MenuButton.Name = "MenuButton";
+            this.MenuButton.Size = new System.Drawing.Size(127, 40);
+            this.MenuButton.TabIndex = 95;
+            this.MenuButton.Text = "MENU";
+            this.MenuButton.UseVisualStyleBackColor = false;
+            this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // YearsLaterForm
             // 

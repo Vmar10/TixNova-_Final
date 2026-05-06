@@ -49,6 +49,7 @@
             this.roundedPictureBox9 = new TixNova_Final.RoundedPictureBox();
             this.roundedPictureBox10 = new TixNova_Final.RoundedPictureBox();
             this.MenuButton = new System.Windows.Forms.Button();
+            this.SearchButton = new System.Windows.Forms.Button();
             this.subheadingGradientLabel1 = new TixNova__Final.SubheadingGradientLabel();
             this.fadingImageButton2 = new TixNova__Final.FadingImageButton();
             this.fadingImageButton1 = new TixNova__Final.FadingImageButton();
@@ -58,7 +59,6 @@
             this.blueGradientLabel4 = new TixNova_Final.BlueGradientLabel();
             this.blueGradientLabel3 = new TixNova_Final.BlueGradientLabel();
             this.gradientLabel2 = new TixNova_Final.GradientLabel();
-            this.SearchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.viewportPanel.SuspendLayout();
             this.movieTrackPanel.SuspendLayout();
@@ -359,6 +359,22 @@
             this.MenuButton.TabIndex = 25;
             this.MenuButton.Text = "MENU";
             this.MenuButton.UseVisualStyleBackColor = false;
+            this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.BackColor = System.Drawing.Color.Aqua;
+            this.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.SearchButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.SearchButton.ForeColor = System.Drawing.Color.White;
+            this.SearchButton.Location = new System.Drawing.Point(1603, 53);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(40, 40);
+            this.SearchButton.TabIndex = 26;
+            this.SearchButton.Text = "⌕";
+            this.SearchButton.UseVisualStyleBackColor = false;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // subheadingGradientLabel1
             // 
@@ -464,20 +480,6 @@
             this.gradientLabel2.Size = new System.Drawing.Size(436, 106);
             this.gradientLabel2.TabIndex = 9;
             this.gradientLabel2.Text = "TixNova+";
-            // 
-            // SearchButton
-            // 
-            this.SearchButton.BackColor = System.Drawing.Color.Aqua;
-            this.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.SearchButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.SearchButton.ForeColor = System.Drawing.Color.White;
-            this.SearchButton.Location = new System.Drawing.Point(1603, 53);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(40, 40);
-            this.SearchButton.TabIndex = 26;
-            this.SearchButton.Text = "⌕";
-            this.SearchButton.UseVisualStyleBackColor = false;
             // 
             // MainDashBoard
             // 

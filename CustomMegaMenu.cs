@@ -14,6 +14,16 @@ namespace TixNova__Final
             this.DoubleBuffered = true;
 
             InitializeMenuContent();
+            this.Region = new Region(GetRegionPath());
+        }
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x00000020; // WS_EX_TRANSPARENT: Makes the background invisible
+                return cp;
+            }
         }
 
         private void InitializeMenuContent()
@@ -22,16 +32,14 @@ namespace TixNova__Final
             int col2X = 240;
 
             AddHeader("GENRE", col1X, 40);
-            string[] genres = { "Action & Adventure", "Sci-Fi & Fantasy", "Horror & Thriller",
-                                "Comedy & Family", "Drama", "Action", "Animation" };
+            string[] genres = { "Action & Adventure", "Sci-Fi & Fantasy", "Horror & Thriller", "Comedy & Family", "Drama", "Action", "Animation" };
             for (int i = 0; i < genres.Length; i++)
             {
                 AddItem(genres[i], col1X, 75 + (i * 25));
             }
 
             AddHeader("DISCOVER", col2X, 40);
-            string[] discover = { "Now Showing", "Coming Soon", "Advance Screenings",
-                                  "Top 10 This Week", "Staff Picks" };
+            string[] discover = { "Now Showing", "Coming Soon", "Advance Screenings", "Top 10 This Week", "Staff Picks" };
             for (int i = 0; i < discover.Length; i++)
             {
                 AddItem(discover[i], col2X, 75 + (i * 25));

@@ -754,6 +754,7 @@
             this.SearchButton.TabIndex = 42;
             this.SearchButton.Text = "⌕";
             this.SearchButton.UseVisualStyleBackColor = false;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // MenuButton
             // 
@@ -768,6 +769,7 @@
             this.MenuButton.TabIndex = 41;
             this.MenuButton.Text = "MENU";
             this.MenuButton.UseVisualStyleBackColor = false;
+            this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // CinemasForm
             // 

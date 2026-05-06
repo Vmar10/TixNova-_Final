@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MoviesForm));
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
+            this.LinkLabel5 = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
@@ -80,21 +80,22 @@
             this.label1.TabIndex = 31;
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // linkLabel5
+            // LinkLabel5
             // 
-            this.linkLabel5.ActiveLinkColor = System.Drawing.Color.Cyan;
-            this.linkLabel5.AutoSize = true;
-            this.linkLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel5.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel5.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel5.LinkColor = System.Drawing.Color.White;
-            this.linkLabel5.Location = new System.Drawing.Point(1293, 48);
-            this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(116, 30);
-            this.linkLabel5.TabIndex = 24;
-            this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "Categories";
-            this.linkLabel5.VisitedLinkColor = System.Drawing.Color.Cyan;
+            this.LinkLabel5.ActiveLinkColor = System.Drawing.Color.Cyan;
+            this.LinkLabel5.AutoSize = true;
+            this.LinkLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.LinkLabel5.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LinkLabel5.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.LinkLabel5.LinkColor = System.Drawing.Color.White;
+            this.LinkLabel5.Location = new System.Drawing.Point(1293, 48);
+            this.LinkLabel5.Name = "LinkLabel5";
+            this.LinkLabel5.Size = new System.Drawing.Size(116, 30);
+            this.LinkLabel5.TabIndex = 24;
+            this.LinkLabel5.TabStop = true;
+            this.LinkLabel5.Text = "Categories";
+            this.LinkLabel5.VisitedLinkColor = System.Drawing.Color.Cyan;
+            this.LinkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel5_LinkClicked);
             // 
             // linkLabel4
             // 
@@ -177,6 +178,7 @@
             this.SearchButton.TabIndex = 44;
             this.SearchButton.Text = "⌕";
             this.SearchButton.UseVisualStyleBackColor = false;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // MenuButton
             // 
@@ -191,6 +193,7 @@
             this.MenuButton.TabIndex = 43;
             this.MenuButton.Text = "MENU";
             this.MenuButton.UseVisualStyleBackColor = false;
+            this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // roundedPictureBox6
             // 
@@ -336,7 +339,7 @@
             this.Controls.Add(this.gradientLabel2);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.linkLabel5);
+            this.Controls.Add(this.LinkLabel5);
             this.Controls.Add(this.linkLabel4);
             this.Controls.Add(this.linkLabel3);
             this.Controls.Add(this.linkLabel2);
@@ -366,7 +369,7 @@
         private TixNova_Final.GradientLabel gradientLabel2;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel linkLabel5;
+        private System.Windows.Forms.LinkLabel LinkLabel5;
         private System.Windows.Forms.LinkLabel linkLabel4;
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.LinkLabel linkLabel2;

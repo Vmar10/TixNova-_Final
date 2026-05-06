@@ -329,6 +329,58 @@ namespace TixNova__Final
                 dropDownForm.BringToFront(); // Ensure it pops up over everything else
             }
         }
+        private CustomSearchMenu _searchMenu;
 
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            // Check if the menu is null or has been closed/disposed
+            if (_searchMenu == null || _searchMenu.IsDisposed)
+            {
+                _searchMenu = new CustomSearchMenu();
+
+                // Calculate position relative to the screen, not the form
+                // This ensures it pops up exactly under your button
+                Point screenPos = SearchButton.PointToScreen(new Point(0, SearchButton.Height));
+
+                _searchMenu.Location = new Point(
+                    screenPos.X - (_searchMenu.Width / 2) + (SearchButton.Width / 2),
+                    screenPos.Y + 10
+                );
+
+                // DO NOT use this.Controls.Add(_searchMenu); <--- This causes the error!
+                _searchMenu.Show();
+            }
+            else
+            {
+                // Toggle visibility
+                if (_searchMenu.Visible)
+                    _searchMenu.Hide();
+                else
+                    _searchMenu.Show();
+            }
+        }
+
+        private CustomMenu _sideMenu; // Ensure this matches your new class name
+
+        private void MenuButton_Click(object sender, EventArgs e)
+        {
+            // Check if the menu exists or has been closed
+            if (_sideMenu == null || _sideMenu.IsDisposed)
+            {
+                _sideMenu = new CustomMenu(); // Create the instance
+
+                // Position it on the right side of your app
+                // We calculate the X coordinate: App Width - Menu Width - Margin
+                Point screenPos = this.PointToScreen(new Point(this.Width - _sideMenu.Width - 20, 50));
+                _sideMenu.Location = screenPos;
+
+                _sideMenu.Show();
+            }
+            else
+            {
+                // Toggle visibility if already open
+                _sideMenu.Visible = !_sideMenu.Visible;
+            }
+        }
     }
 }
