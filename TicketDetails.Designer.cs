@@ -1,6 +1,6 @@
 ﻿namespace TixNova__Final
 {
-    partial class YearsLaterForm
+    partial class TicketDetails
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(YearsLaterForm));
-            this.roundedButton1 = new TixNova_Final.RoundedButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.blueGradientLabel1 = new TixNova_Final.BlueGradientLabel();
-            this.roundedPictureBox2 = new TixNova_Final.RoundedPictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TicketDetails));
             this.SearchButton = new System.Windows.Forms.Button();
             this.gradientLabel2 = new TixNova_Final.GradientLabel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -43,82 +38,9 @@
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.gradientLabel1 = new TixNova_Final.GradientLabel();
-            this.roundedPictureBox1 = new TixNova_Final.RoundedPictureBox();
             this.MenuButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // roundedButton1
-            // 
-            this.roundedButton1.BorderRadius = 30;
-            this.roundedButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.roundedButton1.FlatAppearance.BorderSize = 0;
-            this.roundedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.roundedButton1.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundedButton1.ForeColor = System.Drawing.Color.White;
-            this.roundedButton1.Location = new System.Drawing.Point(734, 862);
-            this.roundedButton1.Name = "roundedButton1";
-            this.roundedButton1.Size = new System.Drawing.Size(407, 77);
-            this.roundedButton1.TabIndex = 93;
-            this.roundedButton1.Text = "BOOK NOW";
-            this.roundedButton1.UseVisualStyleBackColor = true;
-            this.roundedButton1.Click += new System.EventHandler(this.roundedButton1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label2.Location = new System.Drawing.Point(792, 460);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(890, 288);
-            this.label2.TabIndex = 92;
-            this.label2.Text = resources.GetString("label2.Text");
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label1.Location = new System.Drawing.Point(792, 292);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(777, 160);
-            this.label1.TabIndex = 91;
-            this.label1.Text = "MTRCB Rating: R-18\r\nRuntime: 2h 05m\r\nGenre: Horror/Sci-Fi/Thriller\r\nDirector: Dan" +
-    "ny Boyle\r\nCast: Cillian Murphy, Aaron Taylor-Johnson, Jodie Comer, Ralph Fiennes" +
-    "";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // blueGradientLabel1
-            // 
-            this.blueGradientLabel1.AutoSize = true;
-            this.blueGradientLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.blueGradientLabel1.Font = new System.Drawing.Font("Segoe UI", 35.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.blueGradientLabel1.Location = new System.Drawing.Point(787, 230);
-            this.blueGradientLabel1.Name = "blueGradientLabel1";
-            this.blueGradientLabel1.Size = new System.Drawing.Size(391, 62);
-            this.blueGradientLabel1.TabIndex = 90;
-            this.blueGradientLabel1.Text = "28 YEARS LATER";
-            // 
-            // roundedPictureBox2
-            // 
-            this.roundedPictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.roundedPictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.roundedPictureBox2.BorderRadius = 0;
-            this.roundedPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox2.Image")));
-            this.roundedPictureBox2.Location = new System.Drawing.Point(657, 129);
-            this.roundedPictureBox2.Name = "roundedPictureBox2";
-            this.roundedPictureBox2.Size = new System.Drawing.Size(1196, 720);
-            this.roundedPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.roundedPictureBox2.TabIndex = 89;
-            this.roundedPictureBox2.TabStop = false;
             // 
             // SearchButton
             // 
@@ -252,19 +174,6 @@
             this.gradientLabel1.Size = new System.Drawing.Size(0, 45);
             this.gradientLabel1.TabIndex = 78;
             // 
-            // roundedPictureBox1
-            // 
-            this.roundedPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.roundedPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.roundedPictureBox1.BorderRadius = 0;
-            this.roundedPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("roundedPictureBox1.Image")));
-            this.roundedPictureBox1.Location = new System.Drawing.Point(108, 146);
-            this.roundedPictureBox1.Name = "roundedPictureBox1";
-            this.roundedPictureBox1.Size = new System.Drawing.Size(744, 720);
-            this.roundedPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.roundedPictureBox1.TabIndex = 88;
-            this.roundedPictureBox1.TabStop = false;
-            // 
             // MenuButton
             // 
             this.MenuButton.BackColor = System.Drawing.Color.Aqua;
@@ -280,7 +189,7 @@
             this.MenuButton.UseVisualStyleBackColor = false;
             this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
-            // YearsLaterForm
+            // TicketDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -288,11 +197,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1924, 1061);
-            this.Controls.Add(this.roundedButton1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.blueGradientLabel1);
-            this.Controls.Add(this.roundedPictureBox2);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.MenuButton);
             this.Controls.Add(this.gradientLabel2);
@@ -303,28 +207,19 @@
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.gradientLabel1);
-            this.Controls.Add(this.roundedPictureBox1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "YearsLaterForm";
+            this.Name = "TicketDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "YearsLaterForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private TixNova_Final.RoundedButton roundedButton1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private TixNova_Final.BlueGradientLabel blueGradientLabel1;
-        private TixNova_Final.RoundedPictureBox roundedPictureBox2;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Button MenuButton;
         private TixNova_Final.GradientLabel gradientLabel2;
@@ -335,6 +230,5 @@
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private TixNova_Final.GradientLabel gradientLabel1;
-        private TixNova_Final.RoundedPictureBox roundedPictureBox1;
     }
 }

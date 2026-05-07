@@ -350,5 +350,16 @@ namespace TixNova__Final
                 _sideMenu.Visible = !_sideMenu.Visible;
             }
         }
+
+        private void roundedButton1_Click(object sender, EventArgs e)
+        {
+            BookingSeats SeatPicker = new BookingSeats();
+
+
+            SeatPicker.Show();
+
+
+            this.Hide();
+        }
     }
 }

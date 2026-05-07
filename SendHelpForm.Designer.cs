@@ -219,6 +219,7 @@
             this.roundedButton1.TabIndex = 61;
             this.roundedButton1.Text = "BOOK NOW";
             this.roundedButton1.UseVisualStyleBackColor = true;
+            this.roundedButton1.Click += new System.EventHandler(this.roundedButton1_Click);
             // 
             // blueGradientLabel1
             // 
