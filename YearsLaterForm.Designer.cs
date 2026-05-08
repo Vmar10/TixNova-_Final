@@ -45,6 +45,7 @@
             this.gradientLabel1 = new TixNova_Final.GradientLabel();
             this.roundedPictureBox1 = new TixNova_Final.RoundedPictureBox();
             this.MenuButton = new System.Windows.Forms.Button();
+            this.gradientLabel3 = new TixNova_Final.GradientLabel();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox1)).BeginInit();
@@ -64,7 +65,7 @@
             this.roundedButton1.TabIndex = 93;
             this.roundedButton1.Text = "BOOK NOW";
             this.roundedButton1.UseVisualStyleBackColor = true;
-            this.roundedButton1.Click += new System.EventHandler(this.roundedButton1_Click);
+            this.roundedButton1.Click += new System.EventHandler(this.RoundedButton1_Click);
             // 
             // label2
             // 
@@ -280,6 +281,17 @@
             this.MenuButton.UseVisualStyleBackColor = false;
             this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
+            // gradientLabel3
+            // 
+            this.gradientLabel3.AutoSize = true;
+            this.gradientLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.gradientLabel3.Font = new System.Drawing.Font("Segoe UI Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientLabel3.Location = new System.Drawing.Point(314, 779);
+            this.gradientLabel3.Name = "gradientLabel3";
+            this.gradientLabel3.Size = new System.Drawing.Size(238, 50);
+            this.gradientLabel3.TabIndex = 96;
+            this.gradientLabel3.Text = "Price:  ₱270";
+            // 
             // YearsLaterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,6 +300,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1924, 1061);
+            this.Controls.Add(this.gradientLabel3);
             this.Controls.Add(this.roundedButton1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -336,5 +349,6 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private TixNova_Final.GradientLabel gradientLabel1;
         private TixNova_Final.RoundedPictureBox roundedPictureBox1;
+        private TixNova_Final.GradientLabel gradientLabel3;
     }
 }

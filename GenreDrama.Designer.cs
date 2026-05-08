@@ -1,6 +1,6 @@
 ﻿namespace TixNova__Final
 {
-    partial class RatedPGForm
+    partial class GenreDrama
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RatedPGForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GenreDrama));
             this.roundedPictureBox7 = new TixNova_Final.RoundedPictureBox();
             this.roundedPictureBox6 = new TixNova_Final.RoundedPictureBox();
             this.roundedPictureBox5 = new TixNova_Final.RoundedPictureBox();
@@ -62,6 +62,7 @@
             this.roundedPictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox7.TabIndex = 68;
             this.roundedPictureBox7.TabStop = false;
+            this.roundedPictureBox7.Click += new System.EventHandler(this.RoundedPictureBox7_Click);
             // 
             // roundedPictureBox6
             // 
@@ -75,6 +76,7 @@
             this.roundedPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox6.TabIndex = 67;
             this.roundedPictureBox6.TabStop = false;
+            this.roundedPictureBox6.Click += new System.EventHandler(this.RoundedPictureBox6_Click);
             // 
             // roundedPictureBox5
             // 
@@ -88,6 +90,7 @@
             this.roundedPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox5.TabIndex = 66;
             this.roundedPictureBox5.TabStop = false;
+            this.roundedPictureBox5.Click += new System.EventHandler(this.RoundedPictureBox5_Click);
             // 
             // roundedPictureBox4
             // 
@@ -101,6 +104,7 @@
             this.roundedPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox4.TabIndex = 65;
             this.roundedPictureBox4.TabStop = false;
+            this.roundedPictureBox4.Click += new System.EventHandler(this.RoundedPictureBox4_Click);
             // 
             // roundedPictureBox3
             // 
@@ -114,6 +118,7 @@
             this.roundedPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox3.TabIndex = 64;
             this.roundedPictureBox3.TabStop = false;
+            this.roundedPictureBox3.Click += new System.EventHandler(this.RoundedPictureBox3_Click);
             // 
             // gradientLabel1
             // 
@@ -125,6 +130,7 @@
             this.gradientLabel1.Size = new System.Drawing.Size(192, 45);
             this.gradientLabel1.TabIndex = 62;
             this.gradientLabel1.Text = "TIXNOVA+";
+            this.gradientLabel1.Click += new System.EventHandler(this.GradientLabel1_Click);
             // 
             // pictureBox4
             // 
@@ -136,6 +142,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 63;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.PictureBox4_Click);
             // 
             // roundedPictureBox2
             // 
@@ -149,6 +156,7 @@
             this.roundedPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox2.TabIndex = 61;
             this.roundedPictureBox2.TabStop = false;
+            this.roundedPictureBox2.Click += new System.EventHandler(this.RoundedPictureBox2_Click);
             // 
             // gradientLabel2
             // 
@@ -160,6 +168,7 @@
             this.gradientLabel2.Size = new System.Drawing.Size(203, 32);
             this.gradientLabel2.TabIndex = 60;
             this.gradientLabel2.Text = "Main Dashboard";
+            this.gradientLabel2.Click += new System.EventHandler(this.GradientLabel2_Click);
             // 
             // roundedPictureBox1
             // 
@@ -173,20 +182,21 @@
             this.roundedPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox1.TabIndex = 59;
             this.roundedPictureBox1.TabStop = false;
-            this.roundedPictureBox1.Click += new System.EventHandler(this.roundedPictureBox1_Click);
+            this.roundedPictureBox1.Click += new System.EventHandler(this.RoundedPictureBox1_Click);
             // 
             // subheadingGradientLabel1
             // 
             this.subheadingGradientLabel1.AutoSize = true;
             this.subheadingGradientLabel1.BackColor = System.Drawing.Color.Transparent;
             this.subheadingGradientLabel1.Font = new System.Drawing.Font("Segoe UI Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subheadingGradientLabel1.Location = new System.Drawing.Point(847, 33);
+            this.subheadingGradientLabel1.Location = new System.Drawing.Point(880, 33);
             this.subheadingGradientLabel1.Name = "subheadingGradientLabel1";
-            this.subheadingGradientLabel1.Size = new System.Drawing.Size(245, 65);
+            this.subheadingGradientLabel1.Size = new System.Drawing.Size(185, 130);
             this.subheadingGradientLabel1.TabIndex = 58;
-            this.subheadingGradientLabel1.Text = "Rated PG";
+            this.subheadingGradientLabel1.Text = "Drama\r\n\r\n";
+            this.subheadingGradientLabel1.Click += new System.EventHandler(this.SubheadingGradientLabel1_Click);
             // 
-            // RatedPGForm
+            // GenreDrama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -206,9 +216,9 @@
             this.Controls.Add(this.subheadingGradientLabel1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "RatedPGForm";
+            this.Name = "GenreDrama";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RatedPGForm";
+            this.Text = "GenreDrama";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox6)).EndInit();

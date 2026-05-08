@@ -16,6 +16,7 @@ namespace TixNova__Final
             InitializeMenuContent();
             this.Region = new Region(GetRegionPath());
         }
+
         protected override CreateParams CreateParams
         {
             get
@@ -32,14 +33,14 @@ namespace TixNova__Final
             int col2X = 240;
 
             AddHeader("GENRE", col1X, 40);
-            string[] genres = { "Action & Adventure", "Sci-Fi & Fantasy", "Horror & Thriller", "Comedy & Family", "Drama", "Action", "Animation" };
+            string[] genres = { "Action & Adventure", "Sci-Fi & Fantasy", "Horror & Thriller", "Comedy & Family", "Drama", "Animation" };
             for (int i = 0; i < genres.Length; i++)
             {
                 AddItem(genres[i], col1X, 75 + (i * 25));
             }
 
             AddHeader("DISCOVER", col2X, 40);
-            string[] discover = { "Coming Soon", "Rated G", "Rated PG", "Rated SPG","PG-13", "Staff Picks" };
+            string[] discover = { "Coming Soon", "Rated G", "Rated PG", "Rated PG-13", "Rated SPG" };
             for (int i = 0; i < discover.Length; i++)
             {
                 AddItem(discover[i], col2X, 75 + (i * 25));
@@ -82,130 +83,110 @@ namespace TixNova__Final
             lbl.MouseEnter += (s, e) => lbl.ForeColor = Color.FromArgb(0, 191, 255);
             lbl.MouseLeave += (s, e) => lbl.ForeColor = Color.FromArgb(230, 230, 230);
 
-            // ==========================================
-            // STEP 1: Add the Click event handler here
-            // ==========================================
             lbl.Click += MenuItem_Click;
 
             this.Controls.Add(lbl);
         }
 
         // ==========================================
-        // STEP 2: The Click Event Logic Method
+        // REFACTORED: Click Event Logic Method
         // ==========================================
         private void MenuItem_Click(object sender, EventArgs e)
         {
-            // 1. Identify which label was clicked
-            Label clickedLabel = sender as Label;
-            if (clickedLabel == null) return;
+            if (!(sender is Label clickedLabel)) return;
 
             string selectedCategory = clickedLabel.Text;
-
-            // Grab a reference to the main dashboard form that contains this menu
             Form mainDashboard = this.FindForm();
 
-            // 2. Use a switch statement to open the correct form based on the text
+            // Hide the dashboard safely (Simplifies IDE0031)
+            mainDashboard?.Hide();
+
             switch (selectedCategory)
             {
                 case "Action":
                 case "Action & Adventure":
-
                     GenreActionForm actionForm = new GenreActionForm();
-
-                    // Hide the Main Dashboard
-                    if (mainDashboard != null)
-                    {
-                        mainDashboard.Hide();
-                    }
-
-                    // Show the Action form
+                    actionForm.FormClosed += (s, args) => mainDashboard?.Show();
                     actionForm.Show();
-
-                    // (Recommended) Show the main dashboard again when ActionForm is closed
-                    actionForm.FormClosed += (s, args) =>
-                    {
-                        if (mainDashboard != null)
-                        {
-                            mainDashboard.Show();
-                        }
-                    };
-
                     break;
 
                 case "Sci-Fi & Fantasy":
                     GenreSciFi sciFiForm = new GenreSciFi();
-
-                    if (mainDashboard != null)
-                    {
-                        mainDashboard.Hide();
-                    }
+                    sciFiForm.FormClosed += (s, args) => mainDashboard?.Show();
                     sciFiForm.Show();
-
                     break;
 
                 case "Horror & Thriller":
                     GenreHorror horrorForm = new GenreHorror();
-
-                    if(mainDashboard != null)
-                    {
-                        mainDashboard.Hide();
-                    }
+                    horrorForm.FormClosed += (s, args) => mainDashboard?.Show();
                     horrorForm.Show();
-
                     break;
 
                 case "Coming Soon":
                     ComingsoonForm comingSoonForm = new ComingsoonForm();
-                    if (mainDashboard != null)
-                    {
-                        mainDashboard.Hide();
-                    }
+                    comingSoonForm.FormClosed += (s, args) => mainDashboard?.Show();
                     comingSoonForm.Show();
                     break;
 
                 case "Rated G":
                     RatedGForm ratedGForm = new RatedGForm();
-                    if (mainDashboard != null)
-                    {
-                        mainDashboard.Hide();
-                    }
+                    ratedGForm.FormClosed += (s, args) => mainDashboard?.Show();
                     ratedGForm.Show();
                     break;
 
                 case "Rated PG":
                     RatedPGForm ratedPGForm = new RatedPGForm();
-                    if (mainDashboard != null)
-                    {
-                        mainDashboard.Hide();
-                    }
+                    ratedPGForm.FormClosed += (s, args) => mainDashboard?.Show();
                     ratedPGForm.Show();
                     break;
 
+                case "Rated SPG":
+                    RatedSPGForm ratedSPGForm = new RatedSPGForm();
+                    ratedSPGForm.FormClosed += (s, args) => mainDashboard?.Show();
+                    ratedSPGForm.Show();
+                    break;
 
+                case "Rated PG-13":
+                    RatedPG13 ratedPG13Form = new RatedPG13();
+                    ratedPG13Form.FormClosed += (s, args) => mainDashboard?.Show();
+                    ratedPG13Form.Show();
+                    break;
+
+                case "Comedy & Family":
+                    GenreComFam comedyForm = new GenreComFam();
+                    comedyForm.FormClosed += (s, args) => mainDashboard?.Show();
+                    comedyForm.Show();
+                    break;
+
+                case "Drama":
+                    GenreDrama dramaForm = new GenreDrama();
+                    dramaForm.FormClosed += (s, args) => mainDashboard?.Show();
+                    dramaForm.Show();
+                    break;
+
+                case "Animation":
+                    GenreAnimation animationForm = new GenreAnimation();
+                    animationForm.FormClosed += (s, args) => mainDashboard?.Show();
+                    animationForm.Show();
+                    break;
 
                 default:
-                    // Fallback so you know the click registered for unmade forms
+                    mainDashboard?.Show();
                     MessageBox.Show($"Coming soon: {selectedCategory} section!", "TixNova+");
                     break;
             }
         }
-        // ==========================================
 
-        // Extracted the path logic so the Parent Form can use it to clip its bounds
-        // 1. Path for the Form's Region (determines the actual window shape)
         public GraphicsPath GetRegionPath()
         {
             return CreateMenuPath(0, 0, this.Width, this.Height);
         }
 
-        // 2. Path for Drawing (inset by 1 pixel so the border isn't cut off)
         public GraphicsPath GetDrawingPath()
         {
-            // Subtracting 2 from Width/Height to inset 1px on left/right and top/bottom
             return CreateMenuPath(1, 1, this.Width - 2, this.Height - 2);
         }
 
-        // Core math for the shape
         private GraphicsPath CreateMenuPath(int x, int y, int width, int height)
         {
             int radius = 15;
@@ -218,25 +199,20 @@ namespace TixNova__Final
 
             GraphicsPath path = new GraphicsPath();
 
-            // Top edge with arrow
             path.AddLine(x + radius, y + arrowHeight, arrowX, y + arrowHeight);
             path.AddLine(arrowX, y + arrowHeight, arrowX + (arrowWidth / 2), y);
             path.AddLine(arrowX + (arrowWidth / 2), y, arrowX + arrowWidth, y + arrowHeight);
             path.AddLine(arrowX + arrowWidth, y + arrowHeight, right - radius, y + arrowHeight);
 
-            // Right edge
             path.AddArc(right - (radius * 2), y + arrowHeight, radius * 2, radius * 2, 270, 90);
             path.AddLine(right, y + arrowHeight + radius, right, bottom - radius);
 
-            // Bottom edge
             path.AddArc(right - (radius * 2), bottom - (radius * 2), radius * 2, radius * 2, 0, 90);
             path.AddLine(right - radius, bottom, x + radius, bottom);
 
-            // Left edge
             path.AddArc(x, bottom - (radius * 2), radius * 2, radius * 2, 90, 90);
             path.AddLine(x, bottom - radius, x, y + arrowHeight + radius);
 
-            // Top left arc
             path.AddArc(x, y + arrowHeight, radius * 2, radius * 2, 180, 90);
 
             path.CloseFigure();

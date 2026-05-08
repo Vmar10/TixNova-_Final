@@ -45,6 +45,7 @@
             this.LinkLabel1 = new System.Windows.Forms.LinkLabel();
             this.gradientLabel1 = new TixNova_Final.GradientLabel();
             this.roundedPictureBox1 = new TixNova_Final.RoundedPictureBox();
+            this.gradientLabel3 = new TixNova_Final.GradientLabel();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox1)).BeginInit();
@@ -64,7 +65,7 @@
             this.roundedButton1.TabIndex = 77;
             this.roundedButton1.Text = "BOOK NOW";
             this.roundedButton1.UseVisualStyleBackColor = true;
-            this.roundedButton1.Click += new System.EventHandler(this.roundedButton1_Click);
+            this.roundedButton1.Click += new System.EventHandler(this.RoundedButton1_Click_1);
             // 
             // label2
             // 
@@ -101,7 +102,7 @@
             this.blueGradientLabel1.AutoSize = true;
             this.blueGradientLabel1.BackColor = System.Drawing.Color.Transparent;
             this.blueGradientLabel1.Font = new System.Drawing.Font("Segoe UI", 35.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.blueGradientLabel1.Location = new System.Drawing.Point(787, 255);
+            this.blueGradientLabel1.Location = new System.Drawing.Point(787, 249);
             this.blueGradientLabel1.Name = "blueGradientLabel1";
             this.blueGradientLabel1.Size = new System.Drawing.Size(843, 62);
             this.blueGradientLabel1.TabIndex = 74;
@@ -280,6 +281,17 @@
             this.roundedPictureBox1.TabIndex = 72;
             this.roundedPictureBox1.TabStop = false;
             // 
+            // gradientLabel3
+            // 
+            this.gradientLabel3.AutoSize = true;
+            this.gradientLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.gradientLabel3.Font = new System.Drawing.Font("Segoe UI Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientLabel3.Location = new System.Drawing.Point(316, 789);
+            this.gradientLabel3.Name = "gradientLabel3";
+            this.gradientLabel3.Size = new System.Drawing.Size(238, 50);
+            this.gradientLabel3.TabIndex = 97;
+            this.gradientLabel3.Text = "Price:  ₱260";
+            // 
             // GoodluckHaveFunForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,6 +300,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1924, 1061);
+            this.Controls.Add(this.gradientLabel3);
             this.Controls.Add(this.roundedButton1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -336,5 +349,6 @@
         private System.Windows.Forms.LinkLabel LinkLabel1;
         private TixNova_Final.GradientLabel gradientLabel1;
         private TixNova_Final.RoundedPictureBox roundedPictureBox1;
+        private TixNova_Final.GradientLabel gradientLabel3;
     }
 }

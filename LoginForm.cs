@@ -176,5 +176,10 @@ namespace TixNova_Final
                 roundedTextBox2.ForeColor = Color.Gray;
             }
         }
+
+        private void PictureBox4_Click(object sender, System.EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace TixNova__Final
 {
-    public partial class RatedSPGForm : Form
+    public partial class GenreAnimation : Form
     {
-        public RatedSPGForm()
+        public GenreAnimation()
         {
             InitializeComponent();
         }
 
-        private void roundedPictureBox1_Click(object sender, EventArgs e)
+        private void RoundedPictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
         }

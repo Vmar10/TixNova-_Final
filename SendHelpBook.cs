@@ -4,26 +4,122 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TixNova_Final;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
-using System.Runtime.InteropServices;
 
 namespace TixNova__Final
 {
-    public partial class ShopForm : Form
+    public partial class SendHelpBook : Form
     {
-        public ShopForm()
+        public SendHelpBook()
         {
             InitializeComponent();
+
+            // Fix transparency issues by ensuring controls are parented to the form
+            // and using transparent backcolors where necessary
+            this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+
             MakeRoundedGradientButton(MenuButton, Color.FromArgb(78, 199, 220), Color.FromArgb(7, 89, 179), 30);
             MakeRoundedGradientButton(SearchButton, Color.FromArgb(78, 199, 220), Color.FromArgb(7, 89, 179), 35);
             SetupAllLinkLabelsGlow();
             SetupMenu();
-        }
-        private CustomSearchMenu _searchMenu;
 
+            // Initialize the booking dropdowns
+            SetupBookingDropdowns();
+        }
+
+        private void SetupBookingDropdowns()
+        {
+            // 1. WATCH IN: Specific malls set to (Unavailable)
+            string[] locations = {
+                "WATCH IN:", // Index 0 (Placeholder)
+                "SM Batangas City",
+                "SM Lipa City",
+                "SM City Sto. Tomas",
+                "SM City Santa Rosa",
+                "SM City Calamba (Unavailable)",
+                "SM City Bacoor (Unavailable)"
+            };
+
+            // 2. SCHEDULE: Added AM slots
+            string[] times = {
+                "SCHEDULE:", // Index 0 (Placeholder)
+                "10:30 AM - 12:45 PM",
+                "1:00 PM - 3:15 PM",
+                "3:45 PM - 6:00 PM (Full)",
+                "6:30 PM - 8:45 PM",
+                "9:15 PM - 11:30 PM (Full)"
+            };
+
+            ConfigurePlaceholderCombo(roundedComboBox1, locations);
+            ConfigurePlaceholderCombo(roundedComboBox2, times);
+        }
+
+        private void ConfigurePlaceholderCombo(ComboBox combo, string[] items)
+        {
+            if (combo == null) return;
+
+            combo.DrawMode = DrawMode.OwnerDrawFixed;
+            combo.Items.Clear();
+            combo.Items.AddRange(items);
+            combo.SelectedIndex = 0; // Default to the placeholder
+
+            combo.DrawItem += (s, e) =>
+            {
+                if (e.Index < 0) return;
+
+                ComboBox cb = s as ComboBox;
+                string text = cb.Items[e.Index].ToString();
+                bool isPlaceholder = (e.Index == 0);
+                bool isDisabled = text.Contains("(Full)") || text.Contains("(Unavailable)");
+
+                e.DrawBackground();
+
+                // Logic: When box is CLOSED, show Cyan Placeholder.
+                // When box is OPEN, draw list items accordingly.
+                if (!cb.DroppedDown && isPlaceholder)
+                {
+                    using (Font boldFont = new Font(e.Font, FontStyle.Bold))
+                    {
+                        e.Graphics.DrawString(text, boldFont, Brushes.Cyan, e.Bounds.X + 5, e.Bounds.Y);
+                    }
+                }
+                else
+                {
+                    Brush textBrush;
+                    if (isPlaceholder) textBrush = Brushes.DimGray;
+                    else if (isDisabled) textBrush = Brushes.Gray; // Gray out unavailable/full
+                    else textBrush = Brushes.Cyan; // Set available text to Cyan
+
+                    e.Graphics.DrawString(text, e.Font, textBrush, e.Bounds.X + 5, e.Bounds.Y);
+                }
+
+                e.DrawFocusRectangle();
+            };
+
+            combo.SelectedIndexChanged += (s, e) =>
+            {
+                ComboBox cb = s as ComboBox;
+                if (cb.SelectedIndex <= 0) return;
+
+                string selectedText = cb.SelectedItem.ToString();
+
+                // Prevent selection of Grayed-out items
+                if (selectedText.Contains("(Full)") || selectedText.Contains("(Unavailable)"))
+                {
+                    string msg = selectedText.Contains("(Full)") ? "fully booked" : "currently unavailable";
+                    MessageBox.Show($"This selection is {msg}.", "TixNova", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cb.SelectedIndex = 0; // Revert to placeholder
+                }
+            };
+        }
+
+        #region UI Effects and Win32 Blur
         [DllImport("user32.dll")]
         internal static extern int SetWindowCompositionAttribute(IntPtr hwnd, ref WindowCompositionAttributeData data);
 
@@ -56,23 +152,21 @@ namespace TixNova__Final
 
         private void EnableBlur(IntPtr hwnd)
         {
-            var accent = new AccentPolicy();
-            accent.AccentState = AccentState.ACCENT_ENABLE_BLURBEHIND;
-
+            var accent = new AccentPolicy { AccentState = AccentState.ACCENT_ENABLE_BLURBEHIND };
             int accentStructSize = Marshal.SizeOf(accent);
             IntPtr accentPtr = Marshal.AllocHGlobal(accentStructSize);
             Marshal.StructureToPtr(accent, accentPtr, false);
 
-            var data = new WindowCompositionAttributeData();
-            data.Attribute = WindowCompositionAttribute.WCA_ACCENT_POLICY;
-            data.SizeOfData = accentStructSize;
-            data.Data = accentPtr;
+            var data = new WindowCompositionAttributeData
+            {
+                Attribute = WindowCompositionAttribute.WCA_ACCENT_POLICY,
+                SizeOfData = accentStructSize,
+                Data = accentPtr
+            };
 
             SetWindowCompositionAttribute(hwnd, ref data);
             Marshal.FreeHGlobal(accentPtr);
         }
-
-        // --- Your Updated SetupMenu ---
 
         private Form dropDownForm;
         private DateTime menuLastClosedTime = DateTime.MinValue;
@@ -80,38 +174,26 @@ namespace TixNova__Final
 
         private void SetupMenu()
         {
-            menuContent = new TixNovaMenuControl();
-
-            dropDownForm = new Form();
-            dropDownForm.FormBorderStyle = FormBorderStyle.None;
-            dropDownForm.StartPosition = FormStartPosition.Manual;
-            dropDownForm.ShowInTaskbar = false;
-            dropDownForm.Size = menuContent.Size;
-
-            // Use Magenta to punch out the background completely without leaving a black shadow
-            dropDownForm.BackColor = Color.Black;
-
-            // Clip the form perfectly to the outer bounds so the blur doesn't bleed out
-            dropDownForm.Region = new Region(menuContent.GetRegionPath());
+            menuContent = new TixNovaMenuControl { Location = new Point(0, 0) };
+            dropDownForm = new Form
+            {
+                FormBorderStyle = FormBorderStyle.None,
+                StartPosition = FormStartPosition.Manual,
+                ShowInTaskbar = false,
+                Size = menuContent.Size,
+                BackColor = Color.Black,
+                Region = new Region(menuContent.GetRegionPath())
+            };
 
             dropDownForm.Controls.Add(menuContent);
-            menuContent.Location = new Point(0, 0);
-
             dropDownForm.HandleCreated += (s, e) => EnableBlur(dropDownForm.Handle);
             dropDownForm.Deactivate += (s, e) =>
             {
                 dropDownForm.Hide();
-                menuLastClosedTime = DateTime.Now; // Record exactly when it closed
+                menuLastClosedTime = DateTime.Now;
             };
         }
 
-        public class NoBorderRenderer : ToolStripSystemRenderer
-        {
-            protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
-            {
-                // Leave empty
-            }
-        }
         private void SetupAllLinkLabelsGlow()
         {
             foreach (Control control in this.Controls)
@@ -129,17 +211,8 @@ namespace TixNova__Final
                         pulseTimer = new Timer { Interval = 50 };
                         pulseTimer.Tick += (ts, te) =>
                         {
-                            if (increasing)
-                            {
-                                pulseValue += 15;
-                                if (pulseValue >= 255) increasing = false;
-                            }
-                            else
-                            {
-                                pulseValue -= 15;
-                                if (pulseValue <= 100) increasing = true;
-                            }
-
+                            if (increasing) { pulseValue += 15; if (pulseValue >= 255) increasing = false; }
+                            else { pulseValue -= 15; if (pulseValue <= 100) increasing = true; }
                             lbl.LinkColor = Color.FromArgb(255, 0, pulseValue, 255);
                         };
                         pulseTimer.Start();
@@ -157,195 +230,130 @@ namespace TixNova__Final
 
         private void MakeRoundedGradientButton(Button btn, Color startColor, Color endColor, int radius = 20)
         {
-            // Remove default button styling
             btn.FlatStyle = FlatStyle.Popup;
             btn.FlatAppearance.BorderSize = 0;
-
-            // Store gradient colors (you can change these dynamically)
             btn.Tag = new GradientInfo { StartColor = startColor, EndColor = endColor };
-
-            // Store original size and location for hover
             var originalSize = btn.Size;
             var originalLocation = btn.Location;
 
-            // Hover events
-            btn.MouseEnter += (sender, e) =>
-            {
+            btn.MouseEnter += (sender, e) => {
                 btn.Size = new Size(btn.Width + 5, btn.Height + 5);
                 btn.Location = new Point(btn.Location.X - 2, btn.Location.Y - 2);
-                btn.Cursor = Cursors.Hand; // Optional: changes cursor to hand
+                btn.Cursor = Cursors.Hand;
             };
 
-            btn.MouseLeave += (sender, e) =>
-            {
+            btn.MouseLeave += (sender, e) => {
                 btn.Size = originalSize;
                 btn.Location = originalLocation;
-                btn.Cursor = Cursors.Default; // Optional: restores cursor
+                btn.Cursor = Cursors.Default;
             };
 
-            btn.Paint += (sender, e) =>
-            {
+            btn.Paint += (sender, e) => {
                 Button b = sender as Button;
                 e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-
-                // Create rounded rectangle path
                 using (var path = new System.Drawing.Drawing2D.GraphicsPath())
                 {
                     Rectangle rect = new Rectangle(0, 0, b.Width - 1, b.Height - 1);
-
-                    // Create rounded corners
                     path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
                     path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90);
                     path.AddArc(rect.X + rect.Width - radius, rect.Y + rect.Height - radius, radius, radius, 0, 90);
                     path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
                     path.CloseFigure();
-
-                    // Apply rounded region to button
                     b.Region = new Region(path);
 
-                    // Create gradient brush
                     GradientInfo gradient = (GradientInfo)b.Tag;
-                    using (var brush = new System.Drawing.Drawing2D.LinearGradientBrush(
-                        rect,
-                        gradient.StartColor,
-                        gradient.EndColor,
-                        System.Drawing.Drawing2D.LinearGradientMode.Vertical)) // Change to Horizontal if preferred
+                    using (var brush = new System.Drawing.Drawing2D.LinearGradientBrush(rect, gradient.StartColor, gradient.EndColor, System.Drawing.Drawing2D.LinearGradientMode.Vertical))
                     {
                         e.Graphics.FillPath(brush, path);
                     }
-
-                    // Draw button text
-                    TextRenderer.DrawText(e.Graphics, b.Text, b.Font,
-                        rect, b.ForeColor,
-                        TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+                    TextRenderer.DrawText(e.Graphics, b.Text, b.Font, rect, b.ForeColor, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
                 }
             };
-
-            // Redraw on resize
             btn.Resize += (sender, e) => btn.Invalidate();
         }
-        // Helper class to store gradient info
+
         private class GradientInfo
         {
             public Color StartColor { get; set; }
             public Color EndColor { get; set; }
         }
+        #endregion
 
+        #region Navigation
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MainDashBoard mainDashBoard = new MainDashBoard();
-
-            mainDashBoard.Show();
-
+            new MainDashBoard().Show();
             this.Hide();
         }
 
         private void LinkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MoviesForm movieForm = new MoviesForm();
-
-            movieForm.Show();
-
+            new MoviesForm().Show();
             this.Hide();
         }
 
         private void LinkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            CinemasForm cinemaForm = new CinemasForm();
-
-            cinemaForm.Show();
-
+            new CinemasForm().Show();
             this.Hide();
         }
 
-        private void linkLabel5_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LinkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if ((DateTime.Now - menuLastClosedTime).TotalMilliseconds < 100)
-            {
-                return;
-            }
+            new ShopForm().Show();
+            this.Hide();
+        }
 
-            // 2. Toggle logic
-            if (dropDownForm.Visible)
-            {
-                dropDownForm.Hide();
-            }
+        private void LinkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if ((DateTime.Now - menuLastClosedTime).TotalMilliseconds < 100) return;
+            if (dropDownForm.Visible) dropDownForm.Hide();
             else
             {
                 int xOffset = (linkLabel5.Width - menuContent.Width) / 2;
-
-
-
-                // Convert the button's location to screen coordinates
-
                 Point screenLocation = linkLabel5.PointToScreen(new Point(xOffset, linkLabel5.Height + 5));
-
-                // You might need to tweak the X and Y here so the arrow lines up perfectly
-                // dropDownForm.Location = new Point(screenPos.X - 50, screenPos.Y);
                 dropDownForm.Location = screenLocation;
                 dropDownForm.Show();
-                dropDownForm.BringToFront(); // Ensure it pops up over everything else
+                dropDownForm.BringToFront();
             }
         }
 
+        private CustomSearchMenu _searchMenu;
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            // Check if the menu is null or has been closed/disposed
             if (_searchMenu == null || _searchMenu.IsDisposed)
             {
                 _searchMenu = new CustomSearchMenu();
-
-                // Calculate position relative to the screen, not the form
-                // This ensures it pops up exactly under your button
                 Point screenPos = SearchButton.PointToScreen(new Point(0, SearchButton.Height));
-
-                _searchMenu.Location = new Point(
-                    screenPos.X - (_searchMenu.Width / 2) + (SearchButton.Width / 2),
-                    screenPos.Y + 10
-                );
-
-                // DO NOT use this.Controls.Add(_searchMenu); <--- This causes the error!
+                _searchMenu.Location = new Point(screenPos.X - (_searchMenu.Width / 2) + (SearchButton.Width / 2), screenPos.Y + 10);
                 _searchMenu.Show();
             }
-            else
-            {
-                // Toggle visibility
-                if (_searchMenu.Visible)
-                    _searchMenu.Hide();
-                else
-                    _searchMenu.Show();
-            }
+            else { if (_searchMenu.Visible) _searchMenu.Hide(); else _searchMenu.Show(); }
         }
 
-        private CustomMenu _sideMenu; // Ensure this matches your new class name
-
+        private CustomMenu _sideMenu;
         private void MenuButton_Click(object sender, EventArgs e)
         {
-            // Check if the menu exists or has been closed
             if (_sideMenu == null || _sideMenu.IsDisposed)
             {
-                _sideMenu = new CustomMenu(); // Create the instance
-
-                // Position it on the right side of your app
-                // We calculate the X coordinate: App Width - Menu Width - Margin
+                _sideMenu = new CustomMenu();
                 Point screenPos = this.PointToScreen(new Point(this.Width - _sideMenu.Width - 20, 50));
                 _sideMenu.Location = screenPos;
-
                 _sideMenu.Show();
             }
-            else
-            {
-                // Toggle visibility if already open
-                _sideMenu.Visible = !_sideMenu.Visible;
-            }
+            else { _sideMenu.Visible = !_sideMenu.Visible; }
         }
+        #endregion
 
-        private void roundedButton1_Click(object sender, EventArgs e)
+        private void RoundedButton1_Click(object sender, EventArgs e)
         {
-            MoviesForm moviesForm = new MoviesForm();
-            moviesForm.Show();
+            ShopBuy shopbuy = new ShopBuy(this);
+            shopbuy.Show();
 
             this.Hide();
+
+          
+
         }
     }
 }

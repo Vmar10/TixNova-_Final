@@ -392,13 +392,10 @@ namespace TixNova__Final
                 _sideMenu.Visible = !_sideMenu.Visible;
             }
         }
-        private void roundedButton1_Click(object sender, EventArgs e)
+        private void RoundedButton1_Click(object sender, EventArgs e)
         {
-            BookingSeats SeatPicker = new BookingSeats();
-
-
-            SeatPicker.Show();
-
+            SendHelpBook sendhelpBook = new SendHelpBook();
+            sendhelpBook.Show();
 
             this.Hide();
         }

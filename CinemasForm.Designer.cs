@@ -209,7 +209,7 @@
             this.roundedPanel6.Controls.Add(this.label18);
             this.roundedPanel6.Controls.Add(this.gradientLabel7);
             this.roundedPanel6.Controls.Add(this.roundedPictureBox6);
-            this.roundedPanel6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPanel6.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPanel6.Location = new System.Drawing.Point(1205, 563);
             this.roundedPanel6.Name = "roundedPanel6";
             this.roundedPanel6.Size = new System.Drawing.Size(318, 348);
@@ -296,7 +296,7 @@
             this.roundedPanel5.Controls.Add(this.label15);
             this.roundedPanel5.Controls.Add(this.gradientLabel6);
             this.roundedPanel5.Controls.Add(this.roundedPictureBox5);
-            this.roundedPanel5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPanel5.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPanel5.Location = new System.Drawing.Point(778, 569);
             this.roundedPanel5.Name = "roundedPanel5";
             this.roundedPanel5.Size = new System.Drawing.Size(318, 348);
@@ -383,7 +383,7 @@
             this.roundedPanel4.Controls.Add(this.label12);
             this.roundedPanel4.Controls.Add(this.gradientLabel5);
             this.roundedPanel4.Controls.Add(this.roundedPictureBox4);
-            this.roundedPanel4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPanel4.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPanel4.Location = new System.Drawing.Point(349, 575);
             this.roundedPanel4.Name = "roundedPanel4";
             this.roundedPanel4.Size = new System.Drawing.Size(318, 348);
@@ -470,7 +470,7 @@
             this.roundedPanel3.Controls.Add(this.label9);
             this.roundedPanel3.Controls.Add(this.gradientLabel4);
             this.roundedPanel3.Controls.Add(this.roundedPictureBox3);
-            this.roundedPanel3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPanel3.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPanel3.Location = new System.Drawing.Point(1205, 184);
             this.roundedPanel3.Name = "roundedPanel3";
             this.roundedPanel3.Size = new System.Drawing.Size(318, 348);
@@ -557,7 +557,7 @@
             this.roundedPanel2.Controls.Add(this.label6);
             this.roundedPanel2.Controls.Add(this.gradientLabel3);
             this.roundedPanel2.Controls.Add(this.roundedPictureBox2);
-            this.roundedPanel2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPanel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPanel2.Location = new System.Drawing.Point(778, 184);
             this.roundedPanel2.Name = "roundedPanel2";
             this.roundedPanel2.Size = new System.Drawing.Size(318, 348);
@@ -644,7 +644,7 @@
             this.roundedPanel1.Controls.Add(this.label1);
             this.roundedPanel1.Controls.Add(this.gradientLabel2);
             this.roundedPanel1.Controls.Add(this.roundedPictureBox1);
-            this.roundedPanel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.roundedPanel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPanel1.Location = new System.Drawing.Point(349, 184);
             this.roundedPanel1.Name = "roundedPanel1";
             this.roundedPanel1.Size = new System.Drawing.Size(318, 348);

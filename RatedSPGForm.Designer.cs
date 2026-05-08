@@ -173,17 +173,18 @@
             this.roundedPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox1.TabIndex = 59;
             this.roundedPictureBox1.TabStop = false;
+            this.roundedPictureBox1.Click += new System.EventHandler(this.roundedPictureBox1_Click);
             // 
             // subheadingGradientLabel1
             // 
             this.subheadingGradientLabel1.AutoSize = true;
             this.subheadingGradientLabel1.BackColor = System.Drawing.Color.Transparent;
             this.subheadingGradientLabel1.Font = new System.Drawing.Font("Segoe UI Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subheadingGradientLabel1.Location = new System.Drawing.Point(913, 33);
+            this.subheadingGradientLabel1.Location = new System.Drawing.Point(846, 34);
             this.subheadingGradientLabel1.Name = "subheadingGradientLabel1";
-            this.subheadingGradientLabel1.Size = new System.Drawing.Size(214, 65);
+            this.subheadingGradientLabel1.Size = new System.Drawing.Size(272, 65);
             this.subheadingGradientLabel1.TabIndex = 58;
-            this.subheadingGradientLabel1.Text = "Rated G";
+            this.subheadingGradientLabel1.Text = "Rated SPG";
             // 
             // RatedSPGForm
             // 

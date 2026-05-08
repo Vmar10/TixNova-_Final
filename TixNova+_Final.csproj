@@ -81,6 +81,24 @@
     <Compile Include="GenreActionForm.Designer.cs">
       <DependentUpon>GenreActionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GenreAnimation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenreAnimation.Designer.cs">
+      <DependentUpon>GenreAnimation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenreComFam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenreComFam.Designer.cs">
+      <DependentUpon>GenreComFam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenreDrama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenreDrama.Designer.cs">
+      <DependentUpon>GenreDrama.cs</DependentUpon>
+    </Compile>
     <Compile Include="GenreHorror.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +113,12 @@
     </Compile>
     <Compile Include="GlassPanel.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GoodluckBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoodluckBook.Designer.cs">
+      <DependentUpon>GoodluckBook.cs</DependentUpon>
     </Compile>
     <Compile Include="GoodluckHaveFunForm.cs">
       <SubType>Form</SubType>
@@ -134,6 +158,12 @@
     <Compile Include="RatedGForm.Designer.cs">
       <DependentUpon>RatedGForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RatedPG13.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RatedPG13.Designer.cs">
+      <DependentUpon>RatedPG13.cs</DependentUpon>
+    </Compile>
     <Compile Include="RatedPGForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +179,9 @@
     <Compile Include="RoundedButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RoundedComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RoundedPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -158,11 +191,23 @@
     <Compile Include="RoundedTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="SendHelpBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SendHelpBook.Designer.cs">
+      <DependentUpon>SendHelpBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="SendHelpForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SendHelpForm.Designer.cs">
       <DependentUpon>SendHelpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShopBuy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShopBuy.Designer.cs">
+      <DependentUpon>ShopBuy.cs</DependentUpon>
     </Compile>
     <Compile Include="ShopForm.cs">
       <SubType>Form</SubType>
@@ -186,6 +231,12 @@
     <Compile Include="TicketDetails.Designer.cs">
       <DependentUpon>TicketDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="YearsLaterBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YearsLaterBook.Designer.cs">
+      <DependentUpon>YearsLaterBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="YearsLaterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,11 +252,23 @@
     <EmbeddedResource Include="GenreActionForm.resx">
       <DependentUpon>GenreActionForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GenreAnimation.resx">
+      <DependentUpon>GenreAnimation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenreComFam.resx">
+      <DependentUpon>GenreComFam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenreDrama.resx">
+      <DependentUpon>GenreDrama.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GenreHorror.resx">
       <DependentUpon>GenreHorror.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenreSciFi.resx">
       <DependentUpon>GenreSciFi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GoodluckBook.resx">
+      <DependentUpon>GoodluckBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GoodluckHaveFunForm.resx">
       <DependentUpon>GoodluckHaveFunForm.cs</DependentUpon>
@@ -231,14 +294,23 @@
     <EmbeddedResource Include="RatedGForm.resx">
       <DependentUpon>RatedGForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RatedPG13.resx">
+      <DependentUpon>RatedPG13.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RatedPGForm.resx">
       <DependentUpon>RatedPGForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RatedSPGForm.resx">
       <DependentUpon>RatedSPGForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SendHelpBook.resx">
+      <DependentUpon>SendHelpBook.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SendHelpForm.resx">
       <DependentUpon>SendHelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShopBuy.resx">
+      <DependentUpon>ShopBuy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShopForm.resx">
       <DependentUpon>ShopForm.cs</DependentUpon>
@@ -248,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TicketDetails.resx">
       <DependentUpon>TicketDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YearsLaterBook.resx">
+      <DependentUpon>YearsLaterBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="YearsLaterForm.resx">
       <DependentUpon>YearsLaterForm.cs</DependentUpon>

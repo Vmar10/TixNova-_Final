@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TixNova__Final
 {
-    public partial class RatedSPGForm : Form
+    public partial class RatedPG13 : Form
     {
-        public RatedSPGForm()
+        public RatedPG13()
         {
             InitializeComponent();
         }

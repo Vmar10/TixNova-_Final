@@ -149,7 +149,7 @@ namespace TixNova__Final
             btnBack.Click += (s, e) =>
             {
                 // Replace 'MoviesForm' with the actual name of your previous screen
-                MoviesForm prev = new MoviesForm();
+                ShopBuy prev = new ShopBuy();
                 prev.Show();
                 this.Close(); // Close this form to free up memory
             };
@@ -168,6 +168,7 @@ namespace TixNova__Final
                     // Open the Ticket Details screen and pass the seats
                     TicketDetails details = new TicketDetails(selected);
                     details.Show();
+
                     this.Hide();
                 }
             };

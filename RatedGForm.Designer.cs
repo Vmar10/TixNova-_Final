@@ -180,7 +180,7 @@
             this.subheadingGradientLabel1.AutoSize = true;
             this.subheadingGradientLabel1.BackColor = System.Drawing.Color.Transparent;
             this.subheadingGradientLabel1.Font = new System.Drawing.Font("Segoe UI Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subheadingGradientLabel1.Location = new System.Drawing.Point(913, 33);
+            this.subheadingGradientLabel1.Location = new System.Drawing.Point(859, 34);
             this.subheadingGradientLabel1.Name = "subheadingGradientLabel1";
             this.subheadingGradientLabel1.Size = new System.Drawing.Size(214, 65);
             this.subheadingGradientLabel1.TabIndex = 47;
