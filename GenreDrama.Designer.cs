@@ -189,11 +189,11 @@
             this.subheadingGradientLabel1.AutoSize = true;
             this.subheadingGradientLabel1.BackColor = System.Drawing.Color.Transparent;
             this.subheadingGradientLabel1.Font = new System.Drawing.Font("Segoe UI Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subheadingGradientLabel1.Location = new System.Drawing.Point(880, 33);
+            this.subheadingGradientLabel1.Location = new System.Drawing.Point(792, 33);
             this.subheadingGradientLabel1.Name = "subheadingGradientLabel1";
-            this.subheadingGradientLabel1.Size = new System.Drawing.Size(185, 130);
+            this.subheadingGradientLabel1.Size = new System.Drawing.Size(368, 130);
             this.subheadingGradientLabel1.TabIndex = 58;
-            this.subheadingGradientLabel1.Text = "Drama\r\n\r\n";
+            this.subheadingGradientLabel1.Text = "Drama Movies\r\n\r\n";
             this.subheadingGradientLabel1.Click += new System.EventHandler(this.SubheadingGradientLabel1_Click);
             // 
             // GenreDrama

@@ -192,6 +192,24 @@
     <Compile Include="RoundedTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="SearchAnime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchAnime.Designer.cs">
+      <DependentUpon>SearchAnime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchTopFamily.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchTopFamily.Designer.cs">
+      <DependentUpon>SearchTopFamily.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchTopHorror.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchTopHorror.Designer.cs">
+      <DependentUpon>SearchTopHorror.cs</DependentUpon>
+    </Compile>
     <Compile Include="SendHelpBook.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -303,6 +321,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RatedSPGForm.resx">
       <DependentUpon>RatedSPGForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchAnime.resx">
+      <DependentUpon>SearchAnime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchTopFamily.resx">
+      <DependentUpon>SearchTopFamily.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchTopHorror.resx">
+      <DependentUpon>SearchTopHorror.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SendHelpBook.resx">
       <DependentUpon>SendHelpBook.cs</DependentUpon>

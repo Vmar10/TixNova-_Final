@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Linq; // Required to search OpenForms
 
 namespace TixNova__Final
 {
@@ -105,11 +106,11 @@ namespace TixNova__Final
             AddMenuLabel("Recent Searches", col1X, 110, 210, true);
             AddMenuLabel("Suggestions", col2X, 110, 210, true);
 
-            string[] recent = { "One Piece Movie", "Part two", "Tangled", "Beauty and the Beast" };
+            string[] recent = { "Send Help", "Rated PG", "28 Years Later", "Rated PG-13" };
             for (int i = 0; i < recent.Length; i++)
                 AddMenuLabel(recent[i], col1X, 155 + (i * 35), 210, false);
 
-            string[] suggestions = { "One Piece Movie", "Top Action Movies", "Top Family Movie", "One Piece Movie" };
+            string[] suggestions = { "Drama Movies", "Top Horror Movies", "Top Family Movies", "Top Animation Movies" };
             for (int i = 0; i < suggestions.Length; i++)
                 AddMenuLabel(suggestions[i], col2X, 155 + (i * 35), 210, false);
         }
@@ -132,9 +133,87 @@ namespace TixNova__Final
             {
                 lbl.MouseEnter += (s, e) => lbl.ForeColor = Color.FromArgb(0, 191, 255);
                 lbl.MouseLeave += (s, e) => lbl.ForeColor = Color.White;
+
+                // Attach the click event to any non-header label
+                lbl.Click += MenuLabel_Click;
             }
 
             this.Controls.Add(lbl);
+        }
+
+        // ==========================================
+        // REFACTORED: Click Event Logic Method
+        // ==========================================
+        private void MenuLabel_Click(object sender, EventArgs e)
+        {
+            if (!(sender is Label clickedLabel)) return;
+
+            string selectedCategory = clickedLabel.Text;
+
+            // Find the main dashboard instance
+            var mainDashboard = Application.OpenForms.OfType<MainDashBoard>().FirstOrDefault();
+
+            // Hide the search menu itself
+            this.Hide();
+
+            // Hide the dashboard safely
+            mainDashboard?.Hide();
+
+            switch (selectedCategory)
+            {
+                case "Top Horror Movies":
+                    SearchTopHorror horrorForm = new SearchTopHorror();
+                    horrorForm.FormClosed += (s, args) => mainDashboard?.Show();
+                    horrorForm.Show();
+                    break;
+
+                case "Top Family Movies":
+                    SearchTopFamily familyForm = new SearchTopFamily();
+                    familyForm.FormClosed += (s, args) => mainDashboard?.Show();
+                    familyForm.Show();
+                    break;
+
+                case "Top Animation Movies":
+                    SearchAnime searchAnimeForm = new SearchAnime();
+                    searchAnimeForm.FormClosed += (s, args) => mainDashboard?.Show();
+                    searchAnimeForm.Show();
+                    break;
+
+                case "Drama Movies":
+                    GenreDrama genreDramaForm = new GenreDrama();
+                    genreDramaForm.FormClosed += (s, args) => mainDashboard?.Show();
+                    genreDramaForm.Show();
+                    break;
+
+                case "Send Help":
+                    SendHelpForm sendHelpForm = new SendHelpForm();
+                    sendHelpForm.FormClosed += (s, args) => mainDashboard?.Show();
+                    sendHelpForm.Show();
+                    break;
+
+                case "Rated PG":
+                    RatedPGForm ratedPGForm = new RatedPGForm();
+                    ratedPGForm.FormClosed += (s, args) => mainDashboard?.Show();
+                    ratedPGForm.Show();
+                    break;
+
+                case "28 Years Later":
+                    YearsLaterForm yearsLaterForm = new YearsLaterForm();
+                    yearsLaterForm.FormClosed += (s, args) => mainDashboard?.Show();
+                    yearsLaterForm.Show();
+                    break;
+
+                case "Rated PG-13":
+                    RatedPG13 ratedPG13 = new RatedPG13();
+                    ratedPG13.FormClosed += (s, args) => mainDashboard?.Show();
+                    ratedPG13.Show();
+                    break;
+
+                default:
+                    mainDashboard?.Show();
+                    MessageBox.Show($"Coming soon: {selectedCategory} section!", "TixNova+ Search");
+                    break;
+            }
         }
 
         protected override void OnPaint(PaintEventArgs e)

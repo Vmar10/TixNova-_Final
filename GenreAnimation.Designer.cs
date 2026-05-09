@@ -180,11 +180,11 @@
             this.subheadingGradientLabel1.AutoSize = true;
             this.subheadingGradientLabel1.BackColor = System.Drawing.Color.Transparent;
             this.subheadingGradientLabel1.Font = new System.Drawing.Font("Segoe UI Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subheadingGradientLabel1.Location = new System.Drawing.Point(830, 32);
+            this.subheadingGradientLabel1.Location = new System.Drawing.Point(722, 33);
             this.subheadingGradientLabel1.Name = "subheadingGradientLabel1";
-            this.subheadingGradientLabel1.Size = new System.Drawing.Size(277, 65);
+            this.subheadingGradientLabel1.Size = new System.Drawing.Size(483, 65);
             this.subheadingGradientLabel1.TabIndex = 69;
-            this.subheadingGradientLabel1.Text = "Animation";
+            this.subheadingGradientLabel1.Text = "Animation Moviess";
             // 
             // GenreAnimation
             // 

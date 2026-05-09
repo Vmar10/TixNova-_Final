@@ -83,13 +83,19 @@
             this.roundedPanel1 = new TixNova_Final.RoundedPanel();
             this.btnPopcornMinus = new TixNova_Final.RoundedButton();
             this.btnPopcornPlus = new TixNova_Final.RoundedButton();
+            this.lblPopcornCount = new TixNova_Final.GradientLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblPopcornCount = new TixNova_Final.GradientLabel();
             this.roundedPictureBox2 = new TixNova_Final.RoundedPictureBox();
             this.blueGradientLabel1 = new TixNova_Final.BlueGradientLabel();
             this.gradientLabel2 = new TixNova_Final.GradientLabel();
             this.gradientLabel1 = new TixNova_Final.GradientLabel();
+            this.gradientLabel3 = new TixNova_Final.GradientLabel();
+            this.gradientLabel4 = new TixNova_Final.GradientLabel();
+            this.gradientLabel5 = new TixNova_Final.GradientLabel();
+            this.gradientLabel6 = new TixNova_Final.GradientLabel();
+            this.gradientLabel7 = new TixNova_Final.GradientLabel();
+            this.gradientLabel8 = new TixNova_Final.GradientLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.roundedPanel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox6)).BeginInit();
@@ -275,11 +281,11 @@
             this.roundedPanel11.BorderColor = System.Drawing.Color.Transparent;
             this.roundedPanel11.BorderRadius = 20;
             this.roundedPanel11.BorderSize = 0;
+            this.roundedPanel11.Controls.Add(this.gradientLabel8);
             this.roundedPanel11.Controls.Add(this.roundedPictureBox6);
             this.roundedPanel11.Controls.Add(this.roundedPanel12);
             this.roundedPanel11.Controls.Add(this.label11);
             this.roundedPanel11.Controls.Add(this.label12);
-            this.roundedPanel11.Controls.Add(this.lblPringlesCount);
             this.roundedPanel11.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPanel11.Location = new System.Drawing.Point(995, 759);
             this.roundedPanel11.Name = "roundedPanel11";
@@ -306,6 +312,7 @@
             this.roundedPanel12.BorderSize = 0;
             this.roundedPanel12.Controls.Add(this.btnPringlesMinus);
             this.roundedPanel12.Controls.Add(this.btnPringlesPlus);
+            this.roundedPanel12.Controls.Add(this.lblPringlesCount);
             this.roundedPanel12.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPanel12.Font = new System.Drawing.Font("Segoe UI Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundedPanel12.Location = new System.Drawing.Point(231, 136);
@@ -351,11 +358,11 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(232, 55);
+            this.label11.Location = new System.Drawing.Point(228, 55);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(154, 50);
+            this.label11.Size = new System.Drawing.Size(193, 64);
             this.label11.TabIndex = 29;
             this.label11.Text = "Available with 3 \r\nflavors\r\n";
             // 
@@ -376,11 +383,11 @@
             this.lblPringlesCount.AutoSize = true;
             this.lblPringlesCount.BackColor = System.Drawing.Color.Transparent;
             this.lblPringlesCount.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPringlesCount.Location = new System.Drawing.Point(230, 15);
+            this.lblPringlesCount.Location = new System.Drawing.Point(98, 6);
             this.lblPringlesCount.Name = "lblPringlesCount";
-            this.lblPringlesCount.Size = new System.Drawing.Size(200, 37);
+            this.lblPringlesCount.Size = new System.Drawing.Size(33, 37);
             this.lblPringlesCount.TabIndex = 26;
-            this.lblPringlesCount.Text = "Large Pringles\r\n";
+            this.lblPringlesCount.Text = "0";
             // 
             // roundedPanel9
             // 
@@ -388,11 +395,11 @@
             this.roundedPanel9.BorderColor = System.Drawing.Color.Transparent;
             this.roundedPanel9.BorderRadius = 20;
             this.roundedPanel9.BorderSize = 0;
+            this.roundedPanel9.Controls.Add(this.gradientLabel7);
             this.roundedPanel9.Controls.Add(this.roundedPictureBox5);
             this.roundedPanel9.Controls.Add(this.roundedPanel10);
             this.roundedPanel9.Controls.Add(this.label9);
             this.roundedPanel9.Controls.Add(this.label10);
-            this.roundedPanel9.Controls.Add(this.lblSodaCount);
             this.roundedPanel9.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPanel9.Location = new System.Drawing.Point(430, 759);
             this.roundedPanel9.Name = "roundedPanel9";
@@ -419,6 +426,7 @@
             this.roundedPanel10.BorderSize = 0;
             this.roundedPanel10.Controls.Add(this.btnSodaMinus);
             this.roundedPanel10.Controls.Add(this.btnSodaPlus);
+            this.roundedPanel10.Controls.Add(this.lblSodaCount);
             this.roundedPanel10.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPanel10.Font = new System.Drawing.Font("Segoe UI Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundedPanel10.Location = new System.Drawing.Point(231, 136);
@@ -464,11 +472,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(232, 55);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(162, 50);
+            this.label9.Size = new System.Drawing.Size(207, 64);
             this.label9.TabIndex = 29;
             this.label9.Text = "Coke, Sprite, and \r\nRoyal\r\n";
             // 
@@ -489,11 +497,11 @@
             this.lblSodaCount.AutoSize = true;
             this.lblSodaCount.BackColor = System.Drawing.Color.Transparent;
             this.lblSodaCount.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSodaCount.Location = new System.Drawing.Point(230, 15);
+            this.lblSodaCount.Location = new System.Drawing.Point(96, 6);
             this.lblSodaCount.Name = "lblSodaCount";
-            this.lblSodaCount.Size = new System.Drawing.Size(160, 37);
+            this.lblSodaCount.Size = new System.Drawing.Size(33, 37);
             this.lblSodaCount.TabIndex = 26;
-            this.lblSodaCount.Text = "Large Soda";
+            this.lblSodaCount.Text = "0";
             // 
             // roundedPanel7
             // 
@@ -501,11 +509,11 @@
             this.roundedPanel7.BorderColor = System.Drawing.Color.Transparent;
             this.roundedPanel7.BorderRadius = 20;
             this.roundedPanel7.BorderSize = 0;
+            this.roundedPanel7.Controls.Add(this.gradientLabel6);
             this.roundedPanel7.Controls.Add(this.roundedPictureBox4);
             this.roundedPanel7.Controls.Add(this.roundedPanel8);
             this.roundedPanel7.Controls.Add(this.label7);
             this.roundedPanel7.Controls.Add(this.label8);
-            this.roundedPanel7.Controls.Add(this.lblDealsCount);
             this.roundedPanel7.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPanel7.Location = new System.Drawing.Point(995, 479);
             this.roundedPanel7.Name = "roundedPanel7";
@@ -532,6 +540,7 @@
             this.roundedPanel8.BorderSize = 0;
             this.roundedPanel8.Controls.Add(this.btnDealsMinus);
             this.roundedPanel8.Controls.Add(this.btnDealsPlus);
+            this.roundedPanel8.Controls.Add(this.lblDealsCount);
             this.roundedPanel8.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPanel8.Font = new System.Drawing.Font("Segoe UI Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundedPanel8.Location = new System.Drawing.Point(231, 136);
@@ -577,11 +586,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(232, 53);
+            this.label7.Location = new System.Drawing.Point(227, 55);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(198, 50);
+            this.label7.Size = new System.Drawing.Size(254, 64);
             this.label7.TabIndex = 29;
             this.label7.Text = "Burger with Fries and \r\nDrink\r\n";
             // 
@@ -602,11 +611,11 @@
             this.lblDealsCount.AutoSize = true;
             this.lblDealsCount.BackColor = System.Drawing.Color.Transparent;
             this.lblDealsCount.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDealsCount.Location = new System.Drawing.Point(230, 15);
+            this.lblDealsCount.Location = new System.Drawing.Point(96, 6);
             this.lblDealsCount.Name = "lblDealsCount";
-            this.lblDealsCount.Size = new System.Drawing.Size(188, 37);
+            this.lblDealsCount.Size = new System.Drawing.Size(33, 37);
             this.lblDealsCount.TabIndex = 26;
-            this.lblDealsCount.Text = "Alltime Deals";
+            this.lblDealsCount.Text = "0";
             // 
             // roundedPanel5
             // 
@@ -614,8 +623,8 @@
             this.roundedPanel5.BorderColor = System.Drawing.Color.Transparent;
             this.roundedPanel5.BorderRadius = 20;
             this.roundedPanel5.BorderSize = 0;
+            this.roundedPanel5.Controls.Add(this.gradientLabel5);
             this.roundedPanel5.Controls.Add(this.label5);
-            this.roundedPanel5.Controls.Add(this.lblFriesCount);
             this.roundedPanel5.Controls.Add(this.roundedPictureBox3);
             this.roundedPanel5.Controls.Add(this.roundedPanel6);
             this.roundedPanel5.Controls.Add(this.label6);
@@ -629,11 +638,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(232, 53);
+            this.label5.Location = new System.Drawing.Point(235, 55);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(155, 50);
+            this.label5.Size = new System.Drawing.Size(198, 64);
             this.label5.TabIndex = 111;
             this.label5.Text = "Large Fries With \r\nSoftdrinks";
             // 
@@ -642,11 +651,11 @@
             this.lblFriesCount.AutoSize = true;
             this.lblFriesCount.BackColor = System.Drawing.Color.Transparent;
             this.lblFriesCount.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFriesCount.Location = new System.Drawing.Point(230, 17);
+            this.lblFriesCount.Location = new System.Drawing.Point(97, 5);
             this.lblFriesCount.Name = "lblFriesCount";
-            this.lblFriesCount.Size = new System.Drawing.Size(177, 37);
+            this.lblFriesCount.Size = new System.Drawing.Size(33, 37);
             this.lblFriesCount.TabIndex = 110;
-            this.lblFriesCount.Text = "Fries Combo";
+            this.lblFriesCount.Text = "0";
             // 
             // roundedPictureBox3
             // 
@@ -667,6 +676,7 @@
             this.roundedPanel6.BorderRadius = 20;
             this.roundedPanel6.BorderSize = 0;
             this.roundedPanel6.Controls.Add(this.btnFriesMinus);
+            this.roundedPanel6.Controls.Add(this.lblFriesCount);
             this.roundedPanel6.Controls.Add(this.btnFriesPlus);
             this.roundedPanel6.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPanel6.Font = new System.Drawing.Font("Segoe UI Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -727,8 +737,8 @@
             this.roundedPanel3.BorderColor = System.Drawing.Color.Transparent;
             this.roundedPanel3.BorderRadius = 20;
             this.roundedPanel3.BorderSize = 0;
+            this.roundedPanel3.Controls.Add(this.gradientLabel4);
             this.roundedPanel3.Controls.Add(this.label3);
-            this.roundedPanel3.Controls.Add(this.lblNachosCount);
             this.roundedPanel3.Controls.Add(this.roundedPictureBox1);
             this.roundedPanel3.Controls.Add(this.roundedPanel4);
             this.roundedPanel3.Controls.Add(this.label4);
@@ -742,11 +752,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(219, 59);
+            this.label3.Location = new System.Drawing.Point(219, 58);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(194, 50);
+            this.label3.Size = new System.Drawing.Size(246, 64);
             this.label3.TabIndex = 115;
             this.label3.Text = "Cheesy  Nachos with \r\nJalapeño ";
             // 
@@ -755,11 +765,11 @@
             this.lblNachosCount.AutoSize = true;
             this.lblNachosCount.BackColor = System.Drawing.Color.Transparent;
             this.lblNachosCount.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNachosCount.Location = new System.Drawing.Point(217, 23);
+            this.lblNachosCount.Location = new System.Drawing.Point(98, 5);
             this.lblNachosCount.Name = "lblNachosCount";
-            this.lblNachosCount.Size = new System.Drawing.Size(208, 37);
+            this.lblNachosCount.Size = new System.Drawing.Size(33, 37);
             this.lblNachosCount.TabIndex = 114;
-            this.lblNachosCount.Text = "Cheesy Nachos\r\n";
+            this.lblNachosCount.Text = "0\r\n";
             // 
             // roundedPictureBox1
             // 
@@ -780,6 +790,7 @@
             this.roundedPanel4.BorderRadius = 20;
             this.roundedPanel4.BorderSize = 0;
             this.roundedPanel4.Controls.Add(this.btnNachosMinus);
+            this.roundedPanel4.Controls.Add(this.lblNachosCount);
             this.roundedPanel4.Controls.Add(this.btnNachosPlus);
             this.roundedPanel4.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPanel4.Font = new System.Drawing.Font("Segoe UI Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -840,10 +851,10 @@
             this.roundedPanel2.BorderColor = System.Drawing.Color.Transparent;
             this.roundedPanel2.BorderRadius = 20;
             this.roundedPanel2.BorderSize = 0;
+            this.roundedPanel2.Controls.Add(this.gradientLabel3);
             this.roundedPanel2.Controls.Add(this.roundedPanel1);
             this.roundedPanel2.Controls.Add(this.label2);
             this.roundedPanel2.Controls.Add(this.label1);
-            this.roundedPanel2.Controls.Add(this.lblPopcornCount);
             this.roundedPanel2.Controls.Add(this.roundedPictureBox2);
             this.roundedPanel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPanel2.Location = new System.Drawing.Point(430, 196);
@@ -859,6 +870,7 @@
             this.roundedPanel1.BorderSize = 0;
             this.roundedPanel1.Controls.Add(this.btnPopcornMinus);
             this.roundedPanel1.Controls.Add(this.btnPopcornPlus);
+            this.roundedPanel1.Controls.Add(this.lblPopcornCount);
             this.roundedPanel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.roundedPanel1.Font = new System.Drawing.Font("Segoe UI Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roundedPanel1.Location = new System.Drawing.Point(231, 136);
@@ -900,15 +912,26 @@
             this.btnPopcornPlus.UseVisualStyleBackColor = true;
             this.btnPopcornPlus.Click += new System.EventHandler(this.BtnPopcornPlus_Click);
             // 
+            // lblPopcornCount
+            // 
+            this.lblPopcornCount.AutoSize = true;
+            this.lblPopcornCount.BackColor = System.Drawing.Color.Transparent;
+            this.lblPopcornCount.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPopcornCount.Location = new System.Drawing.Point(96, 4);
+            this.lblPopcornCount.Name = "lblPopcornCount";
+            this.lblPopcornCount.Size = new System.Drawing.Size(33, 37);
+            this.lblPopcornCount.TabIndex = 26;
+            this.lblPopcornCount.Text = "0";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(232, 52);
+            this.label2.Location = new System.Drawing.Point(233, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(185, 50);
+            this.label2.Size = new System.Drawing.Size(237, 64);
             this.label2.TabIndex = 29;
             this.label2.Text = "Large Popcorn With \r\nSoftdrink";
             // 
@@ -923,17 +946,6 @@
             this.label1.Size = new System.Drawing.Size(106, 32);
             this.label1.TabIndex = 28;
             this.label1.Text = "₱200.00\r\n";
-            // 
-            // lblPopcornCount
-            // 
-            this.lblPopcornCount.AutoSize = true;
-            this.lblPopcornCount.BackColor = System.Drawing.Color.Transparent;
-            this.lblPopcornCount.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPopcornCount.Location = new System.Drawing.Point(230, 15);
-            this.lblPopcornCount.Name = "lblPopcornCount";
-            this.lblPopcornCount.Size = new System.Drawing.Size(228, 37);
-            this.lblPopcornCount.TabIndex = 26;
-            this.lblPopcornCount.Text = "PopCorn Combo";
             // 
             // roundedPictureBox2
             // 
@@ -979,6 +991,72 @@
             this.gradientLabel1.Size = new System.Drawing.Size(0, 45);
             this.gradientLabel1.TabIndex = 96;
             // 
+            // gradientLabel3
+            // 
+            this.gradientLabel3.AutoSize = true;
+            this.gradientLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.gradientLabel3.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientLabel3.Location = new System.Drawing.Point(233, 17);
+            this.gradientLabel3.Name = "gradientLabel3";
+            this.gradientLabel3.Size = new System.Drawing.Size(243, 40);
+            this.gradientLabel3.TabIndex = 109;
+            this.gradientLabel3.Text = "PopCorn Combo";
+            // 
+            // gradientLabel4
+            // 
+            this.gradientLabel4.AutoSize = true;
+            this.gradientLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.gradientLabel4.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientLabel4.Location = new System.Drawing.Point(218, 17);
+            this.gradientLabel4.Name = "gradientLabel4";
+            this.gradientLabel4.Size = new System.Drawing.Size(222, 40);
+            this.gradientLabel4.TabIndex = 116;
+            this.gradientLabel4.Text = "Cheesy Nachos\r\n";
+            // 
+            // gradientLabel5
+            // 
+            this.gradientLabel5.AutoSize = true;
+            this.gradientLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.gradientLabel5.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientLabel5.Location = new System.Drawing.Point(235, 17);
+            this.gradientLabel5.Name = "gradientLabel5";
+            this.gradientLabel5.Size = new System.Drawing.Size(188, 40);
+            this.gradientLabel5.TabIndex = 112;
+            this.gradientLabel5.Text = "Fries Combo";
+            // 
+            // gradientLabel6
+            // 
+            this.gradientLabel6.AutoSize = true;
+            this.gradientLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.gradientLabel6.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientLabel6.Location = new System.Drawing.Point(224, 17);
+            this.gradientLabel6.Name = "gradientLabel6";
+            this.gradientLabel6.Size = new System.Drawing.Size(203, 40);
+            this.gradientLabel6.TabIndex = 114;
+            this.gradientLabel6.Text = "AllTime Deals";
+            // 
+            // gradientLabel7
+            // 
+            this.gradientLabel7.AutoSize = true;
+            this.gradientLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.gradientLabel7.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientLabel7.Location = new System.Drawing.Point(235, 15);
+            this.gradientLabel7.Name = "gradientLabel7";
+            this.gradientLabel7.Size = new System.Drawing.Size(170, 40);
+            this.gradientLabel7.TabIndex = 110;
+            this.gradientLabel7.Text = "Large Soda";
+            // 
+            // gradientLabel8
+            // 
+            this.gradientLabel8.AutoSize = true;
+            this.gradientLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.gradientLabel8.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gradientLabel8.Location = new System.Drawing.Point(228, 15);
+            this.gradientLabel8.Name = "gradientLabel8";
+            this.gradientLabel8.Size = new System.Drawing.Size(213, 40);
+            this.gradientLabel8.TabIndex = 110;
+            this.gradientLabel8.Text = "Large Pringles";
+            // 
             // ShopBuy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1016,25 +1094,31 @@
             this.roundedPanel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox6)).EndInit();
             this.roundedPanel12.ResumeLayout(false);
+            this.roundedPanel12.PerformLayout();
             this.roundedPanel9.ResumeLayout(false);
             this.roundedPanel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox5)).EndInit();
             this.roundedPanel10.ResumeLayout(false);
+            this.roundedPanel10.PerformLayout();
             this.roundedPanel7.ResumeLayout(false);
             this.roundedPanel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox4)).EndInit();
             this.roundedPanel8.ResumeLayout(false);
+            this.roundedPanel8.PerformLayout();
             this.roundedPanel5.ResumeLayout(false);
             this.roundedPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox3)).EndInit();
             this.roundedPanel6.ResumeLayout(false);
+            this.roundedPanel6.PerformLayout();
             this.roundedPanel3.ResumeLayout(false);
             this.roundedPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox1)).EndInit();
             this.roundedPanel4.ResumeLayout(false);
+            this.roundedPanel4.PerformLayout();
             this.roundedPanel2.ResumeLayout(false);
             this.roundedPanel2.PerformLayout();
             this.roundedPanel1.ResumeLayout(false);
+            this.roundedPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1104,5 +1188,11 @@
         private TixNova_Final.RoundedPictureBox roundedPictureBox6;
         private TixNova_Final.RoundedButton roundedButton13;
         private TixNova_Final.RoundedButton roundedButton14;
+        private TixNova_Final.GradientLabel gradientLabel3;
+        private TixNova_Final.GradientLabel gradientLabel4;
+        private TixNova_Final.GradientLabel gradientLabel5;
+        private TixNova_Final.GradientLabel gradientLabel6;
+        private TixNova_Final.GradientLabel gradientLabel7;
+        private TixNova_Final.GradientLabel gradientLabel8;
     }
 }
