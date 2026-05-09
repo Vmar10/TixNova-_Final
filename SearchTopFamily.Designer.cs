@@ -76,19 +76,19 @@
             this.gradientLabel1.Size = new System.Drawing.Size(192, 45);
             this.gradientLabel1.TabIndex = 84;
             this.gradientLabel1.Text = "TIXNOVA+";
-            this.gradientLabel1.Click += new System.EventHandler(this.gradientLabel1_Click);
+            this.gradientLabel1.Click += new System.EventHandler(this.GradientLabel1_Click);
             // 
             // blueGradientLabel1
             // 
             this.blueGradientLabel1.AutoSize = true;
             this.blueGradientLabel1.BackColor = System.Drawing.Color.Transparent;
             this.blueGradientLabel1.Font = new System.Drawing.Font("Segoe UI Black", 50.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.blueGradientLabel1.Location = new System.Drawing.Point(579, 110);
+            this.blueGradientLabel1.Location = new System.Drawing.Point(511, 99);
             this.blueGradientLabel1.Name = "blueGradientLabel1";
             this.blueGradientLabel1.Size = new System.Drawing.Size(692, 89);
             this.blueGradientLabel1.TabIndex = 83;
             this.blueGradientLabel1.Text = "Top Family Moviess";
-            this.blueGradientLabel1.Click += new System.EventHandler(this.blueGradientLabel1_Click);
+            this.blueGradientLabel1.Click += new System.EventHandler(this.BlueGradientLabel1_Click);
             // 
             // gradientLabel2
             // 
@@ -100,7 +100,7 @@
             this.gradientLabel2.Size = new System.Drawing.Size(203, 32);
             this.gradientLabel2.TabIndex = 82;
             this.gradientLabel2.Text = "Main Dashboard";
-            this.gradientLabel2.Click += new System.EventHandler(this.gradientLabel2_Click);
+            this.gradientLabel2.Click += new System.EventHandler(this.GradientLabel2_Click);
             // 
             // roundedPictureBox1
             // 
@@ -114,7 +114,7 @@
             this.roundedPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox1.TabIndex = 81;
             this.roundedPictureBox1.TabStop = false;
-            this.roundedPictureBox1.Click += new System.EventHandler(this.roundedPictureBox1_Click);
+            this.roundedPictureBox1.Click += new System.EventHandler(this.RoundedPictureBox1_Click);
             // 
             // roundedPictureBox2
             // 
@@ -126,7 +126,7 @@
             this.roundedPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox2.TabIndex = 0;
             this.roundedPictureBox2.TabStop = false;
-            this.roundedPictureBox2.Click += new System.EventHandler(this.roundedPictureBox2_Click);
+            this.roundedPictureBox2.Click += new System.EventHandler(this.RoundedPictureBox2_Click);
             // 
             // roundedPictureBox3
             // 
@@ -138,7 +138,7 @@
             this.roundedPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox3.TabIndex = 1;
             this.roundedPictureBox3.TabStop = false;
-            this.roundedPictureBox3.Click += new System.EventHandler(this.roundedPictureBox3_Click);
+            this.roundedPictureBox3.Click += new System.EventHandler(this.RoundedPictureBox3_Click);
             // 
             // roundedPictureBox4
             // 
@@ -150,7 +150,7 @@
             this.roundedPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox4.TabIndex = 2;
             this.roundedPictureBox4.TabStop = false;
-            this.roundedPictureBox4.Click += new System.EventHandler(this.roundedPictureBox4_Click);
+            this.roundedPictureBox4.Click += new System.EventHandler(this.RoundedPictureBox4_Click);
             // 
             // roundedPictureBox5
             // 
@@ -162,7 +162,7 @@
             this.roundedPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox5.TabIndex = 3;
             this.roundedPictureBox5.TabStop = false;
-            this.roundedPictureBox5.Click += new System.EventHandler(this.roundedPictureBox5_Click);
+            this.roundedPictureBox5.Click += new System.EventHandler(this.RoundedPictureBox5_Click);
             // 
             // roundedPictureBox6
             // 
@@ -174,7 +174,7 @@
             this.roundedPictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox6.TabIndex = 4;
             this.roundedPictureBox6.TabStop = false;
-            this.roundedPictureBox6.Click += new System.EventHandler(this.roundedPictureBox6_Click);
+            this.roundedPictureBox6.Click += new System.EventHandler(this.RoundedPictureBox6_Click);
             // 
             // fadingImageButton1
             // 
@@ -188,7 +188,7 @@
             this.fadingImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.fadingImageButton1.TabIndex = 88;
             this.fadingImageButton1.TabStop = false;
-            this.fadingImageButton1.Click += new System.EventHandler(this.fadingImageButton1_Click);
+            this.fadingImageButton1.Click += new System.EventHandler(this.FadingImageButton1_Click);
             // 
             // roundedPictureBox7
             // 
@@ -200,7 +200,7 @@
             this.roundedPictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox7.TabIndex = 5;
             this.roundedPictureBox7.TabStop = false;
-            this.roundedPictureBox7.Click += new System.EventHandler(this.roundedPictureBox7_Click);
+            this.roundedPictureBox7.Click += new System.EventHandler(this.RoundedPictureBox7_Click);
             // 
             // roundedPictureBox8
             // 
@@ -212,7 +212,7 @@
             this.roundedPictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox8.TabIndex = 6;
             this.roundedPictureBox8.TabStop = false;
-            this.roundedPictureBox8.Click += new System.EventHandler(this.roundedPictureBox8_Click);
+            this.roundedPictureBox8.Click += new System.EventHandler(this.RoundedPictureBox8_Click);
             // 
             // roundedPictureBox9
             // 
@@ -224,7 +224,7 @@
             this.roundedPictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox9.TabIndex = 7;
             this.roundedPictureBox9.TabStop = false;
-            this.roundedPictureBox9.Click += new System.EventHandler(this.roundedPictureBox9_Click);
+            this.roundedPictureBox9.Click += new System.EventHandler(this.RoundedPictureBox9_Click);
             // 
             // roundedPictureBox10
             // 
@@ -236,7 +236,7 @@
             this.roundedPictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox10.TabIndex = 8;
             this.roundedPictureBox10.TabStop = false;
-            this.roundedPictureBox10.Click += new System.EventHandler(this.roundedPictureBox10_Click);
+            this.roundedPictureBox10.Click += new System.EventHandler(this.RoundedPictureBox10_Click);
             // 
             // roundedPictureBox11
             // 
@@ -248,7 +248,7 @@
             this.roundedPictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox11.TabIndex = 9;
             this.roundedPictureBox11.TabStop = false;
-            this.roundedPictureBox11.Click += new System.EventHandler(this.roundedPictureBox11_Click);
+            this.roundedPictureBox11.Click += new System.EventHandler(this.RoundedPictureBox11_Click);
             // 
             // movieTrackPanel
             // 
@@ -269,7 +269,7 @@
             this.movieTrackPanel.Size = new System.Drawing.Size(3750, 519);
             this.movieTrackPanel.TabIndex = 0;
             this.movieTrackPanel.WrapContents = false;
-            this.movieTrackPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.movieTrackPanel_Paint);
+            this.movieTrackPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.MovieTrackPanel_Paint);
             // 
             // fadingImageButton2
             // 
@@ -283,7 +283,7 @@
             this.fadingImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.fadingImageButton2.TabIndex = 87;
             this.fadingImageButton2.TabStop = false;
-            this.fadingImageButton2.Click += new System.EventHandler(this.fadingImageButton2_Click);
+            this.fadingImageButton2.Click += new System.EventHandler(this.FadingImageButton2_Click);
             // 
             // viewportPanel
             // 
@@ -293,7 +293,7 @@
             this.viewportPanel.Name = "viewportPanel";
             this.viewportPanel.Size = new System.Drawing.Size(1486, 527);
             this.viewportPanel.TabIndex = 86;
-            this.viewportPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.viewportPanel_Paint);
+            this.viewportPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ViewportPanel_Paint);
             // 
             // pictureBox4
             // 
@@ -305,7 +305,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 85;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.pictureBox4.Click += new System.EventHandler(this.PictureBox4_Click);
             // 
             // SearchTopFamily
             // 

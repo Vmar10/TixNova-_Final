@@ -17,7 +17,7 @@ namespace TixNova__Final
             InitializeComponent();
         }
 
-        private void fadingImageButton1_Click(object sender, EventArgs e)
+        private void FadingImageButton1_Click(object sender, EventArgs e)
         {
             // 1. Set the exact same scroll amount as the Right button
             int scrollAmount = 840;
@@ -32,7 +32,7 @@ namespace TixNova__Final
             }
         }
 
-        private void fadingImageButton2_Click(object sender, EventArgs e)
+        private void FadingImageButton2_Click(object sender, EventArgs e)
         {
             // 1. Set the scroll amount for a "Page"
             // Change 840 if your pictures in this form are a different size!
@@ -49,87 +49,87 @@ namespace TixNova__Final
             }
         }
 
-        private void roundedPictureBox1_Click(object sender, EventArgs e)
+        private void RoundedPictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void blueGradientLabel1_Click(object sender, EventArgs e)
+        private void BlueGradientLabel1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void gradientLabel2_Click(object sender, EventArgs e)
+        private void GradientLabel2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void roundedPictureBox2_Click(object sender, EventArgs e)
+        private void RoundedPictureBox2_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void roundedPictureBox3_Click(object sender, EventArgs e)
+        private void RoundedPictureBox3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void roundedPictureBox4_Click(object sender, EventArgs e)
+        private void RoundedPictureBox4_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void roundedPictureBox5_Click(object sender, EventArgs e)
+        private void RoundedPictureBox5_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void roundedPictureBox6_Click(object sender, EventArgs e)
+        private void RoundedPictureBox6_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void gradientLabel1_Click(object sender, EventArgs e)
+        private void GradientLabel1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void roundedPictureBox7_Click(object sender, EventArgs e)
+        private void RoundedPictureBox7_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void roundedPictureBox8_Click(object sender, EventArgs e)
+        private void RoundedPictureBox8_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void roundedPictureBox9_Click(object sender, EventArgs e)
+        private void RoundedPictureBox9_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void roundedPictureBox10_Click(object sender, EventArgs e)
+        private void RoundedPictureBox10_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void roundedPictureBox11_Click(object sender, EventArgs e)
+        private void RoundedPictureBox11_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void movieTrackPanel_Paint(object sender, PaintEventArgs e)
+        private void MovieTrackPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void viewportPanel_Paint(object sender, PaintEventArgs e)
+        private void ViewportPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void PictureBox4_Click(object sender, EventArgs e)
         {
 
         }

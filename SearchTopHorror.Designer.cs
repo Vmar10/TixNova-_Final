@@ -32,8 +32,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.viewportPanel = new System.Windows.Forms.Panel();
             this.movieTrackPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.fadingImageButton1 = new TixNova__Final.FadingImageButton();
-            this.fadingImageButton2 = new TixNova__Final.FadingImageButton();
             this.roundedPictureBox2 = new TixNova_Final.RoundedPictureBox();
             this.roundedPictureBox3 = new TixNova_Final.RoundedPictureBox();
             this.roundedPictureBox4 = new TixNova_Final.RoundedPictureBox();
@@ -44,6 +42,8 @@
             this.roundedPictureBox9 = new TixNova_Final.RoundedPictureBox();
             this.roundedPictureBox10 = new TixNova_Final.RoundedPictureBox();
             this.roundedPictureBox11 = new TixNova_Final.RoundedPictureBox();
+            this.fadingImageButton1 = new TixNova__Final.FadingImageButton();
+            this.fadingImageButton2 = new TixNova__Final.FadingImageButton();
             this.gradientLabel1 = new TixNova_Final.GradientLabel();
             this.blueGradientLabel1 = new TixNova_Final.BlueGradientLabel();
             this.gradientLabel2 = new TixNova_Final.GradientLabel();
@@ -51,8 +51,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.viewportPanel.SuspendLayout();
             this.movieTrackPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fadingImageButton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fadingImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox4)).BeginInit();
@@ -63,6 +61,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fadingImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fadingImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,7 +81,7 @@
             // 
             this.viewportPanel.BackColor = System.Drawing.Color.Transparent;
             this.viewportPanel.Controls.Add(this.movieTrackPanel);
-            this.viewportPanel.Location = new System.Drawing.Point(180, 300);
+            this.viewportPanel.Location = new System.Drawing.Point(177, 293);
             this.viewportPanel.Name = "viewportPanel";
             this.viewportPanel.Size = new System.Drawing.Size(1486, 527);
             this.viewportPanel.TabIndex = 78;
@@ -105,34 +105,6 @@
             this.movieTrackPanel.Size = new System.Drawing.Size(3750, 519);
             this.movieTrackPanel.TabIndex = 0;
             this.movieTrackPanel.WrapContents = false;
-            // 
-            // fadingImageButton1
-            // 
-            this.fadingImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.fadingImageButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.fadingImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.fadingImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("fadingImageButton1.Image")));
-            this.fadingImageButton1.Location = new System.Drawing.Point(59, 514);
-            this.fadingImageButton1.Name = "fadingImageButton1";
-            this.fadingImageButton1.Size = new System.Drawing.Size(106, 92);
-            this.fadingImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.fadingImageButton1.TabIndex = 80;
-            this.fadingImageButton1.TabStop = false;
-            this.fadingImageButton1.Click += new System.EventHandler(this.fadingImageButton1_Click);
-            // 
-            // fadingImageButton2
-            // 
-            this.fadingImageButton2.BackColor = System.Drawing.Color.Transparent;
-            this.fadingImageButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.fadingImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.fadingImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("fadingImageButton2.Image")));
-            this.fadingImageButton2.Location = new System.Drawing.Point(1710, 514);
-            this.fadingImageButton2.Name = "fadingImageButton2";
-            this.fadingImageButton2.Size = new System.Drawing.Size(106, 92);
-            this.fadingImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.fadingImageButton2.TabIndex = 79;
-            this.fadingImageButton2.TabStop = false;
-            this.fadingImageButton2.Click += new System.EventHandler(this.fadingImageButton2_Click);
             // 
             // roundedPictureBox2
             // 
@@ -244,6 +216,34 @@
             this.roundedPictureBox11.TabIndex = 9;
             this.roundedPictureBox11.TabStop = false;
             // 
+            // fadingImageButton1
+            // 
+            this.fadingImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.fadingImageButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.fadingImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.fadingImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("fadingImageButton1.Image")));
+            this.fadingImageButton1.Location = new System.Drawing.Point(56, 507);
+            this.fadingImageButton1.Name = "fadingImageButton1";
+            this.fadingImageButton1.Size = new System.Drawing.Size(106, 92);
+            this.fadingImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.fadingImageButton1.TabIndex = 80;
+            this.fadingImageButton1.TabStop = false;
+            this.fadingImageButton1.Click += new System.EventHandler(this.fadingImageButton1_Click);
+            // 
+            // fadingImageButton2
+            // 
+            this.fadingImageButton2.BackColor = System.Drawing.Color.Transparent;
+            this.fadingImageButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.fadingImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.fadingImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("fadingImageButton2.Image")));
+            this.fadingImageButton2.Location = new System.Drawing.Point(1707, 507);
+            this.fadingImageButton2.Name = "fadingImageButton2";
+            this.fadingImageButton2.Size = new System.Drawing.Size(106, 92);
+            this.fadingImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.fadingImageButton2.TabIndex = 79;
+            this.fadingImageButton2.TabStop = false;
+            this.fadingImageButton2.Click += new System.EventHandler(this.fadingImageButton2_Click);
+            // 
             // gradientLabel1
             // 
             this.gradientLabel1.AutoSize = true;
@@ -260,7 +260,7 @@
             this.blueGradientLabel1.AutoSize = true;
             this.blueGradientLabel1.BackColor = System.Drawing.Color.Transparent;
             this.blueGradientLabel1.Font = new System.Drawing.Font("Segoe UI Black", 50.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.blueGradientLabel1.Location = new System.Drawing.Point(582, 117);
+            this.blueGradientLabel1.Location = new System.Drawing.Point(511, 99);
             this.blueGradientLabel1.Name = "blueGradientLabel1";
             this.blueGradientLabel1.Size = new System.Drawing.Size(699, 89);
             this.blueGradientLabel1.TabIndex = 74;
@@ -316,8 +316,6 @@
             this.viewportPanel.ResumeLayout(false);
             this.viewportPanel.PerformLayout();
             this.movieTrackPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.fadingImageButton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fadingImageButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox4)).EndInit();
@@ -328,6 +326,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fadingImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fadingImageButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roundedPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

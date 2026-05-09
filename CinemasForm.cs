@@ -53,45 +53,44 @@ namespace TixNova__Final
             public int AnimationId;
         }
 
+        // SIMPLIFIED: Object Initializations
         private void EnableBlur(IntPtr hwnd)
         {
-            var accent = new AccentPolicy();
-            accent.AccentState = AccentState.ACCENT_ENABLE_BLURBEHIND;
+            var accent = new AccentPolicy { AccentState = AccentState.ACCENT_ENABLE_BLURBEHIND };
 
             int accentStructSize = Marshal.SizeOf(accent);
             IntPtr accentPtr = Marshal.AllocHGlobal(accentStructSize);
             Marshal.StructureToPtr(accent, accentPtr, false);
 
-            var data = new WindowCompositionAttributeData();
-            data.Attribute = WindowCompositionAttribute.WCA_ACCENT_POLICY;
-            data.SizeOfData = accentStructSize;
-            data.Data = accentPtr;
+            var data = new WindowCompositionAttributeData
+            {
+                Attribute = WindowCompositionAttribute.WCA_ACCENT_POLICY,
+                SizeOfData = accentStructSize,
+                Data = accentPtr
+            };
 
             SetWindowCompositionAttribute(hwnd, ref data);
             Marshal.FreeHGlobal(accentPtr);
         }
 
-        // --- Your Updated SetupMenu ---
-
         private Form dropDownForm;
         private DateTime menuLastClosedTime = DateTime.MinValue;
         private TixNovaMenuControl menuContent;
 
+        // SIMPLIFIED: Object Initializations
         private void SetupMenu()
         {
             menuContent = new TixNovaMenuControl();
 
-            dropDownForm = new Form();
-            dropDownForm.FormBorderStyle = FormBorderStyle.None;
-            dropDownForm.StartPosition = FormStartPosition.Manual;
-            dropDownForm.ShowInTaskbar = false;
-            dropDownForm.Size = menuContent.Size;
-
-            // Use Magenta to punch out the background completely without leaving a black shadow
-            dropDownForm.BackColor = Color.Black;
-
-            // Clip the form perfectly to the outer bounds so the blur doesn't bleed out
-            dropDownForm.Region = new Region(menuContent.GetRegionPath());
+            dropDownForm = new Form
+            {
+                FormBorderStyle = FormBorderStyle.None,
+                StartPosition = FormStartPosition.Manual,
+                ShowInTaskbar = false,
+                Size = menuContent.Size,
+                BackColor = Color.Black,
+                Region = new Region(menuContent.GetRegionPath())
+            };
 
             dropDownForm.Controls.Add(menuContent);
             menuContent.Location = new Point(0, 0);
@@ -100,7 +99,7 @@ namespace TixNova__Final
             dropDownForm.Deactivate += (s, e) =>
             {
                 dropDownForm.Hide();
-                menuLastClosedTime = DateTime.Now; // Record exactly when it closed
+                menuLastClosedTime = DateTime.Now;
             };
         }
 
@@ -108,9 +107,10 @@ namespace TixNova__Final
         {
             protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
             {
-                // Leave empty
+
             }
         }
+
         private void SetupAllLinkLabelsGlow()
         {
             foreach (Control control in this.Controls)
@@ -156,30 +156,26 @@ namespace TixNova__Final
 
         private void MakeRoundedGradientButton(Button btn, Color startColor, Color endColor, int radius = 20)
         {
-            // Remove default button styling
             btn.FlatStyle = FlatStyle.Popup;
             btn.FlatAppearance.BorderSize = 0;
 
-            // Store gradient colors (you can change these dynamically)
             btn.Tag = new GradientInfo { StartColor = startColor, EndColor = endColor };
 
-            // Store original size and location for hover
             var originalSize = btn.Size;
             var originalLocation = btn.Location;
 
-            // Hover events
             btn.MouseEnter += (sender, e) =>
             {
                 btn.Size = new Size(btn.Width + 5, btn.Height + 5);
                 btn.Location = new Point(btn.Location.X - 2, btn.Location.Y - 2);
-                btn.Cursor = Cursors.Hand; // Optional: changes cursor to hand
+                btn.Cursor = Cursors.Hand;
             };
 
             btn.MouseLeave += (sender, e) =>
             {
                 btn.Size = originalSize;
                 btn.Location = originalLocation;
-                btn.Cursor = Cursors.Default; // Optional: restores cursor
+                btn.Cursor = Cursors.Default;
             };
 
             btn.Paint += (sender, e) =>
@@ -187,83 +183,71 @@ namespace TixNova__Final
                 Button b = sender as Button;
                 e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-                // Create rounded rectangle path
                 using (var path = new System.Drawing.Drawing2D.GraphicsPath())
                 {
                     Rectangle rect = new Rectangle(0, 0, b.Width - 1, b.Height - 1);
 
-                    // Create rounded corners
                     path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
                     path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90);
                     path.AddArc(rect.X + rect.Width - radius, rect.Y + rect.Height - radius, radius, radius, 0, 90);
                     path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
                     path.CloseFigure();
 
-                    // Apply rounded region to button
                     b.Region = new Region(path);
 
-                    // Create gradient brush
                     GradientInfo gradient = (GradientInfo)b.Tag;
                     using (var brush = new System.Drawing.Drawing2D.LinearGradientBrush(
                         rect,
                         gradient.StartColor,
                         gradient.EndColor,
-                        System.Drawing.Drawing2D.LinearGradientMode.Vertical)) // Change to Horizontal if preferred
+                        System.Drawing.Drawing2D.LinearGradientMode.Vertical))
                     {
                         e.Graphics.FillPath(brush, path);
                     }
 
-                    // Draw button text
                     TextRenderer.DrawText(e.Graphics, b.Text, b.Font,
                         rect, b.ForeColor,
                         TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
                 }
             };
 
-            // Redraw on resize
             btn.Resize += (sender, e) => btn.Invalidate();
         }
-        // Helper class to store gradient info
+
         private class GradientInfo
         {
             public Color StartColor { get; set; }
             public Color EndColor { get; set; }
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             MainDashBoard mainDashBoard = new MainDashBoard();
-
             mainDashBoard.Show();
-
             this.Hide();
         }
 
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LinkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             MoviesForm moviesForm = new MoviesForm();
-
             moviesForm.Show();
-
             this.Hide();
         }
 
-        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LinkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             ShopForm shopForm = new ShopForm();
-
             shopForm.Show();
-
             this.Hide();
         }
-        private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+
+        private void LinkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if ((DateTime.Now - menuLastClosedTime).TotalMilliseconds < 100)
             {
                 return;
             }
 
-            // 2. Toggle logic
             if (dropDownForm.Visible)
             {
                 dropDownForm.Hide();
@@ -271,29 +255,20 @@ namespace TixNova__Final
             else
             {
                 int xOffset = (linkLabel5.Width - menuContent.Width) / 2;
-
-
-
-                // Convert the button's location to screen coordinates
-
                 Point screenLocation = linkLabel5.PointToScreen(new Point(xOffset, linkLabel5.Height + 5));
-
-                // You might need to tweak the X and Y here so the arrow lines up perfectly
-                // dropDownForm.Location = new Point(screenPos.X - 50, screenPos.Y);
                 dropDownForm.Location = screenLocation;
                 dropDownForm.Show();
-                dropDownForm.BringToFront(); // Ensure it pops up over everything else
+                dropDownForm.BringToFront();
             }
         }
 
-        private void linkLabel5_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LinkLabel5_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if ((DateTime.Now - menuLastClosedTime).TotalMilliseconds < 100)
             {
                 return;
             }
 
-            // 2. Toggle logic
             if (dropDownForm.Visible)
             {
                 dropDownForm.Hide();
@@ -301,18 +276,10 @@ namespace TixNova__Final
             else
             {
                 int xOffset = (linkLabel5.Width - menuContent.Width) / 2;
-
-
-
-                // Convert the button's location to screen coordinates
-
                 Point screenLocation = linkLabel5.PointToScreen(new Point(xOffset, linkLabel5.Height + 5));
-
-                // You might need to tweak the X and Y here so the arrow lines up perfectly
-                // dropDownForm.Location = new Point(screenPos.X - 50, screenPos.Y);
                 dropDownForm.Location = screenLocation;
                 dropDownForm.Show();
-                dropDownForm.BringToFront(); // Ensure it pops up over everything else
+                dropDownForm.BringToFront();
             }
         }
 
@@ -320,13 +287,10 @@ namespace TixNova__Final
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            // Check if the menu is null or has been closed/disposed
             if (_searchMenu == null || _searchMenu.IsDisposed)
             {
-                _searchMenu = new CustomSearchMenu();
+                _searchMenu = new CustomSearchMenu(this);
 
-                // Calculate position relative to the screen, not the form
-                // This ensures it pops up exactly under your button
                 Point screenPos = SearchButton.PointToScreen(new Point(0, SearchButton.Height));
 
                 _searchMenu.Location = new Point(
@@ -334,12 +298,10 @@ namespace TixNova__Final
                     screenPos.Y + 10
                 );
 
-                // DO NOT use this.Controls.Add(_searchMenu); <--- This causes the error!
                 _searchMenu.Show();
             }
             else
             {
-                // Toggle visibility
                 if (_searchMenu.Visible)
                     _searchMenu.Hide();
                 else
@@ -347,17 +309,13 @@ namespace TixNova__Final
             }
         }
 
-        private CustomMenu _sideMenu; // Ensure this matches your new class name
+        private CustomMenu _sideMenu;
 
         private void MenuButton_Click(object sender, EventArgs e)
         {
-            // Check if the menu exists or has been closed
             if (_sideMenu == null || _sideMenu.IsDisposed)
             {
-                _sideMenu = new CustomMenu(); // Create the instance
-
-                // Position it on the right side of your app
-                // We calculate the X coordinate: App Width - Menu Width - Margin
+                _sideMenu = new CustomMenu();
                 Point screenPos = this.PointToScreen(new Point(this.Width - _sideMenu.Width - 20, 50));
                 _sideMenu.Location = screenPos;
 
@@ -365,7 +323,6 @@ namespace TixNova__Final
             }
             else
             {
-                // Toggle visibility if already open
                 _sideMenu.Visible = !_sideMenu.Visible;
             }
         }
