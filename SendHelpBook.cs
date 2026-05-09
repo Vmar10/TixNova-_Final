@@ -347,13 +347,41 @@ namespace TixNova__Final
 
         private void RoundedButton1_Click(object sender, EventArgs e)
         {
-            ShopBuy shopbuy = new ShopBuy(this);
+            // Get selected cinema and schedule
+            string selectedMall = roundedComboBox1.SelectedItem?.ToString() ?? "";
+            string selectedTime = roundedComboBox2.SelectedItem?.ToString() ?? "";
+
+            // Validate selections
+            if (selectedMall == "WATCH IN:" || string.IsNullOrEmpty(selectedMall) ||
+                selectedTime == "SCHEDULE:" || string.IsNullOrEmpty(selectedTime))
+            {
+                MessageBox.Show("Please select cinema and schedule.", "Selection Required",
+                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Check for unavailable items
+            if (selectedMall.Contains("(Unavailable)") || selectedTime.Contains("(Full)"))
+            {
+                MessageBox.Show("This cinema or schedule is not available.", "Not Available",
+                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // CREATE BookingData with movie info
+            BookingData bookingData = new BookingData
+            {
+                MovieName = "Send Help",
+                Cinema = selectedMall,
+                Schedule = selectedTime,
+                TicketPrice = 270,
+                TicketQuantity = 1
+            };
+
+            // PASS the bookingData to ShopBuy
+            ShopBuy shopbuy = new ShopBuy(this, bookingData);  // ← THIS IS THE KEY FIX
             shopbuy.Show();
-
             this.Hide();
-
-          
-
         }
     }
 }

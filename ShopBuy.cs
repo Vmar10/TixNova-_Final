@@ -22,6 +22,8 @@ namespace TixNova__Final
         private DateTime menuLastClosedTime = DateTime.MinValue;
         private TixNovaMenuControl menuContent;
 
+        private readonly BookingData _bookingData;
+
         // --- SNACK TRACKING FIELDS ---
         private int popcornQty = 0;
         private int nachosQty = 0;
@@ -39,10 +41,11 @@ namespace TixNova__Final
         private const int PRICE_PRINGLES = 100;
 
         // Updated Constructor to accept the parent form
-        public ShopBuy(Form parent = null)
+        public ShopBuy(Form parent = null, BookingData bookingData = null)
         {
             InitializeComponent();
             this._parentForm = parent;
+            this._bookingData = bookingData;
 
             // UI Initializations
             MakeRoundedGradientButton(MenuButton, Color.FromArgb(78, 199, 220), Color.FromArgb(7, 89, 179), 30);
@@ -55,6 +58,38 @@ namespace TixNova__Final
             SetupAllLinkLabelsGlow();
             SetupMenu();
             InitializeCounters();
+        }
+        private List<SnackItem> GetSelectedSnacks()
+        {
+            List<SnackItem> snacks = new List<SnackItem>();
+
+            if (popcornQty > 0)
+                snacks.Add(new SnackItem { Name = "Popcorn", Quantity = popcornQty, Price = PRICE_POPCORN });
+            if (nachosQty > 0)
+                snacks.Add(new SnackItem { Name = "Nachos", Quantity = nachosQty, Price = PRICE_NACHOS });
+            if (friesQty > 0)
+                snacks.Add(new SnackItem { Name = "French Fries", Quantity = friesQty, Price = PRICE_FRIES });
+            if (dealsQty > 0)
+                snacks.Add(new SnackItem { Name = "Snack Deals", Quantity = dealsQty, Price = PRICE_DEALS });
+            if (sodaQty > 0)
+                snacks.Add(new SnackItem { Name = "Soda", Quantity = sodaQty, Price = PRICE_SODA });
+            if (pringlesQty > 0)
+                snacks.Add(new SnackItem { Name = "Pringles", Quantity = pringlesQty, Price = PRICE_PRINGLES });
+
+            return snacks;
+        }
+
+        // Add this method to calculate total price
+        private decimal CalculateTotalSnacksPrice()
+        {
+            decimal total = 0;
+            total += popcornQty * PRICE_POPCORN;
+            total += nachosQty * PRICE_NACHOS;
+            total += friesQty * PRICE_FRIES;
+            total += dealsQty * PRICE_DEALS;
+            total += sodaQty * PRICE_SODA;
+            total += pringlesQty * PRICE_PRINGLES;
+            return total;
         }
 
         private void InitializeCounters()
@@ -297,7 +332,10 @@ namespace TixNova__Final
             }
             else
             {
-                new SendHelpBook().Show();
+                MoviesForm moviesTab = new MoviesForm();
+
+                // Show the movies list
+                moviesTab.Show();
                 this.Hide();
             }
         }
@@ -305,12 +343,23 @@ namespace TixNova__Final
         // PROCEED BUTTON
         private void RoundedButton14_Click(object sender, EventArgs e)
         {
-            BookingSeats bookingSeats = new BookingSeats();
+            if (_bookingData == null)
+            {
+                MessageBox.Show("Missing booking information.", "Error",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Add snacks to booking data
+            _bookingData.Snacks = GetSelectedSnacks();
+            _bookingData.TotalSnacksPrice = CalculateTotalSnacksPrice();
+
+            // Pass to seat selection
+            BookingSeats bookingSeats = new BookingSeats(_bookingData);
             bookingSeats.Show();
             this.Hide();
         }
         #endregion
 
-      
     }
 }

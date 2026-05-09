@@ -11,12 +11,8 @@ namespace TixNova__Final
     public partial class TicketDetails : Form
     {
         // Fields
-        private readonly string _movieTitle = "The Odyssey";
-        private readonly string _showDate = "May 24, 2026";
-        private readonly string _showTime = "5:00 PM to 8:00 PM";
-        private readonly string _cinemaName = "TixNova Grand IMAX";
-        private readonly string _seats = "D5 & D6";
-        private readonly double _totalPrice = 1;
+        private readonly BookingData _bookingData;
+        private readonly List<string> _selectedSeats;
 
         // UI fields
         private Form _dropDownForm;
@@ -26,19 +22,12 @@ namespace TixNova__Final
         private CustomMenu _sideMenu;
 
         // Constructor that accepts all data from BookingSeats
-        public TicketDetails(List<string> selectedSeats)
+        public TicketDetails(BookingData bookingData = null, List<string> selectedSeats = null)
         {
             InitializeComponent();
 
-            // Convert the list of seats to a readable string
-            if (selectedSeats != null && selectedSeats.Count > 0)
-            {
-                _seats = string.Join(", ", selectedSeats);
-            }
-            else
-            {
-                _seats = "None";
-            }
+            _bookingData = bookingData;
+            _selectedSeats = selectedSeats ?? new List<string>();
 
             // Setup UI
             MakeRoundedGradientButton(MenuButton, Color.FromArgb(78, 199, 220), Color.FromArgb(7, 89, 179), 30);
@@ -54,8 +43,23 @@ namespace TixNova__Final
 
         private void SetupUI()
         {
+            // Get data from BookingData or use defaults
+            string movieTitle = _bookingData?.MovieName ?? "Unknown Movie";
+            string cinemaName = _bookingData?.Cinema ?? "Unknown Cinema";
+            string showTime = _bookingData?.Schedule ?? "Unknown Time";
+            string seats = _selectedSeats != null && _selectedSeats.Count > 0 ? string.Join(", ", _selectedSeats) : "None";
+            int ticketCount = _selectedSeats?.Count ?? 1;
+
+            // Calculate prices
+            decimal ticketTotal = (_bookingData?.TicketPrice ?? 250) * ticketCount;
+            decimal snacksTotal = _bookingData?.TotalSnacksPrice ?? 0;
+            decimal subtotal = ticketTotal + snacksTotal;
+            decimal tax = subtotal * 0.12m;
+            decimal serviceFee = 50.00m;
+            decimal grandTotal = subtotal + tax + serviceFee;
+
             int panelWidth = 550;
-            int panelHeight = 650;
+            int panelHeight = 720;
 
             // The Main Glass Panel
             Panel ticketPanel = new Panel
@@ -93,43 +97,65 @@ namespace TixNova__Final
 
             // Add Labels for Title, Date, etc.
             AddDetailLabel(ticketPanel, "TICKET DETAILS", new Point(25, 25), true, 18);
-            AddDetailLabel(ticketPanel, $"Title : {_movieTitle}", new Point(35, 110));
-            AddDetailLabel(ticketPanel, $"Date : {_showDate}", new Point(35, 150));
-            AddDetailLabel(ticketPanel, $"Time : {_showTime}", new Point(35, 190));
-            AddDetailLabel(ticketPanel, $"Seats : {_seats}", new Point(35, 230));
-            AddDetailLabel(ticketPanel, $"Cinema : {_cinemaName}", new Point(35, 270));
+            AddDetailLabel(ticketPanel, $"Title : {movieTitle}", new Point(35, 110));
+            AddDetailLabel(ticketPanel, $"Cinema : {cinemaName}", new Point(35, 150));
+            AddDetailLabel(ticketPanel, $"Time : {showTime}", new Point(35, 190));
+            AddDetailLabel(ticketPanel, $"Seats : {seats}", new Point(35, 230));
 
-            // Number of tickets
-            int ticketCount = _seats.Split(',').Length;
-            AddDetailLabel(ticketPanel, $"Tickets : {ticketCount}", new Point(35, 310));
+            // Show snacks if any
+            if (_bookingData?.Snacks != null && _bookingData.Snacks.Count > 0)
+            {
+                string snacksText = string.Join(", ", _bookingData.Snacks.Select(s => $"{s.Name} x{s.Quantity}"));
+                AddDetailLabel(ticketPanel, $"Snacks : {snacksText}", new Point(35, 270));
+                AddDetailLabel(ticketPanel, $"Snacks Total : ₱{snacksTotal:N2}", new Point(35, 310));
+                // Number of tickets (adjust position if snacks exist)
+                AddDetailLabel(ticketPanel, $"Tickets : {ticketCount}", new Point(35, 350));
 
-            // Separator Line
-            Panel line = new Panel { Size = new Size(panelWidth - 70, 2), Location = new Point(35, 360), BackColor = Color.FromArgb(0, 180, 216) };
-            ticketPanel.Controls.Add(line);
+                // Separator Line after snacks
+                Panel line = new Panel { Size = new Size(panelWidth - 70, 2), Location = new Point(35, 390), BackColor = Color.FromArgb(0, 180, 216) };
+                ticketPanel.Controls.Add(line);
 
-            // Price details
-            double subtotal = _totalPrice;
-            double tax = _totalPrice * 0.12; // 12% VAT
-            double serviceFee = 50.00;
-            double grandTotal = subtotal + tax + serviceFee;
+                // Price details
+                AddDetailLabel(ticketPanel, $"Ticket Total : ₱{ticketTotal:N2}", new Point(35, 430));
+                AddDetailLabel(ticketPanel, $"Subtotal : ₱{subtotal:N2}", new Point(35, 465));
+                AddDetailLabel(ticketPanel, $"Tax (12% VAT) : ₱{tax:N2}", new Point(35, 500));
+                AddDetailLabel(ticketPanel, $"Service Fee : ₱{serviceFee:N2}", new Point(35, 535));
 
-            AddDetailLabel(ticketPanel, $"Subtotal : ₱{subtotal:N2}", new Point(35, 390));
-            AddDetailLabel(ticketPanel, $"Tax (12% VAT) : ₱{tax:N2}", new Point(35, 425));
-            AddDetailLabel(ticketPanel, $"Service Fee : ₱{serviceFee:N2}", new Point(35, 460));
+                // Second separator
+                Panel line2 = new Panel { Size = new Size(panelWidth - 70, 1), Location = new Point(35, 570), BackColor = Color.FromArgb(100, 255, 255, 255) };
+                ticketPanel.Controls.Add(line2);
 
-            // Second separator
-            Panel line2 = new Panel { Size = new Size(panelWidth - 70, 1), Location = new Point(35, 495), BackColor = Color.FromArgb(100, 255, 255, 255) };
-            ticketPanel.Controls.Add(line2);
+                AddDetailLabel(ticketPanel, $"TOTAL AMOUNT : ₱{grandTotal:N2}", new Point(35, 600), true, 18);
+            }
+            else
+            {
+                // Number of tickets (no snacks)
+                AddDetailLabel(ticketPanel, $"Tickets : {ticketCount}", new Point(35, 310));
 
-            AddDetailLabel(ticketPanel, $"TOTAL AMOUNT : ₱{grandTotal:N2}", new Point(35, 520), true, 18);
+                // Separator Line
+                Panel line = new Panel { Size = new Size(panelWidth - 70, 2), Location = new Point(35, 360), BackColor = Color.FromArgb(0, 180, 216) };
+                ticketPanel.Controls.Add(line);
 
-            // Add buttons at the bottom
-            AddBottomButtons(ticketPanel, panelWidth);
+                // Price details
+                AddDetailLabel(ticketPanel, $"Ticket Total : ₱{ticketTotal:N2}", new Point(35, 400));
+                AddDetailLabel(ticketPanel, $"Subtotal : ₱{subtotal:N2}", new Point(35, 435));
+                AddDetailLabel(ticketPanel, $"Tax (12% VAT) : ₱{tax:N2}", new Point(35, 470));
+                AddDetailLabel(ticketPanel, $"Service Fee : ₱{serviceFee:N2}", new Point(35, 505));
+
+                // Second separator
+                Panel line2 = new Panel { Size = new Size(panelWidth - 70, 1), Location = new Point(35, 540), BackColor = Color.FromArgb(100, 255, 255, 255) };
+                ticketPanel.Controls.Add(line2);
+
+                AddDetailLabel(ticketPanel, $"TOTAL AMOUNT : ₱{grandTotal:N2}", new Point(35, 575), true, 18);
+            }
+
+            // Add buttons at the bottom - PASS grandTotal as parameter
+            AddBottomButtons(ticketPanel, panelWidth, grandTotal);
 
             this.Controls.Add(ticketPanel);
         }
 
-        private void AddBottomButtons(Panel parent, int panelWidth)
+        private void AddBottomButtons(Panel parent, int panelWidth, decimal grandTotal)
         {
             int btnWidth = 150;
             int btnHeight = 45;
@@ -165,19 +191,18 @@ namespace TixNova__Final
 
             btnConfirm.Click += (s, e) =>
             {
+                string seats = _selectedSeats != null && _selectedSeats.Count > 0 ? string.Join(", ", _selectedSeats) : "None";
                 DialogResult result = MessageBox.Show(
-                    $"Confirm payment of ₱{(_totalPrice + (_totalPrice * 0.12) + 50):N2}?\n\nTickets: {_seats}",
+                    $"Confirm payment of ₱{grandTotal:N2}?\n\nTickets: {seats}",
                     "Confirm Payment",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
-                    // Process payment
                     MessageBox.Show("Payment confirmed! Enjoy your movie! 🎬", "Success",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Go to dashboard
                     MainDashBoard mainForm = new MainDashBoard();
                     mainForm.Show();
                     this.Hide();

@@ -21,10 +21,12 @@ namespace TixNova__Final
         private readonly Color seatAvailable = Color.FromArgb(160, 160, 160);
         private readonly Color seatSold = Color.FromArgb(70, 70, 70);
 
-        public BookingSeats()
+        private readonly BookingData _bookingData;
+
+        public BookingSeats(BookingData bookingData = null)
         {
             InitializeComponent();
-
+            _bookingData = bookingData;
             // Enable styles immediately
             this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.OptimizedDoubleBuffer, true);
@@ -157,7 +159,7 @@ namespace TixNova__Final
             // Next Button Logic
             btnNext.Click += (s, e) =>
             {
-                var selected = GetSelectedSeatNames(); // Your existing helper
+                var selected = GetSelectedSeatNames();
 
                 if (selected.Count == 0)
                 {
@@ -165,10 +167,16 @@ namespace TixNova__Final
                 }
                 else
                 {
-                    // Open the Ticket Details screen and pass the seats
-                    TicketDetails details = new TicketDetails(selected);
-                    details.Show();
+                    // Save selected seats to booking data
+                    if (_bookingData != null)
+                    {
+                        _bookingData.SelectedSeats = selected;
+                        _bookingData.TicketQuantity = selected.Count;
+                    }
 
+                    // Open the Ticket Details screen and pass the data
+                    TicketDetails details = new TicketDetails(_bookingData, selected);
+                    details.Show();
                     this.Hide();
                 }
             };

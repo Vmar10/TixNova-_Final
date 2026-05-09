@@ -262,7 +262,7 @@
             this.roundedButton1.TabIndex = 131;
             this.roundedButton1.Text = "NEXT";
             this.roundedButton1.UseVisualStyleBackColor = true;
-            this.roundedButton1.Click += new System.EventHandler(this.RoundedButton1_Click_1);
+            this.roundedButton1.Click += new System.EventHandler(this.RoundedButton1_Click);
             // 
             // blueGradientLabel1
             // 

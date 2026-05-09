@@ -51,6 +51,7 @@
     <Compile Include="BlueGradientLabel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="BookingData.cs" />
     <Compile Include="CinemasForm.cs">
       <SubType>Form</SubType>
     </Compile>
