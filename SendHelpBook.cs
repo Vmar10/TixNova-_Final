@@ -19,8 +19,7 @@ namespace TixNova__Final
         {
             InitializeComponent();
 
-            // Fix transparency issues by ensuring controls are parented to the form
-            // and using transparent backcolors where necessary
+            
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
 
@@ -29,15 +28,15 @@ namespace TixNova__Final
             SetupAllLinkLabelsGlow();
             SetupMenu();
 
-            // Initialize the booking dropdowns
+            
             SetupBookingDropdowns();
         }
 
         private void SetupBookingDropdowns()
         {
-            // 1. WATCH IN: Specific malls set to (Unavailable)
+            
             string[] locations = {
-                "WATCH IN:", // Index 0 (Placeholder)
+                "WATCH IN:", 
                 "SM Batangas City",
                 "SM Lipa City",
                 "SM City Sto. Tomas",
@@ -46,9 +45,9 @@ namespace TixNova__Final
                 "SM City Bacoor (Unavailable)"
             };
 
-            // 2. SCHEDULE: Added AM slots
+            
             string[] times = {
-                "SCHEDULE:", // Index 0 (Placeholder)
+                "SCHEDULE:", 
                 "10:30 AM - 12:45 PM",
                 "1:00 PM - 3:15 PM",
                 "3:45 PM - 6:00 PM (Full)",
@@ -67,7 +66,7 @@ namespace TixNova__Final
             combo.DrawMode = DrawMode.OwnerDrawFixed;
             combo.Items.Clear();
             combo.Items.AddRange(items);
-            combo.SelectedIndex = 0; // Default to the placeholder
+            combo.SelectedIndex = 0; 
 
             combo.DrawItem += (s, e) =>
             {
@@ -80,8 +79,7 @@ namespace TixNova__Final
 
                 e.DrawBackground();
 
-                // Logic: When box is CLOSED, show Cyan Placeholder.
-                // When box is OPEN, draw list items accordingly.
+                
                 if (!cb.DroppedDown && isPlaceholder)
                 {
                     using (Font boldFont = new Font(e.Font, FontStyle.Bold))
@@ -93,8 +91,8 @@ namespace TixNova__Final
                 {
                     Brush textBrush;
                     if (isPlaceholder) textBrush = Brushes.DimGray;
-                    else if (isDisabled) textBrush = Brushes.Gray; // Gray out unavailable/full
-                    else textBrush = Brushes.Cyan; // Set available text to Cyan
+                    else if (isDisabled) textBrush = Brushes.Gray; 
+                    else textBrush = Brushes.Cyan; 
 
                     e.Graphics.DrawString(text, e.Font, textBrush, e.Bounds.X + 5, e.Bounds.Y);
                 }
@@ -109,12 +107,12 @@ namespace TixNova__Final
 
                 string selectedText = cb.SelectedItem.ToString();
 
-                // Prevent selection of Grayed-out items
+                
                 if (selectedText.Contains("(Full)") || selectedText.Contains("(Unavailable)"))
                 {
                     string msg = selectedText.Contains("(Full)") ? "fully booked" : "currently unavailable";
                     MessageBox.Show($"This selection is {msg}.", "TixNova", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    cb.SelectedIndex = 0; // Revert to placeholder
+                    cb.SelectedIndex = 0; 
                 }
             };
         }
@@ -347,11 +345,11 @@ namespace TixNova__Final
 
         private void RoundedButton1_Click(object sender, EventArgs e)
         {
-            // Get selected cinema and schedule
+            
             string selectedMall = roundedComboBox1.SelectedItem?.ToString() ?? "";
             string selectedTime = roundedComboBox2.SelectedItem?.ToString() ?? "";
 
-            // Validate selections
+            
             if (selectedMall == "WATCH IN:" || string.IsNullOrEmpty(selectedMall) ||
                 selectedTime == "SCHEDULE:" || string.IsNullOrEmpty(selectedTime))
             {
@@ -360,7 +358,7 @@ namespace TixNova__Final
                 return;
             }
 
-            // Check for unavailable items
+            
             if (selectedMall.Contains("(Unavailable)") || selectedTime.Contains("(Full)"))
             {
                 MessageBox.Show("This cinema or schedule is not available.", "Not Available",
@@ -368,7 +366,7 @@ namespace TixNova__Final
                 return;
             }
 
-            // CREATE BookingData with movie info
+            
             BookingData bookingData = new BookingData
             {
                 MovieName = "Send Help",
@@ -378,8 +376,8 @@ namespace TixNova__Final
                 TicketQuantity = 1
             };
 
-            // PASS the bookingData to ShopBuy
-            ShopBuy shopbuy = new ShopBuy(this, bookingData);  // ← THIS IS THE KEY FIX
+            
+            ShopBuy shopbuy = new ShopBuy(this, bookingData); 
             shopbuy.Show();
             this.Hide();
         }

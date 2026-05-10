@@ -3,11 +3,11 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Windows.Forms;
 
-namespace TixNova__Final // Make sure this matches your project's namespace
+namespace TixNova__Final 
 {
     public class FadingImageButton : PictureBox
     {
-        private float _opacity = 0.0f; // Starts fully transparent
+        private float _opacity = 0.0f; 
         private readonly Timer _fadeTimer;
         private bool _isHovered = false;
 
@@ -18,7 +18,7 @@ namespace TixNova__Final // Make sure this matches your project's namespace
             this.SizeMode = PictureBoxSizeMode.Zoom;
             this.Cursor = Cursors.Hand;
 
-            _fadeTimer = new Timer { Interval = 15 }; // Speed of the animation
+            _fadeTimer = new Timer { Interval = 15 }; 
             _fadeTimer.Tick += FadeTimer_Tick;
         }
 
@@ -38,16 +38,16 @@ namespace TixNova__Final // Make sure this matches your project's namespace
 
         private void FadeTimer_Tick(object sender, EventArgs e)
         {
-            // Increase opacity on hover
+            
             if (_isHovered && _opacity < 1.0f)
             {
-                _opacity += 0.08f; // Adjust this number to change fade-in speed
+                _opacity += 0.08f; 
                 if (_opacity > 1.0f) _opacity = 1.0f;
             }
-            // Decrease opacity when mouse leaves
+            
             else if (!_isHovered && _opacity > 0.0f)
             {
-                _opacity -= 0.08f; // Adjust this number to change fade-out speed
+                _opacity -= 0.08f; 
                 if (_opacity < 0.0f) _opacity = 0.0f;
             }
             else
@@ -55,7 +55,7 @@ namespace TixNova__Final // Make sure this matches your project's namespace
                 _fadeTimer.Stop();
             }
 
-            this.Invalidate(); // Forces the control to redraw
+            this.Invalidate(); 
         }
 
         protected override void OnPaint(PaintEventArgs pe)

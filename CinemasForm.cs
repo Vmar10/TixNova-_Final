@@ -53,7 +53,7 @@ namespace TixNova__Final
             public int AnimationId;
         }
 
-        // SIMPLIFIED: Object Initializations
+        
         private void EnableBlur(IntPtr hwnd)
         {
             var accent = new AccentPolicy { AccentState = AccentState.ACCENT_ENABLE_BLURBEHIND };
@@ -77,7 +77,7 @@ namespace TixNova__Final
         private DateTime menuLastClosedTime = DateTime.MinValue;
         private TixNovaMenuControl menuContent;
 
-        // SIMPLIFIED: Object Initializations
+        
         private void SetupMenu()
         {
             menuContent = new TixNovaMenuControl();

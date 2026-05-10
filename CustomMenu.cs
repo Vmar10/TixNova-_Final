@@ -11,7 +11,7 @@ namespace TixNova__Final
     {
         public CustomMenu()
         {
-            // Vertical layout matching image_b0342f.png
+            
             this.Size = new Size(280, 600);
             this.FormBorderStyle = FormBorderStyle.None;
             this.AllowTransparency = true;
@@ -86,7 +86,7 @@ namespace TixNova__Final
 
         private void InitializeSidebarUI()
         {
-            // --- Close Button ---
+            
             Label closeBtn = new Label
             {
                 Text = "✕",
@@ -100,7 +100,7 @@ namespace TixNova__Final
             closeBtn.Click += (s, e) => this.Hide();
             this.Controls.Add(closeBtn);
 
-            // --- User Profile Section ---
+            
             Panel profileCircle = new Panel
             {
                 Size = new Size(60, 60),
@@ -125,7 +125,7 @@ namespace TixNova__Final
             };
             this.Controls.Add(userLabel);
 
-            // --- Navigation Items ---
+            
             string[] items = { "My Bookings", "Watchlist", "Account Settings", "Support Center", "Logout" };
             int startY = 170;
 
@@ -135,7 +135,7 @@ namespace TixNova__Final
                 AddMenuLink(items[i], 30, startY + (i * 45), isLogout);
             }
 
-            // --- Footer links ---
+           
             string[] footer = { "About Us", "Privacy", "Terms", "Cookie Policy" };
             for (int i = 0; i < footer.Length; i++)
             {
@@ -181,12 +181,11 @@ namespace TixNova__Final
             Graphics g = e.Graphics;
             g.SmoothingMode = SmoothingMode.AntiAlias;
 
-            // IMPORTANT: Use the exact same bounds as your Region
+            
             Rectangle rect = new Rectangle(0, 0, this.Width, this.Height);
             using (GraphicsPath path = GetRoundedRect(rect, 20))
             {
-                // Use a semi-transparent black to "darken" the blur 
-                // This makes it look more like your reference image (image_b02172.png)
+               
                 using (SolidBrush bg = new SolidBrush(Color.FromArgb(150, 10, 15, 25)))
                     g.FillPath(bg, path);
 

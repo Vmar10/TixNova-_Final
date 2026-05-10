@@ -11,13 +11,13 @@ namespace TixNova__Final
         private TextBox searchInput;
         private bool isProcessingClick = false;
 
-        // This variable will securely hold the exact form that opened this menu
+        
         private readonly Form callingForm;
 
-        // UPDATED: The constructor now requires the form that is opening it
+        
         public CustomSearchMenu(Form caller)
         {
-            this.callingForm = caller; // Save the specific form that called this menu
+            this.callingForm = caller; 
 
             this.FormBorderStyle = FormBorderStyle.None;
             this.AllowTransparency = true;
@@ -143,9 +143,7 @@ namespace TixNova__Final
             this.Controls.Add(lbl);
         }
 
-        // ==========================================
-        // Helper Method: Direct Caller Tracking
-        // ==========================================
+        
         private void OpenCategorySafely<T>() where T : Form, new()
         {
             if (isProcessingClick) return;
@@ -153,7 +151,7 @@ namespace TixNova__Final
 
             T newForm = new T();
 
-            // When the new form closes, bring back the EXACT form that opened this menu
+            
             newForm.FormClosed += (s, args) =>
             {
                 if (callingForm != null && !callingForm.IsDisposed)

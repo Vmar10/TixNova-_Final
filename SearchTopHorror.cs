@@ -17,7 +17,7 @@ namespace TixNova__Final
             InitializeComponent();
         }
 
-        private void roundedPictureBox1_Click(object sender, EventArgs e)
+        private void RoundedPictureBox1_Click(object sender, EventArgs e)
         {
           this.Close();
         }
@@ -25,31 +25,30 @@ namespace TixNova__Final
     
 
   
-        private void fadingImageButton1_Click(object sender, EventArgs e)
+        private void FadingImageButton1_Click(object sender, EventArgs e)
         {
-            // 1. Set the exact same scroll amount as the Right button
+            
             int scrollAmount = 840;
 
-            // 2. Move the track to the right (reveals movies on the left)
+            
             movieTrackPanel.Left += scrollAmount;
 
-            // 3. Stop perfectly at the beginning of the list
+            
             if (movieTrackPanel.Left > 0)
             {
                 movieTrackPanel.Left = 0;
             }
         }
 
-        private void fadingImageButton2_Click(object sender, EventArgs e)
+        private void FadingImageButton2_Click(object sender, EventArgs e)
         {
-            // 1. Set the scroll amount for a "Page"
-            // Change 840 if your pictures in this form are a different size!
+            
             int scrollAmount = 840;
 
-            // 2. Move the track to the left (reveals movies on the right)
+            
             movieTrackPanel.Left -= scrollAmount;
 
-            // 3. Stop perfectly at the end of the list
+            
             int maxScrollLimit = viewportPanel.Width - movieTrackPanel.Width;
             if (movieTrackPanel.Left < maxScrollLimit)
             {

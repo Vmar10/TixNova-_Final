@@ -228,7 +228,7 @@
             this.fadingImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.fadingImageButton1.TabIndex = 80;
             this.fadingImageButton1.TabStop = false;
-            this.fadingImageButton1.Click += new System.EventHandler(this.fadingImageButton1_Click);
+            this.fadingImageButton1.Click += new System.EventHandler(this.FadingImageButton1_Click);
             // 
             // fadingImageButton2
             // 
@@ -242,7 +242,7 @@
             this.fadingImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.fadingImageButton2.TabIndex = 79;
             this.fadingImageButton2.TabStop = false;
-            this.fadingImageButton2.Click += new System.EventHandler(this.fadingImageButton2_Click);
+            this.fadingImageButton2.Click += new System.EventHandler(this.FadingImageButton2_Click);
             // 
             // gradientLabel1
             // 
@@ -289,7 +289,7 @@
             this.roundedPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.roundedPictureBox1.TabIndex = 72;
             this.roundedPictureBox1.TabStop = false;
-            this.roundedPictureBox1.Click += new System.EventHandler(this.roundedPictureBox1_Click);
+            this.roundedPictureBox1.Click += new System.EventHandler(this.RoundedPictureBox1_Click);
             // 
             // SearchTopHorror
             // 

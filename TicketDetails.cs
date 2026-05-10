@@ -10,18 +10,18 @@ namespace TixNova__Final
 {
     public partial class TicketDetails : Form
     {
-        // Fields
+        
         private readonly BookingData _bookingData;
         private readonly List<string> _selectedSeats;
 
-        // UI fields
+        
         private Form _dropDownForm;
         private DateTime _menuLastClosedTime = DateTime.MinValue;
         private TixNovaMenuControl _menuContent;
         private CustomSearchMenu _searchMenu;
         private CustomMenu _sideMenu;
 
-        // Constructor that accepts all data from BookingSeats
+        
         public TicketDetails(BookingData bookingData = null, List<string> selectedSeats = null)
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace TixNova__Final
             _bookingData = bookingData;
             _selectedSeats = selectedSeats ?? new List<string>();
 
-            // Setup UI
+           
             MakeRoundedGradientButton(MenuButton, Color.FromArgb(78, 199, 220), Color.FromArgb(7, 89, 179), 30);
             MakeRoundedGradientButton(SearchButton, Color.FromArgb(78, 199, 220), Color.FromArgb(7, 89, 179), 35);
             SetupAllLinkLabelsGlow();
@@ -43,14 +43,14 @@ namespace TixNova__Final
 
         private void SetupUI()
         {
-            // Get data from BookingData or use defaults
+            
             string movieTitle = _bookingData?.MovieName ?? "Unknown Movie";
             string cinemaName = _bookingData?.Cinema ?? "Unknown Cinema";
             string showTime = _bookingData?.Schedule ?? "Unknown Time";
             string seats = _selectedSeats != null && _selectedSeats.Count > 0 ? string.Join(", ", _selectedSeats) : "None";
             int ticketCount = _selectedSeats?.Count ?? 1;
 
-            // Calculate prices
+            
             decimal ticketTotal = (_bookingData?.TicketPrice ?? 250) * ticketCount;
             decimal snacksTotal = _bookingData?.TotalSnacksPrice ?? 0;
             decimal subtotal = ticketTotal + snacksTotal;
@@ -61,7 +61,7 @@ namespace TixNova__Final
             int panelWidth = 550;
             int panelHeight = 720;
 
-            // The Main Glass Panel
+            
             Panel ticketPanel = new Panel
             {
                 Size = new Size(panelWidth, panelHeight),
@@ -69,7 +69,7 @@ namespace TixNova__Final
                 BackColor = Color.FromArgb(20, 255, 255, 255)
             };
 
-            // Custom Border and Header logic
+            
             ticketPanel.Paint += (s, e) =>
             {
                 e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
@@ -80,14 +80,14 @@ namespace TixNova__Final
                 {
                     ticketPanel.Region = new Region(path);
 
-                    // Draw Header Gradient (Blue section at the top)
+                    
                     Rectangle headerRect = new Rectangle(0, 0, rect.Width, 80);
                     using (LinearGradientBrush headerBrush = new LinearGradientBrush(headerRect, Color.FromArgb(0, 180, 216), Color.FromArgb(7, 89, 179), LinearGradientMode.Horizontal))
                     {
                         e.Graphics.FillRectangle(headerBrush, headerRect);
                     }
 
-                    // Draw the Cyan border
+                   
                     using (Pen cyanPen = new Pen(Color.FromArgb(0, 255, 255), 3))
                     {
                         e.Graphics.DrawPath(cyanPen, path);
@@ -95,33 +95,33 @@ namespace TixNova__Final
                 }
             };
 
-            // Add Labels for Title, Date, etc.
+            
             AddDetailLabel(ticketPanel, "TICKET DETAILS", new Point(25, 25), true, 18);
             AddDetailLabel(ticketPanel, $"Title : {movieTitle}", new Point(35, 110));
             AddDetailLabel(ticketPanel, $"Cinema : {cinemaName}", new Point(35, 150));
             AddDetailLabel(ticketPanel, $"Time : {showTime}", new Point(35, 190));
             AddDetailLabel(ticketPanel, $"Seats : {seats}", new Point(35, 230));
 
-            // Show snacks if any
+            
             if (_bookingData?.Snacks != null && _bookingData.Snacks.Count > 0)
             {
                 string snacksText = string.Join(", ", _bookingData.Snacks.Select(s => $"{s.Name} x{s.Quantity}"));
                 AddDetailLabel(ticketPanel, $"Snacks : {snacksText}", new Point(35, 270));
                 AddDetailLabel(ticketPanel, $"Snacks Total : ₱{snacksTotal:N2}", new Point(35, 310));
-                // Number of tickets (adjust position if snacks exist)
+                
                 AddDetailLabel(ticketPanel, $"Tickets : {ticketCount}", new Point(35, 350));
 
-                // Separator Line after snacks
+                
                 Panel line = new Panel { Size = new Size(panelWidth - 70, 2), Location = new Point(35, 390), BackColor = Color.FromArgb(0, 180, 216) };
                 ticketPanel.Controls.Add(line);
 
-                // Price details
+                
                 AddDetailLabel(ticketPanel, $"Ticket Total : ₱{ticketTotal:N2}", new Point(35, 430));
                 AddDetailLabel(ticketPanel, $"Subtotal : ₱{subtotal:N2}", new Point(35, 465));
                 AddDetailLabel(ticketPanel, $"Tax (12% VAT) : ₱{tax:N2}", new Point(35, 500));
                 AddDetailLabel(ticketPanel, $"Service Fee : ₱{serviceFee:N2}", new Point(35, 535));
 
-                // Second separator
+                
                 Panel line2 = new Panel { Size = new Size(panelWidth - 70, 1), Location = new Point(35, 570), BackColor = Color.FromArgb(100, 255, 255, 255) };
                 ticketPanel.Controls.Add(line2);
 
@@ -129,27 +129,27 @@ namespace TixNova__Final
             }
             else
             {
-                // Number of tickets (no snacks)
+                
                 AddDetailLabel(ticketPanel, $"Tickets : {ticketCount}", new Point(35, 310));
 
-                // Separator Line
+                
                 Panel line = new Panel { Size = new Size(panelWidth - 70, 2), Location = new Point(35, 360), BackColor = Color.FromArgb(0, 180, 216) };
                 ticketPanel.Controls.Add(line);
 
-                // Price details
+                
                 AddDetailLabel(ticketPanel, $"Ticket Total : ₱{ticketTotal:N2}", new Point(35, 400));
                 AddDetailLabel(ticketPanel, $"Subtotal : ₱{subtotal:N2}", new Point(35, 435));
                 AddDetailLabel(ticketPanel, $"Tax (12% VAT) : ₱{tax:N2}", new Point(35, 470));
                 AddDetailLabel(ticketPanel, $"Service Fee : ₱{serviceFee:N2}", new Point(35, 505));
 
-                // Second separator
+                
                 Panel line2 = new Panel { Size = new Size(panelWidth - 70, 1), Location = new Point(35, 540), BackColor = Color.FromArgb(100, 255, 255, 255) };
                 ticketPanel.Controls.Add(line2);
 
                 AddDetailLabel(ticketPanel, $"TOTAL AMOUNT : ₱{grandTotal:N2}", new Point(35, 575), true, 18);
             }
 
-            // Add buttons at the bottom - PASS grandTotal as parameter
+            
             AddBottomButtons(ticketPanel, panelWidth, grandTotal);
 
             this.Controls.Add(ticketPanel);
@@ -165,7 +165,7 @@ namespace TixNova__Final
             int totalButtonsWidth = (btnWidth * 2) + spacing;
             int startX = (panelWidth - totalButtonsWidth) / 2;
 
-            // Confirm Payment button
+            
             Button btnConfirm = new Button
             {
                 Text = "CONFIRM PAYMENT",
@@ -177,7 +177,7 @@ namespace TixNova__Final
                 FlatStyle = FlatStyle.Flat
             };
 
-            // Cancel button
+            
             Button btnCancel = new Button
             {
                 Text = "CANCEL",
@@ -216,14 +216,14 @@ namespace TixNova__Final
 
                 if (result == DialogResult.Yes)
                 {
-                    // Go back to seat selection
+                    
                     BookingSeats seatPicker = new BookingSeats();
                     seatPicker.Show();
                     this.Hide();
                 }
             };
 
-            // Apply gradient styling
+            
             MakeRoundedGradientButton(btnConfirm, Color.FromArgb(0, 180, 216), Color.FromArgb(7, 89, 179), 25);
             MakeRoundedGradientButton(btnCancel, Color.FromArgb(80, 80, 85), Color.FromArgb(50, 50, 55), 25);
 
@@ -256,7 +256,7 @@ namespace TixNova__Final
             return path;
         }
 
-        // Add all the styling and menu methods from your original code...
+        
         [DllImport("user32.dll")]
         internal static extern int SetWindowCompositionAttribute(IntPtr hwnd, ref WindowCompositionAttributeData data);
 
@@ -422,7 +422,7 @@ namespace TixNova__Final
             public Color EndColor { get; set; }
         }
 
-        // Navigation Handlers
+        
         private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             MainDashBoard mainForm = new MainDashBoard();

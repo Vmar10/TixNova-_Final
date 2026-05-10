@@ -54,7 +54,7 @@ namespace TixNova__Final
             public int AnimationId;
         }
 
-        // SIMPLIFIED: Object Initializations
+        
         private void EnableBlur(IntPtr hwnd)
         {
             var accent = new AccentPolicy { AccentState = AccentState.ACCENT_ENABLE_BLURBEHIND };
@@ -74,13 +74,13 @@ namespace TixNova__Final
             Marshal.FreeHGlobal(accentPtr);
         }
 
-        // --- Your Updated SetupMenu ---
+        
 
         private Form dropDownForm;
         private DateTime menuLastClosedTime = DateTime.MinValue;
         private TixNovaMenuControl menuContent;
 
-        // SIMPLIFIED: Object Initializations
+        
         private void SetupMenu()
         {
             menuContent = new TixNovaMenuControl();
@@ -91,8 +91,8 @@ namespace TixNova__Final
                 StartPosition = FormStartPosition.Manual,
                 ShowInTaskbar = false,
                 Size = menuContent.Size,
-                BackColor = Color.Black, // Use Magenta to punch out the background completely without leaving a black shadow
-                Region = new Region(menuContent.GetRegionPath()) // Clip the form perfectly to the outer bounds so the blur doesn't bleed out
+                BackColor = Color.Black, 
+                Region = new Region(menuContent.GetRegionPath()) 
             };
 
             dropDownForm.Controls.Add(menuContent);
@@ -102,7 +102,7 @@ namespace TixNova__Final
             dropDownForm.Deactivate += (s, e) =>
             {
                 dropDownForm.Hide();
-                menuLastClosedTime = DateTime.Now; // Record exactly when it closed
+                menuLastClosedTime = DateTime.Now;
             };
         }
 
@@ -110,7 +110,7 @@ namespace TixNova__Final
         {
             protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
             {
-                // Leave empty
+                
             }
         }
 
@@ -159,30 +159,30 @@ namespace TixNova__Final
 
         private void MakeRoundedGradientButton(Button btn, Color startColor, Color endColor, int radius = 20)
         {
-            // Remove default button styling
+           
             btn.FlatStyle = FlatStyle.Popup;
             btn.FlatAppearance.BorderSize = 0;
 
-            // Store gradient colors (you can change these dynamically)
+            
             btn.Tag = new GradientInfo { StartColor = startColor, EndColor = endColor };
 
-            // Store original size and location for hover
+            
             var originalSize = btn.Size;
             var originalLocation = btn.Location;
 
-            // Hover events
+           
             btn.MouseEnter += (sender, e) =>
             {
                 btn.Size = new Size(btn.Width + 5, btn.Height + 5);
                 btn.Location = new Point(btn.Location.X - 2, btn.Location.Y - 2);
-                btn.Cursor = Cursors.Hand; // Optional: changes cursor to hand
+                btn.Cursor = Cursors.Hand; 
             };
 
             btn.MouseLeave += (sender, e) =>
             {
                 btn.Size = originalSize;
                 btn.Location = originalLocation;
-                btn.Cursor = Cursors.Default; // Optional: restores cursor
+                btn.Cursor = Cursors.Default; 
             };
 
             btn.Paint += (sender, e) =>
@@ -190,44 +190,44 @@ namespace TixNova__Final
                 Button b = sender as Button;
                 e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-                // Create rounded rectangle path
+               
                 using (var path = new System.Drawing.Drawing2D.GraphicsPath())
                 {
                     Rectangle rect = new Rectangle(0, 0, b.Width - 1, b.Height - 1);
 
-                    // Create rounded corners
+                    
                     path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
                     path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90);
                     path.AddArc(rect.X + rect.Width - radius, rect.Y + rect.Height - radius, radius, radius, 0, 90);
                     path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
                     path.CloseFigure();
 
-                    // Apply rounded region to button
+                    
                     b.Region = new Region(path);
 
-                    // Create gradient brush
+                    
                     GradientInfo gradient = (GradientInfo)b.Tag;
                     using (var brush = new System.Drawing.Drawing2D.LinearGradientBrush(
                         rect,
                         gradient.StartColor,
                         gradient.EndColor,
-                        System.Drawing.Drawing2D.LinearGradientMode.Vertical)) // Change to Horizontal if preferred
+                        System.Drawing.Drawing2D.LinearGradientMode.Vertical)) 
                     {
                         e.Graphics.FillPath(brush, path);
                     }
 
-                    // Draw button text
+                    
                     TextRenderer.DrawText(e.Graphics, b.Text, b.Font,
                         rect, b.ForeColor,
                         TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
                 }
             };
 
-            // Redraw on resize
+            
             btn.Resize += (sender, e) => btn.Invalidate();
         }
 
-        // Helper class to store gradient info
+        
         private class GradientInfo
         {
             public Color StartColor { get; set; }
@@ -262,7 +262,7 @@ namespace TixNova__Final
                 return;
             }
 
-            // 2. Toggle logic
+            
             if (dropDownForm.Visible)
             {
                 dropDownForm.Hide();
@@ -271,25 +271,24 @@ namespace TixNova__Final
             {
                 int xOffset = (linkLabel5.Width - menuContent.Width) / 2;
 
-                // Convert the button's location to screen coordinates
+                
                 Point screenLocation = linkLabel5.PointToScreen(new Point(xOffset, linkLabel5.Height + 5));
 
-                // You might need to tweak the X and Y here so the arrow lines up perfectly
+                
                 dropDownForm.Location = screenLocation;
                 dropDownForm.Show();
-                dropDownForm.BringToFront(); // Ensure it pops up over everything else
+                dropDownForm.BringToFront(); 
             }
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            // Check if the menu is null or has been closed/disposed
+            
             if (_searchMenu == null || _searchMenu.IsDisposed)
             {
                 _searchMenu = new CustomSearchMenu(this);
 
-                // Calculate position relative to the screen, not the form
-                // This ensures it pops up exactly under your button
+                
                 Point screenPos = SearchButton.PointToScreen(new Point(0, SearchButton.Height));
 
                 _searchMenu.Location = new Point(
@@ -297,12 +296,12 @@ namespace TixNova__Final
                     screenPos.Y + 10
                 );
 
-                // DO NOT use this.Controls.Add(_searchMenu); <--- This causes the error!
+                
                 _searchMenu.Show();
             }
             else
             {
-                // Toggle visibility
+                
                 if (_searchMenu.Visible)
                     _searchMenu.Hide();
                 else
@@ -310,17 +309,16 @@ namespace TixNova__Final
             }
         }
 
-        private CustomMenu _sideMenu; // Ensure this matches your new class name
+        private CustomMenu _sideMenu; 
 
         private void MenuButton_Click(object sender, EventArgs e)
         {
-            // Check if the menu exists or has been closed
+            
             if (_sideMenu == null || _sideMenu.IsDisposed)
             {
-                _sideMenu = new CustomMenu(); // Create the instance
+                _sideMenu = new CustomMenu(); 
 
-                // Position it on the right side of your app
-                // We calculate the X coordinate: App Width - Menu Width - Margin
+               
                 Point screenPos = this.PointToScreen(new Point(this.Width - _sideMenu.Width - 20, 50));
                 _sideMenu.Location = screenPos;
 
@@ -328,7 +326,7 @@ namespace TixNova__Final
             }
             else
             {
-                // Toggle visibility if already open
+                
                 _sideMenu.Visible = !_sideMenu.Visible;
             }
         }
