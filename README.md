@@ -18,5 +18,6 @@ TixNova+ is a modern, feature-rich desktop application built using C# and .NET W
 
 
 **Features**
+
 Main Dashboard and its Core Features
 The main dashboard serves as the central hub of the application, highlighting today's trending movies while providing seamless navigation to various modules. The Movies section displays both Now Showing and Coming Soon titles. Users can explore different locations and view their ratings in the Cinemas module, or pre-order snacks through the built-in Shop. For targeted browsing, the Categories section efficiently organizes films by genre and age ratings. Additionally, a robust Search Menu ensures quick and easy navigation throughout the entire system.
