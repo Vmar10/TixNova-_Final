@@ -7,6 +7,5 @@ TixNova+ is a modern, feature-rich desktop application built using C# and .NET W
 
 **Quick Overview of the System**
 
-
-Login Form
+**Login Form**
 <img width="1919" height="1079" alt="Login Page" src="https://github.com/user-attachments/assets/dc05cc2c-85d3-44fe-9822-792b5d938b5a" />
